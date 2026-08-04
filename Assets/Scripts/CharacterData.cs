@@ -6,8 +6,8 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     [SerializeField] private string characterName;
-    [SerializeField] private Sprite protrait;
+    [SerializeField] private Sprite portrait;
 
     public string CharacterName => characterName;
-    public Sprite Portrait => protrait;
+    public Sprite Portrait => portrait;
 }

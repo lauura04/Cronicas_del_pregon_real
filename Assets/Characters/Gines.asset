@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Gines
   m_EditorClassIdentifier: 
   characterName: "Gin\xE9s"
-  protrait: {fileID: 0}
+  portrait: {fileID: 0}
