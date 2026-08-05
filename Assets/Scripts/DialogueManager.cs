@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
         Image portraitImageComponent,
         System.Action onFinished)
     {
+
         if (dialogue == null || dialogue.Lines.Count == 0)
         {
             Debug.LogError("El diálogo está vacío o no ha sido asignado.");
@@ -63,6 +64,15 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogError("No se ha asignado la imagen del retrato.");
             return;
+        }
+
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(false);
+        }
+        else
+        {
+            Debug.LogWarning("No se ha encontrado PlayerMovement.");
         }
 
         currentDialogue = dialogue;
@@ -178,6 +188,11 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
         isTyping = false;
 
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(true);
+        }
+        
         finishedAction?.Invoke();
     }
 }

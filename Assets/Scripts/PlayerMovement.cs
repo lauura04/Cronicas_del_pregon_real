@@ -11,11 +11,17 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidbody;
     private Vector3 movementInput;
 
+    private Vector3 lastMovementDirection = Vector3.forward;
+    private string currentDirection = "";
+
     public Vector3 MovementDirection => movementInput;
     public bool IsMoving => movementInput.sqrMagnitude > 0.01f;
 
+    private bool canMove = true;
+    public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {
+        Instance = this;
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -31,15 +37,46 @@ public class PlayerMovement : MonoBehaviour
 
     private void ReadMovementInput()
     {
-        float horizontalInput= Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        
-        movementInput = new Vector3(horizontalInput,0f,verticalInput).normalized;
+
+        movementInput = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+
+        if (movementInput.sqrMagnitude > 0.01f)
+        {
+            lastMovementDirection = movementInput;
+
+            string newDirection = "";
+
+            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            {
+                newDirection = horizontalInput > 0 ? "Right" : "Left";
+            }
+            else
+            {
+                newDirection = verticalInput > 0 ? "Up" : "Down";
+            }
+            if (newDirection != currentDirection)
+            {
+                currentDirection = newDirection;
+                Debug.Log("Player is moving " + currentDirection);
+            }
+        }
     }
 
     private void MovePlayer()
     {
         Vector3 newPosition = playerRigidbody.position + movementInput * moveSpeed * Time.fixedDeltaTime;
         playerRigidbody.MovePosition(newPosition);
+    }
+
+    public void SetMovementEnabled(bool enabled)
+    {
+        canMove = enabled;
+
+        if (!canMove)
+        {
+            movementInput = Vector3.zero;
+        }
     }
 }
