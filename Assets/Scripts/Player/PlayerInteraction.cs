@@ -2,21 +2,31 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [Header("Interacción")]
+    [Header("Detección")]
     [SerializeField] private float interactionRadius = 1.5f;
     [SerializeField] private LayerMask interactableLayer;
-    [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
+    [Header("Controles")]
+    [SerializeField] private KeyCode interactionKey = KeyCode.E;
+    [SerializeField] private KeyCode charmKey = KeyCode.R;
+
+    
     private IInteractable currentInteractable;
 
     private void Update()
     {
+       
+
         FindClosestInteractable();
 
-        if (Input.GetKeyDown(interactionKey) &&
-            currentInteractable != null)
+        if (Input.GetKeyDown(interactionKey))
         {
             currentInteractable.Interact();
+        }
+
+        if(Input.GetKeyDown(charmKey))
+        {
+            currentInteractable.Charm();
         }
     }
 
@@ -41,9 +51,10 @@ public class PlayerInteraction : MonoBehaviour
                 continue;
             }
 
-            float distance = Vector3.SqrMagnitude(
-                nearbyCollider.transform.position - transform.position
-            );
+            float distance = (
+                nearbyCollider.ClosestPoint(transform.position) -
+                transform.position
+            ).sqrMagnitude;
 
             if (distance < closestDistance)
             {
@@ -55,6 +66,7 @@ public class PlayerInteraction : MonoBehaviour
         currentInteractable = closestInteractable;
     }
 
+   
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(

@@ -45,4 +45,9 @@ public class SpyDialogueInteractable : MonoBehaviour, IInteractable
     {
         onDialogueFinished?.Invoke();
     }
+
+    public void Charm()
+    {
+        // Implement charm behavior if needed
+    }
 }

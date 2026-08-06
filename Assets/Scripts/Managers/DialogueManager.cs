@@ -20,7 +20,8 @@ public class DialogueManager : MonoBehaviour
     private DialogueData currentDialogue;
     private int currentLineIndex;
 
-
+    public bool IsDialogueActive =>
+        currentDialogue != null;
     private System.Action onDialogueFinished;
 
     private Coroutine typingCoroutine;
