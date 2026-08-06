@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Basico_1
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Menuda cantidad de gente ha llegado estos d\xEDas."
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "No me extra\xF1a. Una boda real no se ve todos los a\xF1os."
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: Encontrar una cama anoche fue imposible.
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Yo termin\xE9 durmiendo en el establo de una posada."
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Al menos ten\xEDas techo. Algunos pasaron la noche al raso."
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: Espoero que el viaje haya merecido la pena.

@@ -27,11 +27,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove)
+        {
+            movementInput = Vector3.zero;
+            return;
+        }
         ReadMovementInput();
     }
 
     private void FixedUpdate()
     {
+        if (!canMove)
+        {
+            movementInput = Vector3.zero;
+            return;
+        }
         MovePlayer();
     }
 

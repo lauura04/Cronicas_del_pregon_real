@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Arlequino
   m_EditorClassIdentifier: 
   characterName: Arlequino
-  protrait: {fileID: 0}
+  portrait: {fileID: 1127340698855164803, guid: 7637798a2f4a8d143ba885b7c782da90,
+    type: 3}

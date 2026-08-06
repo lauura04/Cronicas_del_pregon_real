@@ -7,14 +7,19 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
+
+    [Header("Configuración")]
     [SerializeField] private float typingSpeed = 0.05f;
+
+    [Header("Interfaz de diálogo")]
+    [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text characterNameText;
+    [SerializeField] private Image characterPortraitImage;
 
     private DialogueData currentDialogue;
     private int currentLineIndex;
 
-    private TMP_Text dialogueText;
-    private TMP_Text characterNameText;
-    private Image characterPortraitImage;
 
     private System.Action onDialogueFinished;
 
@@ -35,34 +40,26 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(
-        DialogueData dialogue,
-        TMP_Text textComponent,
-        TMP_Text nameTextComponent,
-        Image portraitImageComponent,
-        System.Action onFinished)
+    DialogueData dialogue,
+    System.Action onFinished = null)
     {
-
-        if (dialogue == null || dialogue.Lines.Count == 0)
+        if (dialogue == null || dialogue.Lines == null ||
+            dialogue.Lines.Count == 0)
         {
-            Debug.LogError("El diálogo está vacío o no ha sido asignado.");
+            Debug.LogError(
+                "El diálogo está vacío o no ha sido asignado."
+            );
             return;
         }
 
-        if (textComponent == null)
+        if (dialogueCanvas == null ||
+            dialogueText == null ||
+            characterNameText == null ||
+            characterPortraitImage == null)
         {
-            Debug.LogError("No se ha asignado el texto del diálogo.");
-            return;
-        }
-
-        if (nameTextComponent == null)
-        {
-            Debug.LogError("No se ha asignado el texto del nombre.");
-            return;
-        }
-
-        if (portraitImageComponent == null)
-        {
-            Debug.LogError("No se ha asignado la imagen del retrato.");
+            Debug.LogError(
+                "La interfaz de diálogo no está completamente asignada."
+            );
             return;
         }
 
@@ -70,21 +67,15 @@ public class DialogueManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
         }
-        else
-        {
-            Debug.LogWarning("No se ha encontrado PlayerMovement.");
-        }
 
+        dialogueCanvas.SetActive(true);
         currentDialogue = dialogue;
-        dialogueText = textComponent;
-        characterNameText = nameTextComponent;
-        characterPortraitImage = portraitImageComponent;
         onDialogueFinished = onFinished;
         currentLineIndex = 0;
 
+
         ShowCurrentLine();
     }
-
     private void ShowCurrentLine()
     {
         DialogueLine line = currentDialogue.Lines[currentLineIndex];
@@ -180,19 +171,18 @@ public class DialogueManager : MonoBehaviour
         System.Action finishedAction = onDialogueFinished;
 
         currentDialogue = null;
-        dialogueText = null;
-        characterNameText = null;
-        characterPortraitImage = null;
         onDialogueFinished = null;
         currentLineText = null;
         currentLineIndex = 0;
         isTyping = false;
 
+        dialogueCanvas.SetActive(false);
+
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
         }
-        
+
         finishedAction?.Invoke();
     }
 }

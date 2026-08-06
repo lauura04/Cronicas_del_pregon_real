@@ -14,16 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "\xBFQu\xE9 tal fue con sus majestades?"
-  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "Horrible mi querido mentor, al igual que su madre, la pricensa tiene un
-      gran car\xE1cter y la de presentarme con las manos vac\xEDas no es algo que
-      le haya agradado."
+    text: Bien muchacho, ahora tenemos que hacernos paso entre los monjes para poder
+      llegar al casamiento,
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "\xA1Bobo insensato! Pero c\xF3mo se te ocurre acercarte sin una m\xEDsera
-      ofrenda. Ve a buscar algo que posea tal esplendor que complazca a nuestra se\xF1ora
-      la infanta."
-  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "Querido pupilo, tendr\xE1s que hallar aquello que guste a su majestad,
-      yo ya te he brindado diferentes m\xE9todos para conseguir dicha informaci\xF3n,
-      trata de hacerlo lo mejor posible."
+    text: "pero mant\xE9n tus o\xEDdos abiertos, que toda inforamci\xF3n es \xFAtil
+      y nunca est\xE1 de m\xE1s almacenarla"

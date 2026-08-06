@@ -13,14 +13,5 @@ MonoBehaviour:
   m_Name: Tutorial_2
   m_EditorClassIdentifier: 
   lines:
-  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "A sus pies mis majestades, es un honor para m\xED estar presente en un
-      d\xEDa tan especial."
-  - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
-    text: Ponte en pie y muestra tus respetos. Si quiere puede dejarlo en aquella
-      mesa.
-  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "\xBFDejar el qu\xE9 Su Majestad?"
-  - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
-    text: "\xBF\xA1Osas presentarte con las manos vac\xEDas ante nos!? \xA1Ve en
-      busca de algo digno de la Reina de dos Reinos si no quieres que te haga largar."
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "\xA1Pero ap\xFArate usando Shift, que vamos a llegar tarde al enlace real!"
