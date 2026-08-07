@@ -5,10 +5,10 @@ public class CameraZone : MonoBehaviour
 {
     [Header("Vista de esta zona")]
     [SerializeField] private Vector3 cameraOffset =
-        new Vector3(0f, 3f, -5f);
+        new Vector3(0f, 2f, -4f);
 
     [SerializeField] private Vector3 cameraRotation =
-        new Vector3(25f, 0f, 0f);
+        new Vector3(45f, 0f, 0f);
 
     [Header("Salida")]
     [SerializeField] private bool resetOnExit = true;

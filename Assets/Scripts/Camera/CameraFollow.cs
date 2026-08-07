@@ -9,10 +9,10 @@ public class CameraFollow : MonoBehaviour
 
     [Header("Vista normal")]
     [SerializeField] private Vector3 defaultOffset =
-        new Vector3(0f, 2f, -4.5f);
+        new Vector3(0f, 2f, -4f);
 
     [SerializeField] private Vector3 defaultRotation =
-        new Vector3(25f, 0f, 0f);
+        new Vector3(45f, 0f, 0f);
 
     [Header("Suavizado")]
     [SerializeField] private float followSpeed = 8f;
