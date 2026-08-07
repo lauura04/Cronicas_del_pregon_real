@@ -3,20 +3,32 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class CameraZone : MonoBehaviour
 {
-    [Header("Vista de esta zona")]
+    public enum CameraMode
+    {
+        Follow,
+        Fixed
+    }
+
+    [Header("Modo")]
+    [SerializeField] private CameraMode cameraMode =
+        CameraMode.Follow;
+
+    [Header("Vista Follow")]
     [SerializeField] private Vector3 cameraOffset =
-        new Vector3(0f, 2f, -4f);
+        new Vector3(0f, 3f, -5f);
 
     [SerializeField] private Vector3 cameraRotation =
         new Vector3(45f, 0f, 0f);
 
+    [Header("Vista fija")]
+    [SerializeField] private Transform fixedCameraPoint;
+
     [Header("Salida")]
     [SerializeField] private bool resetOnExit = true;
 
-    private void Reset()
+    private void Awake()
     {
-        BoxCollider boxCollider = GetComponent<BoxCollider>();
-        boxCollider.isTrigger = true;
+        GetComponent<BoxCollider>().isTrigger = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,17 +40,33 @@ public class CameraZone : MonoBehaviour
 
         if (CameraFollow.Instance == null)
         {
-            Debug.LogWarning(
-                "No se ha encontrado CameraFollow.Instance."
-            );
-
             return;
         }
 
-        CameraFollow.Instance.SetCameraView(
-            cameraOffset,
-            cameraRotation
-        );
+        if (cameraMode == CameraMode.Fixed)
+        {
+            if (fixedCameraPoint == null)
+            {
+                Debug.LogWarning(
+                    $"No hay Fixed Camera Point en {gameObject.name}."
+                );
+
+                return;
+            }
+
+            CameraFollow.Instance.SetFixedCameraView(
+                fixedCameraPoint.position,
+                fixedCameraPoint.eulerAngles,
+                this
+            );
+        }
+        else
+        {
+            CameraFollow.Instance.SetCameraView(
+                cameraOffset,
+                cameraRotation
+            );
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -48,11 +76,20 @@ public class CameraZone : MonoBehaviour
             return;
         }
 
-        if (!resetOnExit || CameraFollow.Instance == null)
+        if (CameraFollow.Instance == null)
         {
             return;
         }
 
-        CameraFollow.Instance.ResetCameraView();
+        if (cameraMode == CameraMode.Fixed)
+        {
+            CameraFollow.Instance.ExitFixedCameraView(this);
+            return;
+        }
+
+        if (resetOnExit)
+        {
+            CameraFollow.Instance.ResetCameraView();
+        }
     }
 }

@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Controles")]
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+    [SerializeField] private KeyCode spyKey = KeyCode.Q;
     [SerializeField] private KeyCode charmKey = KeyCode.R;
 
     

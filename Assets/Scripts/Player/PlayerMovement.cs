@@ -81,12 +81,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SetMovementEnabled(bool enabled)
-    {
-        canMove = enabled;
+{
+    canMove = enabled;
+    movementInput = Vector3.zero;
 
-        if (!canMove)
-        {
-            movementInput = Vector3.zero;
-        }
+    if (!canMove)
+    {
+        playerRigidbody.velocity = Vector3.zero;
+        playerRigidbody.angularVelocity = Vector3.zero;
     }
+}
 }

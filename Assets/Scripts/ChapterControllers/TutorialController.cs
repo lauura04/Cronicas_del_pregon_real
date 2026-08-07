@@ -11,6 +11,7 @@ public class TutorialController : MonoBehaviour
 
     private void Start()
     {
+        
         DialogueManager.Instance.StartDialogue(
             initialDialogue, StartTutorial
         );
