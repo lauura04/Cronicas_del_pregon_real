@@ -65,6 +65,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void HandleDialogueFinished()
     {
+        Debug.Log("Intentando mostrar mensaje");
         if (showMessageAfterDialogue)
         {
             if (MessageUI.Instance == null)
@@ -81,6 +82,11 @@ public class DialogueTrigger : MonoBehaviour
             }
             else
             {
+                Debug.Log(
+    $"showMessageAfterDialogue: {showMessageAfterDialogue} | " +
+    $"message: {messageAfterDialogue} | " +
+    $"duration: {messageDuration}"
+);
                 MessageUI.Instance.ShowMessage(
                     messageAfterDialogue, messageDuration
                 );

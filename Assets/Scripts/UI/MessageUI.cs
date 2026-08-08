@@ -28,6 +28,7 @@ public class MessageUI : MonoBehaviour
 
     public void ShowMessage(string message, float duration = -1f)
     {
+        Debug.Log("ShowMessage ejecutado con: " + message);
         messageText.text = message;
         messagePanel.SetActive(true);
 

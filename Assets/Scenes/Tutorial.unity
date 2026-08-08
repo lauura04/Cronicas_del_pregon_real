@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 95381481}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 295437468}
   - component: {fileID: 295437471}
   - component: {fileID: 295437472}
+  - component: {fileID: 295437473}
   m_Layer: 0
   m_Name: Arlequino
   m_TagString: Arlequino
@@ -849,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 0}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -858,10 +859,36 @@ MonoBehaviour:
   charmOnlyOnce: 1
   onInteractionFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 295437473}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &295437473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295437467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: c53f04df47a39cf46a61634d73a7df49, type: 2}
+  giveOnlyOnce: 1
 --- !u!1 &389185363
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 389185368}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -1094,8 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 11400000, guid: 2f4d65fe7b4c77545ad6e20ad19ac823,
-    type: 2}
+  interactionDialogues: []
   spyConversation: {fileID: 0}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -1313,8 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 11400000, guid: 890b915e90fe1bd4583fc751bf8012c1,
-    type: 2}
+  interactionDialogues: []
   spyConversation: {fileID: 0}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -1424,6 +1449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 572217300}
   - component: {fileID: 572217302}
+  - component: {fileID: 572217303}
   m_Layer: 0
   m_Name: SoldadoInteract
   m_TagString: Untagged
@@ -1461,12 +1487,32 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.574871, y: 1, z: 0.72191334}
-  m_Center: {x: -0.87701035, y: 0, z: -0.13904333}
+  m_Size: {x: 4.574871, y: 1, z: 0.90796185}
+  m_Center: {x: -0.87701035, y: 0, z: -0.046019077}
+--- !u!114 &572217303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572217299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1884902198181478ee388d2463fd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: 890b915e90fe1bd4583fc751bf8012c1, type: 2}
+  triggerOnlyOnce: 1
+  showMessageAfterDialogue: 1
+  messageDuration: 3
+  messageAfterDialogue: Pulsa R para Engatusar
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &580830476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8470915362201443334, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -1699,7 +1745,7 @@ MonoBehaviour:
   triggerOnlyOnce: 1
   showMessageAfterDialogue: 1
   messageDuration: 2
-  messageAfterDialogue: Pulsa E para ESPIAR
+  messageAfterDialogue: Pulsa Q para ESPIAR
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls:
@@ -1929,7 +1975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 716146608}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -2135,13 +2181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44169d678eaafdd4faf1d415c52fbb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: a8939fda49c7b0a4e96c4ca1cf4c9cc3, type: 2}
-  canRepeat: 1
-  onDialogueFinished:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  hasBeenPlayed: 0
 --- !u!136 &851681095
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2243,7 +2282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 851681098}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -2577,7 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 947478677}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -2797,13 +2836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44169d678eaafdd4faf1d415c52fbb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 22fe398feb7dbf04da5a4e41a052985f, type: 2}
-  canRepeat: 1
-  onDialogueFinished:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  hasBeenPlayed: 0
 --- !u!136 &1015965076
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2905,7 +2937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 1015965079}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -4006,6 +4038,8 @@ GameObject:
   - component: {fileID: 1561669304}
   - component: {fileID: 1561669303}
   - component: {fileID: 1561669302}
+  - component: {fileID: 1561669307}
+  - component: {fileID: 1561669306}
   m_Layer: 0
   m_Name: Sheep1
   m_TagString: Untagged
@@ -4122,6 +4156,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561669300}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1561669306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561669300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: ec87f95cc35fd2d48aed8b3af005d70f, type: 2}
+  giveOnlyOnce: 1
+--- !u!114 &1561669307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561669300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  spyConversation: {fileID: 0}
+  detectionTime: 5
+  detectedDialogue: {fileID: 0}
+  canBeCharmed: 1
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1561669306}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1563788893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6372620159720347986, guid: e392b342ff6fb854b815e08330f484b9,
@@ -4467,6 +4552,8 @@ GameObject:
   - component: {fileID: 1812024798}
   - component: {fileID: 1812024797}
   - component: {fileID: 1812024796}
+  - component: {fileID: 1812024800}
+  - component: {fileID: 1812024799}
   m_Layer: 0
   m_Name: Sheep2
   m_TagString: Untagged
@@ -4560,6 +4647,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812024793}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1812024799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812024793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a97fe1b4b8287f147bb676c7a5f2cf24, type: 2}
+  giveOnlyOnce: 1
+--- !u!114 &1812024800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812024793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  spyConversation: {fileID: 0}
+  detectionTime: 5
+  detectedDialogue: {fileID: 0}
+  canBeCharmed: 1
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1812024799}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1824971795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4711,8 @@ GameObject:
   - component: {fileID: 1824971799}
   - component: {fileID: 1824971798}
   - component: {fileID: 1824971797}
+  - component: {fileID: 1824971802}
+  - component: {fileID: 1824971801}
   m_Layer: 0
   m_Name: Sheep3
   m_TagString: Untagged
@@ -4689,6 +4829,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824971795}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1824971801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824971795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: dcf4c877b94b9934893dd55797e33fc0, type: 2}
+  giveOnlyOnce: 1
+--- !u!114 &1824971802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824971795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  spyConversation: {fileID: 0}
+  detectionTime: 5
+  detectedDialogue: {fileID: 0}
+  canBeCharmed: 1
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1824971801}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1828561388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3798869762385945882, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -4842,6 +5033,8 @@ GameObject:
   - component: {fileID: 1852416976}
   - component: {fileID: 1852416975}
   - component: {fileID: 1852416974}
+  - component: {fileID: 1852416979}
+  - component: {fileID: 1852416978}
   m_Layer: 0
   m_Name: Herrero
   m_TagString: Untagged
@@ -4935,6 +5128,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1852416978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852416973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  spyConversation: {fileID: 0}
+  detectionTime: 5
+  detectedDialogue: {fileID: 0}
+  canBeCharmed: 0
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1852416979}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1852416979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852416973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: dd10e41d00ae1434991bef4159d46816, type: 2}
+  giveOnlyOnce: 1
 --- !u!1 &1852646867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5474,7 +5718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogue: {fileID: 0}
+  interactionDialogues: []
   spyConversation: {fileID: 1908115438}
   detectionTime: 5
   detectedDialogue: {fileID: 0}
@@ -5677,6 +5921,8 @@ GameObject:
   - component: {fileID: 1987636153}
   - component: {fileID: 1987636152}
   - component: {fileID: 1987636151}
+  - component: {fileID: 1987636156}
+  - component: {fileID: 1987636155}
   m_Layer: 0
   m_Name: Mercader
   m_TagString: Untagged
@@ -5770,6 +6016,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1987636155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987636150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  spyConversation: {fileID: 0}
+  detectionTime: 5
+  detectedDialogue: {fileID: 0}
+  canBeCharmed: 0
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1987636156}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1987636156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987636150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a1c3992f77c81e74985b2987e6d1bc96, type: 2}
+  giveOnlyOnce: 1
 --- !u!1 &2000139089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7152041083712873465, guid: 92d75df775f66cb4799269d1b2bafc6a,

@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f;
 
     [Header("Interfaz de diálogo")]
-    [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private Image characterPortraitImage;
@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (dialogueCanvas == null ||
+        if (dialoguePanel == null ||
             dialogueText == null ||
             characterNameText == null ||
             characterPortraitImage == null)
@@ -68,8 +68,8 @@ public class DialogueManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
         }
-
-        dialogueCanvas.SetActive(true);
+        HUDManager.Instance?.HideHUD();
+        dialoguePanel.SetActive(true);
         currentDialogue = dialogue;
         onDialogueFinished = onFinished;
         currentLineIndex = 0;
@@ -162,7 +162,7 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
         }
-
+        
         dialogueText.text = "";
         characterNameText.text = "";
 
@@ -177,7 +177,8 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
         isTyping = false;
 
-        dialogueCanvas.SetActive(false);
+        dialoguePanel.SetActive(false);
+        HUDManager.Instance?.ShowHUD();
 
         if (PlayerMovement.Instance != null)
         {

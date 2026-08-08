@@ -8,7 +8,7 @@ public class SpyManager : MonoBehaviour
     public static SpyManager Instance {get; private set;}
 
     [Header("Interfaz")]
-    [SerializeField] private GameObject spyCanvas;
+    [SerializeField] private GameObject spyPanel;
     [SerializeField] private TMP_Text spyText;
     [SerializeField] private TMP_Text characterNameText;
     
@@ -24,9 +24,9 @@ public class SpyManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        if (spyCanvas != null)
+        if (spyPanel != null)
         {
-            spyCanvas.SetActive(false);
+            spyPanel.SetActive(false);
         }
     }
 
@@ -48,7 +48,7 @@ public class SpyManager : MonoBehaviour
         }
 
         currentConversation = conversation;
-        spyCanvas.SetActive(true);
+        spyPanel.SetActive(true);
 
         UpdateSpyUI();
     }
@@ -57,7 +57,7 @@ public class SpyManager : MonoBehaviour
     {
         currentConversation = null;
         ClearUI();
-        spyCanvas.SetActive(false);
+        spyPanel.SetActive(false);
     }
 
     private void UpdateSpyUI()

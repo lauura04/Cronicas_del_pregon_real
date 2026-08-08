@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
     [Header("Interaction/Speak with E")]
-    [SerializeField] private DialogueData interactionDialogue;
+    [SerializeField] private PhaseDialogue[] interactionDialogues;
 
     [Header("Spy with Q")]
     [SerializeField] private SpyConversation spyConversation;
@@ -30,11 +30,16 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (isBusy || interactionDialogue == null)
+        if (isBusy)
         {
             return;
         }
+        DialogueData interactionDialogue = GetInteractionDialogueForCurrentPhase();
 
+        if(interactionDialogue == null)
+        {
+            return;
+        }
 
         if (DialogueManager.Instance == null)
         {
@@ -46,6 +51,27 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         DialogueManager.Instance.StartDialogue(interactionDialogue, HandleInteractionFinished);
     }
 
+    private DialogueData GetInteractionDialogueForCurrentPhase()
+    {
+        if(GameProgressManager.Instance == null)
+        {
+            Debug.LogError("GameProgressManager not found");
+            return null;
+        }
+
+        int currentPhase = GameProgressManager.Instance.CurrentPhase;
+
+        foreach(PhaseDialogue phaseDialogue in interactionDialogues)
+        {
+            if(phaseDialogue.phase == currentPhase)
+            {
+                return phaseDialogue.dialogue;
+            }
+        }
+        return null;
+
+    }
+
     public void Charm()
     {
         if (isBusy || !canBeCharmed || (charmOnlyOnce && hasBeenCharmed))
@@ -53,11 +79,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             return;
         }
 
-        if (charmDialogue == null) //si quito esto podría encantar sin necesidad de dialogo --> revisar a futuro
-        {
-            Debug.LogError($"Charm dialogue is not assigned in {gameObject.name}");
-            return;
-        }
+        
 
         if (DialogueManager.Instance == null)
         {
