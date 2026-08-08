@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
   m_Name: Isabel_1
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "A sus pies mis se\xF1ores, es un honor para m\xED poder presenciar tan
+      magn\xE1nimo acontecimiento."
+  - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
+    text: "Lev\xE1ntate joven Buf\xF3n y deje sus presentes en aquella mesa de all\xE1."
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Pero, \xBFc\xF3mo que mis presentes? Si no tengo cosa alguna que mis encantos."
+  - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
+    text: "\xA1\xBFOsas presentarte ante los monarcas de dos reinos con las manos
+      vac\xEDas?! Si esto no cambia al final de la celebraci\xF3n atente a las consecuencias."

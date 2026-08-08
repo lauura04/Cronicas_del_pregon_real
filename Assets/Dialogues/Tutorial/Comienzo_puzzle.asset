@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
   m_Name: Comienzo_puzzle
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Mira Benjam\xEDn, all\xED al fondo de la plaza se encuentra nuestra princesa
+      la Infanta, tan bella como su madre pero mucho m\xE1s jovial."
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Ac\xE9rcate joven para presentar tus respetos a la joven pareja."

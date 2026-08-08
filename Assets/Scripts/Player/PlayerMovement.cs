@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsMoving => movementInput.sqrMagnitude > 0.01f;
 
     private bool canMove = true;
+    public bool CanMove => canMove;
     public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {

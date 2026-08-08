@@ -3,8 +3,18 @@ using UnityEngine.Events;
 
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
-    [Header("Interaction with E")]
+    [Header("Interaction/Speak with E")]
     [SerializeField] private DialogueData interactionDialogue;
+
+    [Header("Spy with Q")]
+    [SerializeField] private SpyConversation spyConversation;
+    [SerializeField] private float detectionTime = 5f;
+    [SerializeField] private DialogueData detectedDialogue;
+
+
+    public SpyConversation SpyConversation => spyConversation;
+    public float DetectionTime => detectionTime;
+    public DialogueData DetectedDialogue => detectedDialogue;
 
     [Header("Charm with R")]
     [SerializeField] private bool canBeCharmed;
@@ -20,17 +30,13 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (isBusy)
+        if (isBusy || interactionDialogue == null)
         {
             return;
         }
 
-        if (interactionDialogue == null)
-        {
-            Debug.LogError($"Interaction dialogue is not assigned in {gameObject.name}");
-            return;
-        }
-        if(DialogueManager.Instance == null)
+
+        if (DialogueManager.Instance == null)
         {
             Debug.LogError("DialogueManager instance is not found in the scene.");
             return;
@@ -42,18 +48,18 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public void Charm()
     {
-        if(isBusy || !canBeCharmed || (charmOnlyOnce && hasBeenCharmed))
+        if (isBusy || !canBeCharmed || (charmOnlyOnce && hasBeenCharmed))
         {
             return;
         }
 
-        if(charmDialogue == null)
+        if (charmDialogue == null) //si quito esto podría encantar sin necesidad de dialogo --> revisar a futuro
         {
             Debug.LogError($"Charm dialogue is not assigned in {gameObject.name}");
             return;
         }
 
-         if(DialogueManager.Instance == null)
+        if (DialogueManager.Instance == null)
         {
             Debug.LogError("DialogueManager instance is not found in the scene.");
             return;
@@ -76,4 +82,5 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         onCharmFinished?.Invoke();
     }
 
+    
 }
