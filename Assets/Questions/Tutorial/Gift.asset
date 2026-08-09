@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
+  m_Name: Gift
+  m_EditorClassIdentifier: 
+  question: "\xBFSabes ya lo que quiere la princesa?"
+  answers:
+  - answerText: Una mascota
+    isCorrect: 0
+  - answerText: Joyas
+    isCorrect: 1
+  - answerText: No quiere nada
+    isCorrect: 0
+  - answerText: Un nuevo vestido
+    isCorrect: 0

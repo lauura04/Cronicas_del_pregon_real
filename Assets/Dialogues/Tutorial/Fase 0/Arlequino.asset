@@ -17,4 +17,5 @@ MonoBehaviour:
     text: "Querido pupilo, tendr\xE1s que hallar aquello que guste a su majestad,
       yo te he brindado diferentes m\xE9todos para conseguir dicha informaci\xF3n."
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: Trata de hacerlo lo mejor posible.
+    text: "Trata de hacerlo lo mejor posible y vuelve a m\xED cuando creas tener
+      informaci\xF3n."

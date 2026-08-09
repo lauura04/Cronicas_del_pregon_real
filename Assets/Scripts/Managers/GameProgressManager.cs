@@ -4,17 +4,9 @@ public class GameProgressManager : MonoBehaviour
 {
     public static GameProgressManager Instance { get; private set; }
 
-    public enum GameChapter
-    {
-        Tutorial,
-        Chapter1,
-        Chapter2,
-        Chapter3
-    }
-
-    public int CurrentPhase { get; private set; }
-
-    public GameChapter CurrentChapter { get; private set; }
+    public ChapterData CurrentChapter { get; private set; }
+    public ChapterPhaseData CurrentPhase { get; private set; }
+    public static event System.Action<ChapterPhaseData> OnPhaseChanged;
 
     private void Awake()
     {
@@ -28,18 +20,51 @@ public class GameProgressManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void StartChapter(GameChapter chapter)
+    public void StartChapter(ChapterData chapter, ChapterPhaseData initialPhase)
     {
+        if (chapter == null)
+        {
+            Debug.LogError("No asignado chapter");
+            return;
+        }
+
+        if (initialPhase == null)
+        {
+            Debug.LogError("No asignada initial phase");
+        }
+
         CurrentChapter = chapter;
-        CurrentPhase = 0;
+        CurrentPhase = initialPhase;
     }
-    public void SetPhase(int phase)
+    public void SetPhase(ChapterPhaseData newPhase)
     {
-        CurrentPhase = phase;
+        if (CurrentChapter == null)
+        {
+            Debug.LogError("No hay ningún capítulo activo.");
+            return;
+        }
+
+        if (newPhase == null)
+        {
+            Debug.LogError("La nueva fase es null.");
+            return;
+        }
+
+        if (!CurrentChapter.ContainsPhase(newPhase))
+        {
+            Debug.LogError(
+                $"{newPhase.name} no pertenece al capítulo actual."
+            );
+            return;
+        }
+
+        CurrentPhase = newPhase;
+
+        Debug.Log(
+            $"Nueva fase: {CurrentPhase.name}"
+        );
+
+        OnPhaseChanged?.Invoke(CurrentPhase);
     }
 
-    public void NextPhase()
-    {
-        CurrentPhase++;
-    }
 }

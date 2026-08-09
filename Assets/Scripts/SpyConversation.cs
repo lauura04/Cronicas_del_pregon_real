@@ -62,4 +62,29 @@ public class SpyConversation : MonoBehaviour
             }
         }
     }
+
+    public void SetDialogue(DialogueData newDialogue)
+{
+    if (spyDialogue == newDialogue)
+    {
+        return;
+    }
+
+    StopAllCoroutines();
+
+    spyDialogue = newDialogue;
+
+    currentLineIndex = 0;
+    currentlyWrittenText = "";
+    currentLine = null;
+
+    if (spyDialogue == null ||
+        spyDialogue.Lines == null ||
+        spyDialogue.Lines.Count == 0)
+    {
+        return;
+    }
+
+    StartCoroutine(ConversationRoutine());
+}
 }

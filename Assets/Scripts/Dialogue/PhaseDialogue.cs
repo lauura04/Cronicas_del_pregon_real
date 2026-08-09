@@ -1,9 +1,9 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 [Serializable]
-public class PhaseDialogue 
+public class PhaseDialogue
 {
-    public int phase;
-    public DialogueData dialogue;
+    public ChapterPhaseData phase;
+    public DialogueStep[] dialogues;
 }

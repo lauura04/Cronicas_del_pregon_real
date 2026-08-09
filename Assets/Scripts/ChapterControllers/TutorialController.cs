@@ -8,15 +8,19 @@ public class TutorialController : MonoBehaviour
 {
     public static TutorialController Instance {get;private set;}
 
-    public enum TutorialPhase
-    {
-        Intro,
-        GiftIdea, //cambia de fase cuando responde al bufón la idea del regalo --> collar de perlas
-        FindMaterials, //cambia de fase cuando tiene todo/construye el collar --> check inventario
-        End
-    }
+    [Header("Chapter")]
+    [SerializeField] private ChapterData tutorialChapter;
 
-    public TutorialPhase CurrentPhase {get; private set;}
+    [Header("Initial Phase")]
+    [SerializeField] private ChapterPhaseData introPhase;
+    [Header("Second Phase")]
+    [SerializeField] private ChapterPhaseData giftIdea;
+    [Header("Third Phase")]
+    [SerializeField] private ChapterPhaseData findMaterials;
+    [Header("Forth Phase")]
+    [SerializeField] private ChapterPhaseData end;   
+
+
     [SerializeField] private DialogueData initialDialogue;
     
     //variables de las que dependen las subfases del FindMaterials
@@ -35,16 +39,16 @@ public class TutorialController : MonoBehaviour
 
     private void Start()
     {
-        CurrentPhase = TutorialPhase.Intro;
+        GameProgressManager.Instance.StartChapter(tutorialChapter, introPhase);
         DialogueManager.Instance.StartDialogue(
             initialDialogue, StartTutorial
         );
     }
 
-    public void SetPhase(TutorialPhase newPhase)
+    public void SetPhase(ChapterPhaseData newPhase)
     {
-        CurrentPhase = newPhase;
-        Debug.Log($"Tutorial phase changed to {CurrentPhase}");
+        GameProgressManager.Instance.SetPhase(newPhase);
+        Debug.Log($"Tutorial phase changed to {newPhase}");
     }
 
     public void UnlockMonks()

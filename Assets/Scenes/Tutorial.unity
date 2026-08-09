@@ -389,8 +389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 95381481}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -457,6 +458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a2a71b6018e14cada32e21c892b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialChapter: {fileID: 11400000, guid: e9066f86ccf72c145ad78011da6fedeb, type: 2}
+  introPhase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+  giftIdea: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+  findMaterials: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+  end: {fileID: 11400000, guid: 542c35420de08e3448e5970c5774c65a, type: 2}
   initialDialogue: {fileID: 11400000, guid: 321849d4e8adf0a4d9fea85ecbc1cbac, type: 2}
 --- !u!4 &217507412
 Transform:
@@ -780,7 +786,8 @@ GameObject:
   - component: {fileID: 295437471}
   - component: {fileID: 295437472}
   - component: {fileID: 295437473}
-  m_Layer: 0
+  - component: {fileID: 295437474}
+  m_Layer: 3
   m_Name: Arlequino
   m_TagString: Arlequino
   m_Icon: {fileID: 0}
@@ -850,28 +857,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogues: []
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 2cce668116374b54cbdd806f2830ecf4, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 217507411}
+            m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+            m_MethodName: SetPhase
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: ChapterPhaseData, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: a948a4d9adb9fdd448a62c2f5d7bb40a, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 295437474}
+            m_TargetAssemblyTypeName: QuestionPuzzle, Assembly-CSharp
+            m_MethodName: Open
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 6b6ae093871f5ef45ba77cb6daf1c286, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 295437473}
+            m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+            m_MethodName: Give
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
   onInteractionFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 295437473}
-        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
-        m_MethodName: Give
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
@@ -889,6 +940,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: c53f04df47a39cf46a61634d73a7df49, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+--- !u!114 &295437474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295437467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9467884e2f630444299881390948a48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionData: {fileID: 11400000, guid: 9f80ddb241a50a4459b08b5305e23249, type: 2}
+  wrongAnswerDialogue: {fileID: 11400000, guid: 6276b987887e7094492b1fe2cce17c6d,
+    type: 2}
+  correctAnswerDialogue: {fileID: 0}
+  onCorrectAnswer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 217507411}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: SetPhase
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ChapterPhaseData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 295437472}
+        m_TargetAssemblyTypeName: NPCInteractable, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onWrongAnswer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &389185363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,8 +1127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 389185368}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -1121,10 +1221,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogues: []
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 2f4d65fe7b4c77545ad6e20ad19ac823, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 295437471}
+            m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
+            m_MethodName: MoveTo
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 1615718671}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1015965073}
+            m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
+            m_MethodName: MoveTo
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 2050154546}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 851681092}
+            m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
+            m_MethodName: MoveTo
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 754759009}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -1341,8 +1484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 1
   charmDialogue: {fileID: 11400000, guid: b5f767720f0280f4ebe6e453c28a777b, type: 2}
   charmOnlyOnce: 1
@@ -1851,6 +1995,7 @@ GameObject:
   - component: {fileID: 716146606}
   - component: {fileID: 716146605}
   - component: {fileID: 716146609}
+  - component: {fileID: 716146610}
   - component: {fileID: 716146608}
   m_Layer: 3
   m_Name: Group1
@@ -1868,7 +2013,7 @@ Transform:
   m_GameObject: {fileID: 716146601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.04, y: 0.61, z: 5.77}
+  m_LocalPosition: {x: -1.26, y: 0.61, z: 4.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1977,8 +2122,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 716146608}
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: e9eade706d0a23b4bafd6ef9a0ade5d9, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: fbc15725753ea804aa512b691ed8fbf0, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -1988,6 +2146,18 @@ MonoBehaviour:
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &716146610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716146601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1202b9f6858c648bd8d1babc336c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &721534017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,6 +2243,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &754759008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754759009}
+  m_Layer: 0
+  m_Name: positiog_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754759009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754759008}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.14, y: 0.72568136, z: -18.28}
+  m_LocalScale: {x: 0.28598884, y: 0.28598878, z: 0.28598884}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758525240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5579509550478490215, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -2163,7 +2364,7 @@ Transform:
   m_GameObject: {fileID: 851681092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.28, y: 0.61, z: -6.96}
+  m_LocalPosition: {x: -3.72, y: 0.61, z: 7.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2284,8 +2485,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 851681098}
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: a8939fda49c7b0a4e96c4ca1cf4c9cc3, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+    dialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -2616,10 +2826,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogues: []
+  interactionDialogues:
+  - phase: {fileID: 0}
+    dialogues: []
   spyConversation: {fileID: 947478677}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -2799,9 +3012,9 @@ GameObject:
   - component: {fileID: 1015965078}
   - component: {fileID: 1015965077}
   - component: {fileID: 1015965076}
-  - component: {fileID: 1015965075}
   - component: {fileID: 1015965080}
   - component: {fileID: 1015965079}
+  - component: {fileID: 1015965081}
   m_Layer: 3
   m_Name: Group2
   m_TagString: Untagged
@@ -2818,24 +3031,12 @@ Transform:
   m_GameObject: {fileID: 1015965073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.92, y: 0.61, z: 2.56}
+  m_LocalPosition: {x: -6.12, y: 0.61, z: 4.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2127317530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1015965075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015965073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44169d678eaafdd4faf1d415c52fbb3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1015965076
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2939,8 +3140,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 1015965079}
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 22fe398feb7dbf04da5a4e41a052985f, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -2950,6 +3158,18 @@ MonoBehaviour:
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1015965081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015965073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1202b9f6858c648bd8d1babc336c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1018517547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +4007,7 @@ Transform:
   m_GameObject: {fileID: 1435779047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.79, y: 0.744, z: -0.1}
+  m_LocalPosition: {x: -19.45, y: 0.744, z: -14.64}
   m_LocalScale: {x: 0.28598878, y: 0.28598878, z: 0.28598878}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3806,7 +4026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5242e316381b5241ae0ad66b36503ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 4
+  interactionRadius: 1.5
   interactableLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4170,6 +4390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ec87f95cc35fd2d48aed8b3af005d70f, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 0}
 --- !u!114 &1561669307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4184,8 +4405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -4263,6 +4485,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3315799505918987197, guid: 92d75df775f66cb4799269d1b2bafc6a, type: 3}
+--- !u!1 &1615718670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615718671}
+  m_Layer: 0
+  m_Name: position4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615718671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615718670}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.283, y: 0.72568136, z: -17.836}
+  m_LocalScale: {x: 0.28598884, y: 0.28598878, z: 0.28598884}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662638625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6790279962392074506, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -4661,6 +4914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a97fe1b4b8287f147bb676c7a5f2cf24, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 0}
 --- !u!114 &1812024800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4675,8 +4929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -4843,6 +5098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: dcf4c877b94b9934893dd55797e33fc0, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 0}
 --- !u!114 &1824971802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4857,8 +5113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -5035,7 +5292,7 @@ GameObject:
   - component: {fileID: 1852416974}
   - component: {fileID: 1852416979}
   - component: {fileID: 1852416978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Herrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5140,10 +5397,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogues: []
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: ecf04f65f6159fb46bc6fcb21cbda4ac, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -5179,6 +5443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: dd10e41d00ae1434991bef4159d46816, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
 --- !u!1 &1852646867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,7 +5485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869795596}
   - component: {fileID: 1869795597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5720,8 +5985,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 1908115438}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -5923,7 +6189,7 @@ GameObject:
   - component: {fileID: 1987636151}
   - component: {fileID: 1987636156}
   - component: {fileID: 1987636155}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mercader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6028,10 +6294,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDialogues: []
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 4a85120644bf7bc43abb80003d857e64, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
   spyConversation: {fileID: 0}
+  spyDialogues: []
   detectionTime: 5
-  detectedDialogue: {fileID: 0}
+  detectedDialogues: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
@@ -6067,6 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a1c3992f77c81e74985b2987e6d1bc96, type: 2}
   giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
 --- !u!1 &2000139089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7152041083712873465, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -6129,6 +6403,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 438391128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2050154545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2050154546}
+  m_Layer: 0
+  m_Name: positiog_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2050154546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050154545}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -34.66, y: 0.72568136, z: -5.083999}
+  m_LocalScale: {x: 0.28598884, y: 0.28598878, z: 0.28598884}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078110401
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,5 +6681,8 @@ SceneRoots:
   - {fileID: 254597574}
   - {fileID: 2127317530}
   - {fileID: 1852646868}
+  - {fileID: 2050154546}
+  - {fileID: 754759009}
   - {fileID: 1208022825}
   - {fileID: 1125950510}
+  - {fileID: 1615718671}
