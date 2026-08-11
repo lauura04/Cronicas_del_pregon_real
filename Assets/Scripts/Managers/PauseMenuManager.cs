@@ -5,7 +5,8 @@ public class PauseMenuManager : MonoBehaviour
     public static PauseMenuManager Instance { get; private set; }
 
     [SerializeField] private GameObject pausePanel;
-     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject inventoryPanel;
 
     public bool IsPaused { get; private set; }
 
@@ -21,6 +22,8 @@ public class PauseMenuManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        inventoryPanel.SetActive(false);
     }
 
     public void PauseGame()
@@ -62,7 +65,7 @@ public class PauseMenuManager : MonoBehaviour
         IsPaused = false;
         Time.timeScale = 1f;
 
-        pausePanel.SetActive(false); 
+        pausePanel.SetActive(false);
 
         HUDManager.Instance?.HideHUD();
 
@@ -75,8 +78,21 @@ public class PauseMenuManager : MonoBehaviour
         Debug.Log("Salir");
     }
 
-     public void ShowOptions()
+    public void ShowOptions()
     {
         optionsPanel.SetActive(true);
+    }
+
+    public void ShowInventory()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        inventoryPanel.SetActive(true);
+    }
+    public void BackToPauseMenu()
+    {
+        inventoryPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 }

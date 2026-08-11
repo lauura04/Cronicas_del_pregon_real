@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Enganche
   description: "Enganche que le da el herrero al buf\xF3n para el collar"
-  icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 481f64ed569f318458a4125bc65db261, type: 3}
   itemId: enganche

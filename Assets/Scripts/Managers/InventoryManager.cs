@@ -1,17 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
-   public static InventoryManager Instance {get; private set;}
+    public static InventoryManager Instance { get; private set; }
 
-   private List<ItemData> items = new List<ItemData>();
+    private List<ItemData> items = new List<ItemData>();
 
-   public IReadOnlyList<ItemData> Items => items;
+    public IReadOnlyList<ItemData> Items => items;
 
-   private void Awake()
+    public event Action OnInventoryChanged;
+
+    private void Awake()
     {
-        if(Instance!=null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -21,16 +24,21 @@ public class InventoryManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void AddItem(ItemData item)
+    public bool AddItem(ItemData item)
     {
-        if(item == null)
+        if (item == null)
         {
             Debug.LogWarning("Se intentó añadir un item vacío");
-            return;
+            return false;
         }
 
         items.Add(item);
-        Debug.Log($"Objeto añadido al inventario {item.itemName}");
+        OnInventoryChanged?.Invoke();
+        Debug.Log(
+         "OBJETO AÑADIDO: " + item.itemName +
+         " | Objetos en inventario: " + items.Count
+     );
+        return true;
     }
 
     public bool HasItem(ItemData item)
@@ -40,15 +48,21 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(ItemData item)
     {
-        if (items.Contains(item))
+        if (item == null)
         {
-            items.Remove(item);
+            return;
+        }
+
+        if (items.Remove(item))
+        {
+            OnInventoryChanged?.Invoke();
         }
     }
-    
+
     public void ClearInventory()
     {
         items.Clear();
+        OnInventoryChanged?.Invoke();
         Debug.Log("Inventario vaciado");
     }
 }

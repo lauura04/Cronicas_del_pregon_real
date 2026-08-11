@@ -10,7 +10,7 @@ public class ItemData : ScriptableObject
    public string description;
 
    [Header("Visual")]
-   public Sprite icon;
+   public Sprite Icon;
 
    [SerializeField] private string itemId;
    public string ItemId => itemId;

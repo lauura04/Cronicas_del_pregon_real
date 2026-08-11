@@ -11,17 +11,13 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private KeyCode spyKey = KeyCode.Q;
     [SerializeField] private KeyCode charmKey = KeyCode.R;
 
-    
     private IInteractable currentInteractable;
-    private IInteractable spyingInteractable;
 
     private NPCInteractable spyingNPC;
     private float spyTimer;
 
     private void Update()
     {
-       
-
         FindClosestInteractable();
 
         HandleInteraction();
@@ -31,7 +27,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleInteraction()
     {
-        if(!Input.GetKeyDown(interactionKey)){
+        if (!Input.GetKeyDown(interactionKey))
+        {
             return;
         }
 
@@ -40,7 +37,8 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        if (PlayerMovement.Instance != null && !PlayerMovement.Instance.CanMove)
+        if (PlayerMovement.Instance != null &&
+            !PlayerMovement.Instance.CanMove)
         {
             return;
         }
@@ -55,24 +53,38 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
+        if (CharmMinigameManager.Instance != null &&
+            CharmMinigameManager.Instance.IsActive)
+        {
+            return;
+        }
+
         if (currentInteractable == null)
         {
             return;
         }
 
-        if(PlayerMovement.Instance!=null && !PlayerMovement.Instance.CanMove)
+        CharmableNPC charmableNPC =
+            (currentInteractable as MonoBehaviour)?
+            .GetComponentInParent<CharmableNPC>();
+
+        if (charmableNPC == null)
         {
             return;
         }
 
-        currentInteractable.Charm();
+        charmableNPC.TryCharm();
     }
 
     private void HandleSpy()
     {
-        NPCInteractable npc = currentInteractable as NPCInteractable;
+        NPCInteractable npc =
+            currentInteractable as NPCInteractable;
 
-        bool canSpy = Input.GetKey(spyKey) && npc!=null && npc.SpyConversation != null;
+        bool canSpy =
+            Input.GetKey(spyKey) &&
+            npc != null &&
+            npc.SpyConversation != null;
 
         if (!canSpy)
         {
@@ -87,12 +99,17 @@ public class PlayerInteraction : MonoBehaviour
             spyingNPC = npc;
             spyTimer = 0f;
 
-            SpyManager.Instance.StartListening(npc.SpyConversation);
+            if (SpyManager.Instance != null)
+            {
+                SpyManager.Instance.StartListening(
+                    npc.SpyConversation
+                );
+            }
         }
 
-        spyTimer+= Time.deltaTime;
+        spyTimer += Time.deltaTime;
 
-        if(spyTimer>= npc.DetectionTime)
+        if (spyTimer >= npc.DetectionTime)
         {
             BeDetected();
         }
@@ -109,33 +126,40 @@ public class PlayerInteraction : MonoBehaviour
         {
             SpyManager.Instance.StopListening();
         }
+
         spyingNPC = null;
         spyTimer = 0f;
     }
-
 
     private void BeDetected()
     {
         NPCInteractable detectedNPC = spyingNPC;
+
         if (SpyManager.Instance != null)
         {
             SpyManager.Instance.StopListening();
         }
+
         spyingNPC = null;
         spyTimer = 0f;
 
-        if(detectedNPC!=null && detectedNPC.DetectedDialogue != null)
+        if (detectedNPC != null &&
+            detectedNPC.DetectedDialogue != null)
         {
-            DialogueManager.Instance.StartDialogue(detectedNPC.DetectedDialogue);
+            DialogueManager.Instance?.StartDialogue(
+                detectedNPC.DetectedDialogue
+            );
         }
     }
+
     private void FindClosestInteractable()
     {
-        Collider[] nearbyColliders = Physics.OverlapSphere(
-            transform.position,
-            interactionRadius,
-            interactableLayer
-        );
+        Collider[] nearbyColliders =
+            Physics.OverlapSphere(
+                transform.position,
+                interactionRadius,
+                interactableLayer
+            );
 
         IInteractable closestInteractable = null;
         float closestDistance = float.MaxValue;
@@ -143,17 +167,20 @@ public class PlayerInteraction : MonoBehaviour
         foreach (Collider nearbyCollider in nearbyColliders)
         {
             IInteractable interactable =
-                nearbyCollider.GetComponentInParent<IInteractable>();
+                nearbyCollider
+                .GetComponentInParent<IInteractable>();
 
             if (interactable == null)
             {
                 continue;
             }
 
-            float distance = (
-                nearbyCollider.ClosestPoint(transform.position) -
-                transform.position
-            ).sqrMagnitude;
+            float distance =
+                (
+                    nearbyCollider
+                    .ClosestPoint(transform.position)
+                    - transform.position
+                ).sqrMagnitude;
 
             if (distance < closestDistance)
             {
@@ -165,7 +192,6 @@ public class PlayerInteraction : MonoBehaviour
         currentInteractable = closestInteractable;
     }
 
-   
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(

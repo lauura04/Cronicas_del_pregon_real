@@ -35,6 +35,7 @@ public class GameProgressManager : MonoBehaviour
 
         CurrentChapter = chapter;
         CurrentPhase = initialPhase;
+        InventoryManager.Instance?.ClearInventory();
     }
     public void SetPhase(ChapterPhaseData newPhase)
     {
