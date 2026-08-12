@@ -15,7 +15,7 @@ public class SpyConversation : MonoBehaviour
     [SerializeField] private bool loopConversation = true;
 
     private int currentLineIndex;
-    private string currentlyWrittenText="";
+    private string currentlyWrittenText = "";
 
     private DialogueLine currentLine;
 
@@ -38,9 +38,9 @@ public class SpyConversation : MonoBehaviour
             currentLine = spyDialogue.Lines[currentLineIndex];
             currentlyWrittenText = "";
 
-            foreach(char character in currentLine.Text)
+            foreach (char character in currentLine.Text)
             {
-                currentlyWrittenText+=character;;
+                currentlyWrittenText += character; ;
 
                 yield return new WaitForSeconds(typingSpeed);
             }
@@ -64,27 +64,44 @@ public class SpyConversation : MonoBehaviour
     }
 
     public void SetDialogue(DialogueData newDialogue)
-{
-    if (spyDialogue == newDialogue)
     {
-        return;
+        if (spyDialogue == newDialogue)
+        {
+            return;
+        }
+
+        StopAllCoroutines();
+
+        spyDialogue = newDialogue;
+
+        currentLineIndex = 0;
+        currentlyWrittenText = "";
+        currentLine = null;
+
+        if (spyDialogue == null ||
+            spyDialogue.Lines == null ||
+            spyDialogue.Lines.Count == 0)
+        {
+            return;
+        }
+
+        StartCoroutine(ConversationRoutine());
     }
-
-    StopAllCoroutines();
-
-    spyDialogue = newDialogue;
-
-    currentLineIndex = 0;
-    currentlyWrittenText = "";
-    currentLine = null;
-
-    if (spyDialogue == null ||
-        spyDialogue.Lines == null ||
-        spyDialogue.Lines.Count == 0)
+    public void RestartConversation()
     {
-        return;
-    }
+        StopAllCoroutines();
 
-    StartCoroutine(ConversationRoutine());
-}
+        currentLineIndex = 0;
+        currentlyWrittenText = "";
+        currentLine = null;
+
+        if (spyDialogue == null ||
+            spyDialogue.Lines == null ||
+            spyDialogue.Lines.Count == 0)
+        {
+            return;
+        }
+
+        StartCoroutine(ConversationRoutine());
+    }
 }

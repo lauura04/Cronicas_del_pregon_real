@@ -11,6 +11,7 @@ public class SpyManager : MonoBehaviour
     [SerializeField] private GameObject spyPanel;
     [SerializeField] private TMP_Text spyText;
     [SerializeField] private TMP_Text characterNameText;
+    [SerializeField] private Slider spyProgressBar;
     
     private SpyConversation currentConversation;
     private void Awake()
@@ -50,14 +51,24 @@ public class SpyManager : MonoBehaviour
         currentConversation = conversation;
         spyPanel.SetActive(true);
 
+        if (spyProgressBar != null)
+        {
+            spyProgressBar.value = 0f;
+        }
+
         UpdateSpyUI();
     }
 
     public void StopListening()
     {
         currentConversation = null;
+        if (spyProgressBar != null)
+        {
+            spyProgressBar.value = 0f;
+        }
         ClearUI();
         spyPanel.SetActive(false);
+
     }
 
     private void UpdateSpyUI()
@@ -91,5 +102,24 @@ public class SpyManager : MonoBehaviour
         spyText.text = "";
         characterNameText.text = "";
     }
+
+    public void UpdateSpyProgress(
+    float currentTime,
+    float maxTime)
+{
+    if (spyProgressBar == null)
+    {
+        return;
+    }
+
+    if (maxTime <= 0f)
+    {
+        spyProgressBar.value = 0f;
+        return;
+    }
+
+    spyProgressBar.value =
+        Mathf.Clamp01(currentTime / maxTime);
+}
 
 }

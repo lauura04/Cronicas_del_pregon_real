@@ -108,6 +108,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         spyTimer += Time.deltaTime;
+        SpyManager.Instance.UpdateSpyProgress(spyTimer, spyingNPC.DetectionTime);
 
         if (spyTimer >= npc.DetectionTime)
         {
@@ -143,10 +144,12 @@ public class PlayerInteraction : MonoBehaviour
         spyingNPC = null;
         spyTimer = 0f;
 
-        if (detectedNPC != null &&
-            detectedNPC.DetectedDialogue != null)
+        detectedNPC.SpyConversation?.RestartConversation();
+
+        if (detectedNPC.DetectedDialogue != null &&
+            DialogueManager.Instance != null)
         {
-            DialogueManager.Instance?.StartDialogue(
+            DialogueManager.Instance.StartDialogue(
                 detectedNPC.DetectedDialogue
             );
         }
