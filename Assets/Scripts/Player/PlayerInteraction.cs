@@ -11,6 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private KeyCode spyKey = KeyCode.Q;
     [SerializeField] private KeyCode charmKey = KeyCode.R;
 
+    private bool spyBlockedUntilRelease;
+
     private IInteractable currentInteractable;
 
     private NPCInteractable spyingNPC;
@@ -78,6 +80,23 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleSpy()
     {
+        if (spyBlockedUntilRelease)
+        {
+            if (Input.GetKeyUp(spyKey))
+            {
+                spyBlockedUntilRelease = false;
+            }
+
+            return;
+        }
+
+        if (PlayerMovement.Instance != null &&
+        !PlayerMovement.Instance.CanMove)
+        {
+            StopSpying();
+            return;
+        }
+
         NPCInteractable npc =
             currentInteractable as NPCInteractable;
 
@@ -133,27 +152,37 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void BeDetected()
+{
+    NPCInteractable detectedNPC = spyingNPC;
+
+    if (detectedNPC == null)
     {
-        NPCInteractable detectedNPC = spyingNPC;
-
-        if (SpyManager.Instance != null)
-        {
-            SpyManager.Instance.StopListening();
-        }
-
-        spyingNPC = null;
-        spyTimer = 0f;
-
-        detectedNPC.SpyConversation?.RestartConversation();
-
-        if (detectedNPC.DetectedDialogue != null &&
-            DialogueManager.Instance != null)
-        {
-            DialogueManager.Instance.StartDialogue(
-                detectedNPC.DetectedDialogue
-            );
-        }
+        return;
     }
+
+    spyBlockedUntilRelease = true;
+
+    if (SpyManager.Instance != null)
+    {
+        SpyManager.Instance.StopListening();
+    }
+
+    spyingNPC = null;
+    spyTimer = 0f;
+
+    detectedNPC.SpyConversation?.RestartConversation();
+
+    DialogueData detectedDialogue =
+        detectedNPC.DetectedDialogue;
+
+    if (detectedDialogue != null &&
+        DialogueManager.Instance != null)
+    {
+        DialogueManager.Instance.StartDialogue(
+            detectedDialogue
+        );
+    }
+}
 
     private void FindClosestInteractable()
     {

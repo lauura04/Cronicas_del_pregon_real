@@ -2156,7 +2156,13 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 0d29eac534ebf524684449b8c754fb63, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
