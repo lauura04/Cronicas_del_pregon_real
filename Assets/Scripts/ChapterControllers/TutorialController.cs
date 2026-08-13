@@ -23,7 +23,7 @@ public class TutorialController : MonoBehaviour
 
     [SerializeField] private DialogueData initialDialogue;
     
-    //variables de las que dependen las subfases del FindMaterials
+    //variables de las que dependen las subfases del FindMaterials 
     public bool MonksUnlocked {get; private set;}
     public bool SheepUnlocked{get; private set;}
 
@@ -89,5 +89,10 @@ public class TutorialController : MonoBehaviour
     }
 
     //funcion para construir el collar
-    //tema de inventario
+    
+    public bool CanCollectWool()
+    {
+        return SheepUnlocked && GameProgressManager.Instance.CurrentPhase == findMaterials;
+    }
+
 }

@@ -144,26 +144,27 @@ public class QuestionPuzzleManager : MonoBehaviour
         );
     }
 
-  private void SelectAnswer(int answerIndex)
+ private void SelectAnswer(int answerIndex)
 {
     if (currentPuzzle == null)
     {
         return;
     }
 
-    
     QuestionPuzzle puzzle = currentPuzzle;
 
     bool correct = puzzle.CheckAnswer(answerIndex);
 
     ClosePuzzle();
 
-    if (!correct)
+    if (correct)
+    {
+        puzzle.HandleCorrectAnswer();
+    }
+    else
     {
         puzzle.HandleWrongAnswer();
     }
-
-     puzzle.HandleCorrectAnswer();
 }
 
     public void ClosePuzzle()

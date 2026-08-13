@@ -1240,7 +1240,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1015965073}
+          - m_Target: {fileID: 1015965081}
             m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
             m_MethodName: MoveTo
             m_Mode: 2
@@ -1252,7 +1252,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 851681092}
+          - m_Target: {fileID: 851681100}
             m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
             m_MethodName: MoveTo
             m_Mode: 2
@@ -2373,6 +2373,7 @@ GameObject:
   - component: {fileID: 851681095}
   - component: {fileID: 851681094}
   - component: {fileID: 851681099}
+  - component: {fileID: 851681100}
   - component: {fileID: 851681098}
   m_Layer: 3
   m_Name: Group3
@@ -2531,6 +2532,18 @@ MonoBehaviour:
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &851681100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851681092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1202b9f6858c648bd8d1babc336c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &871972566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4416,7 +4429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ec87f95cc35fd2d48aed8b3af005d70f, type: 2}
   giveOnlyOnce: 1
-  requiredPhase: {fileID: 0}
+  requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
 --- !u!114 &1561669307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5430,6 +5443,24 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: b3ea3e61b9affcf4588a6e133a0e40b4, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 217507411}
+            m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+            m_MethodName: UnlockMonks
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -6324,6 +6355,12 @@ MonoBehaviour:
   - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: 4a85120644bf7bc43abb80003d857e64, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: f2884a2305454a44c9ed5391070efc5b, type: 2}
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
