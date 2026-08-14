@@ -3,6 +3,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] private InventorySlotUI[] slots;
+    [SerializeField] private NecklaceCrafting necklaceCrafting;
 
     private void Awake()
     {
@@ -31,17 +32,45 @@ public class InventoryUI : MonoBehaviour
             Debug.LogError(
                 "InventoryManager.Instance es NULL"
             );
+
+            return;
+        }
+
+        NecklaceCrafting necklaceCrafting =
+            FindFirstObjectByType<NecklaceCrafting>();
+
+        if (necklaceCrafting != null)
+        {
+            Debug.Log("NecklaceCrafting encontrado desde InventoryUI");
+
+            necklaceCrafting.CraftNecklaceIfReady();
+        }
+        else
+        {
+            Debug.Log("No se ha encontrado NecklaceCrafting");
         }
 
         Refresh();
     }
-
     private void OnDisable()
     {
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnInventoryChanged -= Refresh;
         }
+    }
+
+    public void OpenInventory()
+    {
+        NecklaceCrafting necklaceCrafting =
+            FindFirstObjectByType<NecklaceCrafting>();
+
+        if (necklaceCrafting != null)
+        {
+            necklaceCrafting.CraftNecklaceIfReady();
+        }
+
+       PauseMenuManager.Instance.ShowInventory();
     }
 
     public void Refresh()

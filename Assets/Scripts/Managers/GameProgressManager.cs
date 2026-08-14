@@ -68,4 +68,14 @@ public class GameProgressManager : MonoBehaviour
         OnPhaseChanged?.Invoke(CurrentPhase);
     }
 
+    public int GetPhaseIndex(ChapterPhaseData phase)
+{
+    if (CurrentChapter == null || phase == null)
+    {
+        return -1;
+    }
+
+    return CurrentChapter.GetPhaseIndex(phase);
+}
+
 }

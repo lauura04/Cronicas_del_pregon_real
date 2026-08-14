@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "\xA1Pero ap\xFArate usando Shift, que vamos a llegar tarde al enlace real!"
+    text: "\xA1Pero ap\xFArate usando Shift, que cuando queramos llegar sus majestades
+      se habr\xE1n ido!"

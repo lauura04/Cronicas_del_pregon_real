@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 95381476}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.65, y: 21.33054, z: -10.42}
+  m_LocalPosition: {x: -0.2, y: 21.33054, z: -6.83}
   m_LocalScale: {x: 0.30173, y: 0.30173, z: 0.30173}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,18 +389,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 95381481}
-  spyDialogues: []
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 96cc4af258a948b4db6556ccf8e88c37, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: b206a2e89d89ed74488c5fe0dcb33f1c, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!1 &98298353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4884442740529778249, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -472,12 +488,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217507410}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.175816, y: -24.681995, z: -10.795439}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 40.260956, y: -88.84152, z: 10.820567}
+  m_LocalScale: {x: 3.4966397, y: 3.496641, z: 3.4966397}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1275163001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239606374
 GameObject:
@@ -560,6 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254597574}
+  - component: {fileID: 254597575}
   m_Layer: 0
   m_Name: EventController
   m_TagString: Untagged
@@ -585,6 +602,38 @@ Transform:
   - {fileID: 949364700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &254597575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254597573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad0f62589aa0a54bb9f6fa3ffb2b20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pearlsId: perlas
+  claspId: enganche
+  threadId: hilo
+  necklaceItem: {fileID: 11400000, guid: 5234d9474ea313347978dd0bcdae0f4b, type: 2}
+  onNecklaceCrafted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 217507411}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: SetPhase
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 542c35420de08e3448e5970c5774c65a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ChapterPhaseData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &292604482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,6 +926,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: a948a4d9adb9fdd448a62c2f5d7bb40a, type: 2}
@@ -895,6 +945,14 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      advanceAutomatically: 1
+  - phase: {fileID: 11400000, guid: 542c35420de08e3448e5970c5774c65a, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 7219f7b7a73a1564481cd7b7a1eaeb60, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: 6b6ae093871f5ef45ba77cb6daf1c286, type: 2}
@@ -913,6 +971,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      advanceAutomatically: 1
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -920,12 +979,14 @@ MonoBehaviour:
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &295437473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,18 +1188,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 389185368}
-  spyDialogues: []
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: d424c413c87a0ae42af508881adf3210, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 54b8bc518561fdb468a72036082507d2, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!1 &420999146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1341,26 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      advanceAutomatically: 1
+  - phase: {fileID: 11400000, guid: 542c35420de08e3448e5970c5774c65a, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 59e5774fab4eef74686d63cc2fa303a8, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 295437472}
+            m_TargetAssemblyTypeName: NPCInteractable, Assembly-CSharp
+            m_MethodName: Interact
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 1
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -1271,12 +1368,14 @@ MonoBehaviour:
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!1 &424190619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e392b342ff6fb854b815e08330f484b9,
@@ -1489,14 +1588,16 @@ MonoBehaviour:
   detectionTime: 5
   detectedDialogues: []
   canBeCharmed: 1
-  charmDialogue: {fileID: 11400000, guid: b5f767720f0280f4ebe6e453c28a777b, type: 2}
+  charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 449119289}
 --- !u!4 &449119287
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,12 +2250,14 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: fbc15725753ea804aa512b691ed8fbf0, type: 2}
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
   detectedDialogues:
   - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
@@ -2163,15 +2266,18 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &716146610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,19 +2625,34 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
-    dialogues: []
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: d8547e70636de3a46add8f8c895936cf, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 0d29eac534ebf524684449b8c754fb63, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &851681100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2869,18 +2990,34 @@ MonoBehaviour:
   - phase: {fileID: 0}
     dialogues: []
   spyConversation: {fileID: 947478677}
-  spyDialogues: []
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 34a5f6be519f3e448a8e27a7af7e85c6, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: e13e24548f4d7c646a8f3318912f6d36, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!1 &949364699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,17 +3323,27 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 0d29eac534ebf524684449b8c754fb63, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &1015965081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,7 +3511,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1124138102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1094017858
@@ -3462,6 +3610,124 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0069914, y: 0.3913266, z: 0.3189624}
   m_Center: {x: -0.3256302, y: -0.3043375, z: -0.45133737}
+--- !u!1 &1124138101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124138102}
+  - component: {fileID: 1124138104}
+  - component: {fileID: 1124138103}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1124138102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124138101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.9, y: -3.6, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1094017857}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1124138103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124138101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1124138104
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124138101}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1125950509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,6 +4001,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 239606375}
   m_LocalEulerAnglesHint: {x: 55, y: -35, z: 0}
+--- !u!1 &1275163000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275163001}
+  - component: {fileID: 1275163002}
+  m_Layer: 0
+  m_Name: TutorialSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1275163001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275163000}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.69, y: 0.72568136, z: -13.89}
+  m_LocalScale: {x: 0.28598884, y: 0.28598878, z: 0.28598884}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 217507412}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275163002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275163000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad0f62589aa0a54bb9f6fa3ffb2b20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pearlsId: perlas
+  claspId: enganche
+  threadId: hilo
+  necklaceItem: {fileID: 11400000, guid: 5234d9474ea313347978dd0bcdae0f4b, type: 2}
+  onNecklaceCrafted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 217507411}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: SetPhase
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 542c35420de08e3448e5970c5774c65a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ChapterPhaseData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1296958637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,7 +4630,8 @@ GameObject:
   - component: {fileID: 1561669302}
   - component: {fileID: 1561669307}
   - component: {fileID: 1561669306}
-  m_Layer: 0
+  - component: {fileID: 1561669308}
+  m_Layer: 3
   m_Name: Sheep1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4315,7 +4647,7 @@ Transform:
   m_GameObject: {fileID: 1561669300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.95, y: 3.65, z: 22.11}
+  m_LocalPosition: {x: -4.7, y: 3.65, z: 22.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4450,10 +4782,29 @@ MonoBehaviour:
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 1
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 0}
+--- !u!114 &1561669308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561669300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a60f5113404340b71920e9861d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failedCharmDialogue: {fileID: 0}
+  sucessCharmDialogue: {fileID: 0}
+  onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1561669306}
@@ -4846,7 +5197,8 @@ GameObject:
   - component: {fileID: 1812024796}
   - component: {fileID: 1812024800}
   - component: {fileID: 1812024799}
-  m_Layer: 0
+  - component: {fileID: 1812024801}
+  m_Layer: 3
   m_Name: Sheep2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4974,10 +5326,29 @@ MonoBehaviour:
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 1
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 1812024801}
+--- !u!114 &1812024801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812024793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a60f5113404340b71920e9861d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failedCharmDialogue: {fileID: 0}
+  sucessCharmDialogue: {fileID: 0}
+  onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1812024799}
@@ -5006,8 +5377,9 @@ GameObject:
   - component: {fileID: 1824971798}
   - component: {fileID: 1824971797}
   - component: {fileID: 1824971802}
+  - component: {fileID: 1824971803}
   - component: {fileID: 1824971801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sheep3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5158,10 +5530,29 @@ MonoBehaviour:
   canBeCharmed: 1
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 1
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 1824971803}
+--- !u!114 &1824971803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824971795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a60f5113404340b71920e9861d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failedCharmDialogue: {fileID: 0}
+  sucessCharmDialogue: {fileID: 0}
+  onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1824971801}
@@ -5331,6 +5722,7 @@ GameObject:
   - component: {fileID: 1852416974}
   - component: {fileID: 1852416979}
   - component: {fileID: 1852416978}
+  - component: {fileID: 1852416980}
   m_Layer: 3
   m_Name: Herrero
   m_TagString: Untagged
@@ -5443,6 +5835,7 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: b3ea3e61b9affcf4588a6e133a0e40b4, type: 2}
@@ -5461,6 +5854,36 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      advanceAutomatically: 1
+    - dialogue: {fileID: 11400000, guid: 80d1de3ecfb05b447a9d2439aa74b5e2, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 217507411}
+            m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+            m_MethodName: UnlockMonks
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1852416980}
+            m_TargetAssemblyTypeName: SequentialQuestionsPuzzle, Assembly-CSharp
+            m_MethodName: StartPuzzle
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 1
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -5468,24 +5891,14 @@ MonoBehaviour:
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1852416979}
-        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
-        m_MethodName: Give
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &1852416979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5501,6 +5914,44 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dd10e41d00ae1434991bef4159d46816, type: 2}
   giveOnlyOnce: 1
   requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+--- !u!114 &1852416980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852416973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e6deb577de3594195a32ba7a207e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - {fileID: 11400000, guid: 2d188880fc54b1f45a55a01d088455cc, type: 2}
+  - {fileID: 11400000, guid: ba5bf7dc24238334a8a1f6944aa11a99, type: 2}
+  - {fileID: 11400000, guid: 461121a2ea3673747bac1b7ec0ca7d3b, type: 2}
+  - {fileID: 11400000, guid: 21ad9e797dfa91f409ef137656e58a6d, type: 2}
+  failDialogue: {fileID: 11400000, guid: 2dc11cc51587c6b4cbb7a0e1b97f9636, type: 2}
+  successDialogue: {fileID: 11400000, guid: b2f98ef25cea3b74692ad1634f6b4b3f, type: 2}
+  canRepeat: 0
+  onPuzzleCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1852416979}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPuzzleFailed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1852646867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,18 +6493,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDialogues: []
   spyConversation: {fileID: 1908115438}
-  spyDialogues: []
+  spyDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: a5fb0dd6ce0a549479fc26d3f9ed62b9, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   detectionTime: 5
-  detectedDialogues: []
+  detectedDialogues:
+  - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: cb3b325262bcd774baa857c28e2f3ee0, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+      advanceAutomatically: 1
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!1 &1943477604
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6713,8 @@ GameObject:
   - component: {fileID: 1987636151}
   - component: {fileID: 1987636156}
   - component: {fileID: 1987636155}
+  - component: {fileID: 1987636158}
+  - component: {fileID: 1987636157}
   m_Layer: 3
   m_Name: Mercader
   m_TagString: Untagged
@@ -6358,12 +6827,43 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
+      advanceAutomatically: 1
   - phase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
     dialogues:
     - dialogue: {fileID: 11400000, guid: f2884a2305454a44c9ed5391070efc5b, type: 2}
       onDialogueFinished:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1987636157}
+            m_TargetAssemblyTypeName: QuestionPuzzle, Assembly-CSharp
+            m_MethodName: Open
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 0
+    - dialogue: {fileID: 11400000, guid: 710df15a72378e54faaa9cf8d14ed28b, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1987636158}
+            m_TargetAssemblyTypeName: WoolExchange, Assembly-CSharp
+            m_MethodName: TryExchange
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 0
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -6371,24 +6871,14 @@ MonoBehaviour:
   canBeCharmed: 0
   charmDialogue: {fileID: 0}
   charmOnlyOnce: 1
+  isSheep: 0
   onInteractionFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1987636156}
-        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
-        m_MethodName: Give
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
       m_Calls: []
+  charmableNPC: {fileID: 0}
 --- !u!114 &1987636156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6404,6 +6894,70 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: a1c3992f77c81e74985b2987e6d1bc96, type: 2}
   giveOnlyOnce: 1
   requiredPhase: {fileID: 11400000, guid: 3cbf1f618f1ff094a8bdb1a101abd0d8, type: 2}
+--- !u!114 &1987636157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987636150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9467884e2f630444299881390948a48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionData: {fileID: 11400000, guid: 2d036c6df7b88a64ab9a0427230500a4, type: 2}
+  wrongAnswerDialogue: {fileID: 11400000, guid: 516adabd9b52a4b4990e2db43fbda772,
+    type: 2}
+  correctAnswerDialogue: {fileID: 11400000, guid: 1680d2b3b12d5a14bb5fe3d4027969f8,
+    type: 2}
+  onCorrectAnswer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 217507411}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: UnlockSheeps
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1987636155}
+        m_TargetAssemblyTypeName: NPCInteractable, Assembly-CSharp
+        m_MethodName: AdvanceInteractionDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onWrongAnswer:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1987636158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987636150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdece06d40207b49872b68e0e2fb622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woolId: lana
+  woolRequired: 3
+  pearlItem: {fileID: 11400000, guid: a1c3992f77c81e74985b2987e6d1bc96, type: 2}
+  successDialogue: {fileID: 11400000, guid: aa450d76b459a18408faf81c93c38b90, type: 2}
+  notEnoughDialogue: {fileID: 11400000, guid: 76966365d823c854aaf006813964e948, type: 2}
 --- !u!1 &2000139089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7152041083712873465, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -6506,7 +7060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078110402}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sheeps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6737,9 +7291,9 @@ SceneRoots:
   - {fileID: 1018517548}
   - {fileID: 1296958638}
   - {fileID: 2078110402}
+  - {fileID: 1275163001}
   - {fileID: 1987636154}
   - {fileID: 1852416977}
-  - {fileID: 217507412}
   - {fileID: 1178053303}
   - {fileID: 254597574}
   - {fileID: 2127317530}

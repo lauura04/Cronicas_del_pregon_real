@@ -65,4 +65,47 @@ public class InventoryManager : MonoBehaviour
         OnInventoryChanged?.Invoke();
         Debug.Log("Inventario vaciado");
     }
+
+    public int GetItemCountById(string itemId)
+    {
+        int count = 0;
+
+        foreach (ItemData item in items)
+        {
+            if (item != null && item.ItemId == itemId)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public bool RemoveItemsById(string itemId, int amount)
+    {
+        if (GetItemCountById(itemId) < amount)
+        {
+            return false;
+        }
+
+        int removed = 0;
+
+        for (int i = items.Count - 1; i >= 0 && removed < amount; i--)
+        {
+            if (items[i] != null && items[i].ItemId == itemId)
+            {
+                items.RemoveAt(i);
+                removed++;
+            }
+        }
+
+        OnInventoryChanged?.Invoke();
+
+        return true;
+    }
+
+    public bool HasItemById(string itemId)
+    {
+        return GetItemCountById(itemId)>0;
+    }
 }

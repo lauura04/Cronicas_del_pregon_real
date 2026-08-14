@@ -33,32 +33,49 @@ public class CharmableNPC : MonoBehaviour
         CharmMinigameManager.Instance.StartMinigame(this);
     }
 
-    public void CharmSucceeded()
+   public void CharmSucceeded()
+{
+    Debug.Log(
+        $"CharmSucceeded llamado en {gameObject.name}"
+    );
+
+    if (isCharmed)
     {
-        if (isCharmed)
-        {
-            return;
-        }
-
-        isCharmed = true;
-        DialogueManager.Instance?.StartDialogue(
-            sucessCharmDialogue,
-            null
-        );
-
-        onCharmSuccess?.Invoke();
+        return;
     }
 
-    public void CharmFailed()
-    {
-        if (failedCharmDialogue == null)
-        {
-            return;
-        }
+    isCharmed = true;
 
-        DialogueManager.Instance?.StartDialogue(
-            failedCharmDialogue,
-            null
-        );
+    DialogueManager.Instance?.StartDialogue(
+        sucessCharmDialogue,
+        null
+    );
+
+    onCharmSuccess?.Invoke();
+}
+
+   public void CharmFailed()
+{
+    if (failedCharmDialogue == null)
+    {
+        PlayerMovement.Instance?.SetMovementEnabled(true);
+        return;
     }
+
+    if (DialogueManager.Instance == null)
+    {
+        PlayerMovement.Instance?.SetMovementEnabled(true);
+        return;
+    }
+
+    DialogueManager.Instance.StartDialogue(
+        failedCharmDialogue,
+        HandleFailedCharmDialogueFinished
+    );
+}
+
+private void HandleFailedCharmDialogueFinished()
+{
+    PlayerMovement.Instance?.SetMovementEnabled(true);
+}
 }

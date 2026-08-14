@@ -20,5 +20,4 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
     text: "Si esto dura una semana m\xE1s voy a volver a casa con la bolsa llena."
   - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
-    text: "Aprovecha mientras puedas que cuando acabe la celebraci\xF3n volveremos
-      a la normalidad."
+    text: Aprovecha mientras puedas que cuando se vayan volveremos a la normalidad.

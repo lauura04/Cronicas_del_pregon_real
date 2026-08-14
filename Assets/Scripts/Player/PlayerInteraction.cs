@@ -49,34 +49,31 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void HandleCharm()
+{
+    if (!Input.GetKeyDown(charmKey))
     {
-        if (!Input.GetKeyDown(charmKey))
-        {
-            return;
-        }
-
-        if (CharmMinigameManager.Instance != null &&
-            CharmMinigameManager.Instance.IsActive)
-        {
-            return;
-        }
-
-        if (currentInteractable == null)
-        {
-            return;
-        }
-
-        CharmableNPC charmableNPC =
-            (currentInteractable as MonoBehaviour)?
-            .GetComponentInParent<CharmableNPC>();
-
-        if (charmableNPC == null)
-        {
-            return;
-        }
-
-        charmableNPC.TryCharm();
+        return;
     }
+
+    if (CharmMinigameManager.Instance != null &&
+        CharmMinigameManager.Instance.IsActive)
+    {
+        return;
+    }
+
+    if (currentInteractable == null)
+    {
+        return;
+    }
+
+    if (PlayerMovement.Instance != null &&
+        !PlayerMovement.Instance.CanMove)
+    {
+        return;
+    }
+
+    currentInteractable.Charm();
+}
 
     private void HandleSpy()
     {

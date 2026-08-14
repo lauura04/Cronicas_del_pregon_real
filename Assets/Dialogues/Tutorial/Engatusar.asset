@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: Duerme
+    text: Duerme...

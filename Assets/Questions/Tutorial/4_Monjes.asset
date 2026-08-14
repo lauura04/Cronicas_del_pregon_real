@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
+  m_Name: 4_Monjes
+  m_EditorClassIdentifier: 
+  question: "Ya te lo he dicho antes, nunca hice caso a las sagradas escrituras,
+    no s\xE9 el tiempo del que requiri\xF3 el Padre Todopoderoso para crear lo que
+    hoy vemos"
+  answers:
+  - answerText: "7 d\xEDas"
+    isCorrect: 1
+  - answerText: Semana y media
+    isCorrect: 0
+  - answerText: "8 d\xEDas"
+    isCorrect: 0
+  - answerText: "3 d\xEDas"
+    isCorrect: 0

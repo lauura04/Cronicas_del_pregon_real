@@ -75,8 +75,6 @@ public class QuestionPuzzle : MonoBehaviour
 
         Debug.Log("Respuesta correcta.");
 
-        onCorrectAnswer?.Invoke();
-
         return true;
     }
     public void HandleCorrectAnswer()

@@ -63,7 +63,7 @@ public class CharmMinigameManager : MonoBehaviour
             return;
         }
 
-       
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             CheckAttempt();
@@ -72,35 +72,41 @@ public class CharmMinigameManager : MonoBehaviour
 
     public void StartMinigame(CharmableNPC npc)
     {
+        Debug.Log(
+            $"START MINIGAME con {npc?.gameObject.name}"
+        );
+
         if (isActive)
         {
+            Debug.Log("Minijuego ya activo.");
             return;
         }
 
         if (npc == null)
         {
+            Debug.LogError("NPC NULL");
             return;
         }
 
         currentNPC = npc;
-
         currentScale = maxScale;
-
         shrinking = true;
-
         isActive = true;
-
         canCheckInput = false;
 
         PlayerMovement.Instance?.SetMovementEnabled(false);
 
         if (minigameUI != null)
         {
+            Debug.Log("SHOW UI CHARM");
+
             minigameUI.Show();
-
             minigameUI.SetCircleScale(currentScale);
-
             minigameUI.SetSuccessState(false);
+        }
+        else
+        {
+            Debug.LogError("MINIGAME UI ES NULL");
         }
     }
 
@@ -163,43 +169,42 @@ public class CharmMinigameManager : MonoBehaviour
         }
     }
 
-    private void Success()
+   private void Success()
+{
+    Debug.Log("CHARM SUCCESS");
+
+    isActive = false;
+
+    if (minigameUI != null)
     {
-        isActive = false;
+        minigameUI.Hide();
+    }
 
-        if (minigameUI != null)
-        {
-            minigameUI.Hide();
-        }
+    PlayerMovement.Instance?.SetMovementEnabled(true);
 
+    currentNPC?.CharmSucceeded();
+
+    currentNPC = null;
+}
+   private void Fail()
+{
+    isActive = false;
+
+    if (minigameUI != null)
+    {
+        minigameUI.Hide();
+    }
+
+    CharmableNPC failedNPC = currentNPC;
+    currentNPC = null;
+
+    if (failedNPC != null)
+    {
+        failedNPC.CharmFailed();
+    }
+    else
+    {
         PlayerMovement.Instance?.SetMovementEnabled(true);
-
-        currentNPC?.CharmSucceeded();
-
-        currentNPC = null;
     }
-
-    private void Fail()
-    {
-        isActive = false;
-
-        if (minigameUI != null)
-        {
-            minigameUI.Hide();
-        }
-
-        CharmableNPC failedNPC = currentNPC;
-
-        currentNPC = null;
-
-
-        if (failedNPC != null)
-        {
-            failedNPC.CharmFailed();
-        }
-        else
-        {
-            PlayerMovement.Instance?.SetMovementEnabled(true);
-        }
-    }
+}
 }

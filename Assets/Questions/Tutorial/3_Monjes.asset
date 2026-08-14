@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
+  m_Name: 3_Monjes
+  m_EditorClassIdentifier: 
+  question: "No s\xE9 de cuantos d\xEDas me habla para endulzar la mezcla, nunca
+    fui muy creyente, pero no se lo diga a su majestad que me echa del reino"
+  answers:
+  - answerText: "33 d\xEDas"
+    isCorrect: 0
+  - answerText: "7 d\xEDas"
+    isCorrect: 0
+  - answerText: "40 d\xEDas"
+    isCorrect: 1
+  - answerText: "10 d\xEDas"
+    isCorrect: 0

@@ -7,7 +7,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [SerializeField] private PhaseDialogue[] interactionDialogues;
 
     private int currentDialogueIndex;
-    private ChapterPhaseData lastInteractionPhase;
+    private PhaseDialogue lastInteractionPhaseDialogue;
     private DialogueStep currentDialogueStep;
 
     [Header("Spy with Q")]
@@ -20,6 +20,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [SerializeField] private bool canBeCharmed;
     [SerializeField] private DialogueData charmDialogue;
     [SerializeField] private bool charmOnlyOnce = true;
+    [SerializeField] private bool isSheep;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onInteractionFinished;
@@ -33,6 +34,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     public SpyConversation SpyConversation => spyConversation;
 
     public float DetectionTime => detectionTime;
+    [SerializeField] private CharmableNPC charmableNPC;
 
     public DialogueData DetectedDialogue =>
         GetDialogueForCurrentPhase(detectedDialogues);
@@ -59,66 +61,66 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     // =========================
 
     public void Interact()
-{
-    if (isBusy)
     {
-        return;
-    }
+        if (isBusy)
+        {
+            return;
+        }
 
-    PhaseDialogue phaseDialogue =
-        GetPhaseDialogueForCurrentPhase(
-            interactionDialogues
+        PhaseDialogue phaseDialogue =
+            GetPhaseDialogueForCurrentPhase(
+                interactionDialogues
+            );
+
+        if (phaseDialogue == null ||
+            phaseDialogue.dialogues == null ||
+            phaseDialogue.dialogues.Length == 0)
+        {
+            return;
+        }
+
+        ChapterPhaseData currentPhase =
+            GameProgressManager.Instance.CurrentPhase;
+
+        // Si hemos cambiado de fase, empezamos
+        // desde el primer diálogo.
+        if (lastInteractionPhaseDialogue != phaseDialogue)
+        {
+            lastInteractionPhaseDialogue = phaseDialogue;
+            currentDialogueIndex = 0;
+        }
+
+        // Evitamos superar el último diálogo.
+        currentDialogueIndex = Mathf.Clamp(
+            currentDialogueIndex,
+            0,
+            phaseDialogue.dialogues.Length - 1
         );
 
-    if (phaseDialogue == null ||
-        phaseDialogue.dialogues == null ||
-        phaseDialogue.dialogues.Length == 0)
-    {
-        return;
-    }
+        currentDialogueStep =
+            phaseDialogue.dialogues[currentDialogueIndex];
 
-    ChapterPhaseData currentPhase =
-        GameProgressManager.Instance.CurrentPhase;
+        if (currentDialogueStep == null ||
+            currentDialogueStep.dialogue == null)
+        {
+            return;
+        }
 
-    // Si hemos cambiado de fase, empezamos
-    // desde el primer diálogo.
-    if (lastInteractionPhase != currentPhase)
-    {
-        lastInteractionPhase = currentPhase;
-        currentDialogueIndex = 0;
-    }
+        if (DialogueManager.Instance == null)
+        {
+            Debug.LogError(
+                "DialogueManager instance is not found."
+            );
+            return;
+        }
 
-    // Evitamos superar el último diálogo.
-    currentDialogueIndex = Mathf.Clamp(
-        currentDialogueIndex,
-        0,
-        phaseDialogue.dialogues.Length - 1
-    );
+        isBusy = true;
 
-    currentDialogueStep =
-        phaseDialogue.dialogues[currentDialogueIndex];
-
-    if (currentDialogueStep == null ||
-        currentDialogueStep.dialogue == null)
-    {
-        return;
-    }
-
-    if (DialogueManager.Instance == null)
-    {
-        Debug.LogError(
-            "DialogueManager instance is not found."
+        DialogueManager.Instance.StartDialogue(
+            currentDialogueStep.dialogue,
+            HandleInteractionFinished
         );
-        return;
     }
-
-    isBusy = true;
-
-    DialogueManager.Instance.StartDialogue(
-        currentDialogueStep.dialogue,
-        HandleInteractionFinished
-    );
-}
 
 
     // =========================
@@ -160,38 +162,41 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     // R - CHARM
     // =========================
 
-    public void Charm()
+   public void Charm()
+{
+    if (isBusy ||
+        !canBeCharmed ||
+        (charmOnlyOnce && hasBeenCharmed))
     {
-        if (isBusy ||
-            !canBeCharmed ||
-            (charmOnlyOnce && hasBeenCharmed))
-        {
-            return;
-        }
-
-        if (charmDialogue == null)
-        {
-            Debug.LogWarning(
-                $"Charm dialogue is not assigned in {gameObject.name}."
-            );
-            return;
-        }
-
-        if (DialogueManager.Instance == null)
-        {
-            Debug.LogError(
-                "DialogueManager instance is not found in the scene."
-            );
-            return;
-        }
-
-        isBusy = true;
-
-        DialogueManager.Instance.StartDialogue(
-            charmDialogue,
-            HandleCharmFinished
-        );
+        return;
     }
+
+    if (isSheep &&
+        !TutorialController.Instance.SheepUnlocked)
+    {
+        Debug.Log(
+            "Las ovejas no están desbloqueadas"
+        );
+        return;
+    }
+
+    CharmableNPC charmableNPC =
+        GetComponent<CharmableNPC>();
+
+    if (charmableNPC == null)
+    {
+        Debug.LogError(
+            $"{gameObject.name} no tiene CharmableNPC."
+        );
+        return;
+    }
+
+    Debug.Log(
+        $"Iniciando minijuego Charm con {gameObject.name}"
+    );
+
+    charmableNPC.TryCharm();
+}
 
 
     // =========================
@@ -199,7 +204,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     // =========================
 
     private PhaseDialogue GetPhaseDialogueForCurrentPhase(
-        PhaseDialogue[] dialogues)
+    PhaseDialogue[] dialogues)
     {
         if (GameProgressManager.Instance == null)
         {
@@ -226,51 +231,83 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             return null;
         }
 
-        foreach (PhaseDialogue phaseDialogue
-                 in dialogues)
+        int currentPhaseIndex =
+            GameProgressManager.Instance.GetPhaseIndex(
+                currentPhase
+            );
+
+        if (currentPhaseIndex == -1)
         {
-            if (phaseDialogue == null)
+            Debug.LogWarning(
+                $"La fase {currentPhase.name} no pertenece al capítulo actual."
+            );
+            return null;
+        }
+
+        PhaseDialogue bestDialogue = null;
+        int bestPhaseIndex = -1;
+
+        foreach (PhaseDialogue phaseDialogue in dialogues)
+        {
+            if (phaseDialogue == null ||
+                phaseDialogue.phase == null)
             {
                 continue;
             }
 
-            if (phaseDialogue.phase ==
-                currentPhase)
+            int phaseIndex =
+                GameProgressManager.Instance.GetPhaseIndex(
+                    phaseDialogue.phase
+                );
+
+            // Ignoramos fases que no pertenecen
+            // al capítulo actual.
+            if (phaseIndex == -1)
             {
-                return phaseDialogue;
+                continue;
+            }
+
+            // Buscamos el diálogo más cercano
+            // perteneciente a la fase actual
+            // o a una fase anterior.
+            if (phaseIndex <= currentPhaseIndex &&
+                phaseIndex > bestPhaseIndex)
+            {
+                bestDialogue = phaseDialogue;
+                bestPhaseIndex = phaseIndex;
             }
         }
 
-        return null;
+        return bestDialogue;
     }
 
-  private DialogueData GetDialogueForCurrentPhase(
-    PhaseDialogue[] dialogues)
-{
-    PhaseDialogue phaseDialogue =
-        GetPhaseDialogueForCurrentPhase(dialogues);
-
-    if (phaseDialogue == null)
+    private DialogueData GetDialogueForCurrentPhase(
+      PhaseDialogue[] dialogues)
     {
-        return null;
+        PhaseDialogue phaseDialogue =
+            GetPhaseDialogueForCurrentPhase(dialogues);
+
+        if (phaseDialogue == null)
+        {
+            return null;
+        }
+
+        if (phaseDialogue.dialogues == null ||
+            phaseDialogue.dialogues.Length == 0)
+        {
+            return null;
+        }
+
+        DialogueStep firstStep =
+            phaseDialogue.dialogues[0];
+
+        if (firstStep == null)
+        {
+            return null;
+        }
+
+        return firstStep.dialogue;
     }
-
-    if (phaseDialogue.dialogues == null ||
-        phaseDialogue.dialogues.Length == 0)
-    {
-        return null;
-    }
-
-    DialogueStep firstStep =
-        phaseDialogue.dialogues[0];
-
-    if (firstStep == null)
-    {
-        return null;
-    }
-
-    return firstStep.dialogue;
-}
 
 
     // =========================
@@ -278,40 +315,48 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     // =========================
 
     private void HandleInteractionFinished()
-{
-    isBusy = false;
-
-    currentDialogueStep?
-        .onDialogueFinished?
-        .Invoke();
-
-    PhaseDialogue phaseDialogue =
-        GetPhaseDialogueForCurrentPhase(
-            interactionDialogues
-        );
-
-    if (phaseDialogue != null &&
-        phaseDialogue.dialogues != null)
     {
-        // Solo avanzamos si todavía no estamos
-        // en el último diálogo.
-        if (currentDialogueIndex <
-            phaseDialogue.dialogues.Length - 1)
+        isBusy = false;
+
+        currentDialogueStep?
+            .onDialogueFinished?
+            .Invoke();
+
+        PhaseDialogue phaseDialogue =
+            GetPhaseDialogueForCurrentPhase(
+                interactionDialogues
+            );
+
+        if (phaseDialogue != null &&
+    phaseDialogue.dialogues != null &&
+    currentDialogueStep != null)
+        {
+            if (currentDialogueStep.AdvanceAutomatically &&
+                currentDialogueIndex <
+                phaseDialogue.dialogues.Length - 1)
+            {
+                currentDialogueIndex++;
+            }
+        }
+
+        currentDialogueStep = null;
+
+        onInteractionFinished?.Invoke();
+    }
+
+
+    public void AdvanceInteractionDialogue()
+    {
+        PhaseDialogue phaseDialogue = GetPhaseDialogueForCurrentPhase(interactionDialogues);
+
+        if (phaseDialogue == null || phaseDialogue.dialogues == null)
+        {
+            return;
+        }
+
+        if (currentDialogueIndex < phaseDialogue.dialogues.Length - 1)
         {
             currentDialogueIndex++;
         }
-    }
-
-    currentDialogueStep = null;
-
-    onInteractionFinished?.Invoke();
-}
-
-    private void HandleCharmFinished()
-    {
-        isBusy = false;
-        hasBeenCharmed = true;
-
-        onCharmFinished?.Invoke();
     }
 }

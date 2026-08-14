@@ -9,4 +9,8 @@ public class DialogueStep
 
     [Header("Event when finished")]
     public UnityEvent onDialogueFinished;
+
+    [SerializeField] private bool advanceAutomatically = true;
+
+    public bool AdvanceAutomatically => advanceAutomatically;
 }

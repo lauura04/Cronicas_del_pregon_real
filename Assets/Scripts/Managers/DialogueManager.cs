@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsDialogueActive =>
         currentDialogue != null;
-    private System.Action onDialogueFinished;
+    public System.Action onDialogueFinished;
 
     private Coroutine typingCoroutine;
     private bool isTyping;
