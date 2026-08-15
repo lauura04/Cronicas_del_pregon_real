@@ -86,7 +86,7 @@ public class NecklaceCrafting : MonoBehaviour
     Debug.Log("COLLAR LISTO");
 
     MessageUI.Instance?.ShowMessage(
-        "Has construido el collar",
+        "Has construido el collar, abre el inventario",
         3f
     );
 }

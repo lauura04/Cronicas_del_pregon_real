@@ -16,19 +16,31 @@ public class CharmMinigameUI : MonoBehaviour
     [SerializeField] private Color normalColor = Color.white;
     [SerializeField] private Color successColor = Color.green;
 
-    private void Awake()
-    {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-        }
-    }
+    
 
     public void Show()
     {
-        if (panel != null)
+        if (panel == null)
         {
-            panel.SetActive(true);
+            Debug.LogError("CHARM UI: PANEL ES NULL");
+            return;
+        }
+
+        Debug.Log($"CHARM PANEL: {panel.name}");
+        Debug.Log($"ANTES - activeSelf: {panel.activeSelf}");
+        Debug.Log($"ANTES - activeInHierarchy: {panel.activeInHierarchy}");
+
+        panel.SetActive(true);
+
+        Debug.Log($"DESPUÉS - activeSelf: {panel.activeSelf}");
+        Debug.Log($"DESPUÉS - activeInHierarchy: {panel.activeInHierarchy}");
+
+        if (panel.transform.parent != null)
+        {
+            Debug.Log(
+                $"PADRE: {panel.transform.parent.name} | " +
+                $"activo: {panel.transform.parent.gameObject.activeInHierarchy}"
+            );
         }
     }
 

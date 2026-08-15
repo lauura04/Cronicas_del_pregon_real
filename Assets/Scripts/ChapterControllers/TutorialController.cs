@@ -74,8 +74,7 @@ public class TutorialController : MonoBehaviour
         CheckMaterialsProgress();
     }
 
-    private void CheckMaterialsProgress() //cambiar -->no lo necesita comprobar realmente que esté todo desbloqueado, más bien necesita que cambie de fase al construir el collar
-    {
+    private void CheckMaterialsProgress(){ //me la podria cargar
         if (MonksUnlocked && SheepUnlocked)
         {
             Debug.Log("Todo desbloqueado");
@@ -93,6 +92,11 @@ public class TutorialController : MonoBehaviour
     public bool CanCollectWool()
     {
         return SheepUnlocked && GameProgressManager.Instance.CurrentPhase == findMaterials;
+    }
+
+    public void EndTutorial()
+    {
+        ChapterManager.Instance.StartChapter(GameChapter.Chapter1);
     }
 
 }

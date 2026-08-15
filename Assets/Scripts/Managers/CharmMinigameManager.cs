@@ -24,9 +24,10 @@ public class CharmMinigameManager : MonoBehaviour
     private bool shrinking;
 
     private bool isActive;
-
-
     private bool canCheckInput;
+
+    // Frame en el que se abrió el minijuego
+    private int startFrame;
 
     public bool IsActive => isActive;
 
@@ -52,18 +53,27 @@ public class CharmMinigameManager : MonoBehaviour
 
         UpdateCircle();
 
+        // No procesamos input en el mismo frame
+        // en el que se abrió el minijuego.
+        if (Time.frameCount == startFrame)
+        {
+            return;
+        }
 
+        // Esperamos a que el jugador suelte
+        // la R que abrió el minijuego.
         if (!canCheckInput)
         {
             if (Input.GetKeyUp(KeyCode.R))
             {
                 canCheckInput = true;
+                Debug.Log("R inicial soltada. Ya se puede intentar.");
             }
 
             return;
         }
 
-
+        // La siguiente R ya cuenta como intento.
         if (Input.GetKeyDown(KeyCode.R))
         {
             CheckAttempt();
@@ -72,13 +82,10 @@ public class CharmMinigameManager : MonoBehaviour
 
     public void StartMinigame(CharmableNPC npc)
     {
-        Debug.Log(
-            $"START MINIGAME con {npc?.gameObject.name}"
-        );
+        Debug.Log($"START MINIGAME con {npc?.gameObject.name}");
 
         if (isActive)
         {
-            Debug.Log("Minijuego ya activo.");
             return;
         }
 
@@ -88,11 +95,22 @@ public class CharmMinigameManager : MonoBehaviour
             return;
         }
 
+        if (MessageUI.Instance != null)
+        {
+            MessageUI.Instance.HideMessage();
+        }
+
         currentNPC = npc;
+
         currentScale = maxScale;
         shrinking = true;
+
         isActive = true;
         canCheckInput = false;
+
+        // Guardamos el frame exacto
+        // en el que se abre.
+        startFrame = Time.frameCount;
 
         PlayerMovement.Instance?.SetMovementEnabled(false);
 
@@ -101,7 +119,11 @@ public class CharmMinigameManager : MonoBehaviour
             Debug.Log("SHOW UI CHARM");
 
             minigameUI.Show();
-            minigameUI.SetCircleScale(currentScale);
+
+            minigameUI.SetCircleScale(
+                currentScale
+            );
+
             minigameUI.SetSuccessState(false);
         }
         else
@@ -120,7 +142,6 @@ public class CharmMinigameManager : MonoBehaviour
             if (currentScale <= minScale)
             {
                 currentScale = minScale;
-
                 shrinking = false;
             }
         }
@@ -132,7 +153,6 @@ public class CharmMinigameManager : MonoBehaviour
             if (currentScale >= maxScale)
             {
                 currentScale = maxScale;
-
                 shrinking = true;
             }
         }
@@ -155,6 +175,10 @@ public class CharmMinigameManager : MonoBehaviour
 
     private void CheckAttempt()
     {
+        Debug.Log(
+            $"CHECK ATTEMPT - Scale: {currentScale}"
+        );
+
         bool success =
             currentScale >= successMinScale &&
             currentScale <= successMaxScale;
@@ -169,42 +193,51 @@ public class CharmMinigameManager : MonoBehaviour
         }
     }
 
-   private void Success()
-{
-    Debug.Log("CHARM SUCCESS");
-
-    isActive = false;
-
-    if (minigameUI != null)
+    private void Success()
     {
-        minigameUI.Hide();
+        Debug.Log("CHARM SUCCESS");
+
+        isActive = false;
+        canCheckInput = false;
+
+        if (minigameUI != null)
+        {
+            minigameUI.Hide();
+        }
+
+        PlayerMovement.Instance?
+            .SetMovementEnabled(true);
+
+        currentNPC?.CharmSucceeded();
+
+        currentNPC = null;
     }
 
-    PlayerMovement.Instance?.SetMovementEnabled(true);
-
-    currentNPC?.CharmSucceeded();
-
-    currentNPC = null;
-}
-   private void Fail()
-{
-    isActive = false;
-
-    if (minigameUI != null)
+    private void Fail()
     {
-        minigameUI.Hide();
-    }
+        Debug.Log(
+            ">>>> FAIL() DEL MINIJUEGO EJECUTADO <<<<"
+        );
 
-    CharmableNPC failedNPC = currentNPC;
-    currentNPC = null;
+        isActive = false;
+        canCheckInput = false;
 
-    if (failedNPC != null)
-    {
-        failedNPC.CharmFailed();
+        if (minigameUI != null)
+        {
+            minigameUI.Hide();
+        }
+
+        CharmableNPC failedNPC = currentNPC;
+        currentNPC = null;
+
+        if (failedNPC != null)
+        {
+            failedNPC.CharmFailed();
+        }
+        else
+        {
+            PlayerMovement.Instance?
+                .SetMovementEnabled(true);
+        }
     }
-    else
-    {
-        PlayerMovement.Instance?.SetMovementEnabled(true);
-    }
-}
 }

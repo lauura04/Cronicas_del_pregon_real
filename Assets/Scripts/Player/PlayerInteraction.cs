@@ -10,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private KeyCode spyKey = KeyCode.Q;
     [SerializeField] private KeyCode charmKey = KeyCode.R;
+    [SerializeField] private KeyCode inventoryKey = KeyCode.I;
 
     private bool spyBlockedUntilRelease;
 
@@ -25,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
         HandleInteraction();
         HandleSpy();
         HandleCharm();
+        HandleInventory();
     }
 
     private void HandleInteraction()
@@ -49,31 +51,38 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void HandleCharm()
-{
-    if (!Input.GetKeyDown(charmKey))
     {
-        return;
-    }
+        if (!Input.GetKeyDown(charmKey))
+        {
+            return;
+        }
 
-    if (CharmMinigameManager.Instance != null &&
-        CharmMinigameManager.Instance.IsActive)
-    {
-        return;
-    }
+        // No permitir charm mientras haya diálogo
+        if (DialogueManager.Instance != null &&
+            DialogueManager.Instance.IsDialogueActive)
+        {
+            return;
+        }
 
-    if (currentInteractable == null)
-    {
-        return;
-    }
+        if (CharmMinigameManager.Instance != null &&
+            CharmMinigameManager.Instance.IsActive)
+        {
+            return;
+        }
 
-    if (PlayerMovement.Instance != null &&
-        !PlayerMovement.Instance.CanMove)
-    {
-        return;
-    }
+        if (currentInteractable == null)
+        {
+            return;
+        }
 
-    currentInteractable.Charm();
-}
+        if (PlayerMovement.Instance != null &&
+            !PlayerMovement.Instance.CanMove)
+        {
+            return;
+        }
+
+        currentInteractable.Charm();
+    }
 
     private void HandleSpy()
     {
@@ -88,7 +97,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         if (PlayerMovement.Instance != null &&
-        !PlayerMovement.Instance.CanMove)
+            !PlayerMovement.Instance.CanMove)
         {
             StopSpying();
             return;
@@ -97,10 +106,21 @@ public class PlayerInteraction : MonoBehaviour
         NPCInteractable npc =
             currentInteractable as NPCInteractable;
 
+        if (npc == null)
+        {
+            StopSpying();
+            return;
+        }
+
+        // Comprobamos si existe diálogo de espionaje
+        // para la fase actual
+        DialogueData spyDialogue =
+            npc.GetSpyDialogueForCurrentPhase();
+
         bool canSpy =
             Input.GetKey(spyKey) &&
-            npc != null &&
-            npc.SpyConversation != null;
+            npc.SpyConversation != null &&
+            spyDialogue != null;
 
         if (!canSpy)
         {
@@ -124,12 +144,33 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         spyTimer += Time.deltaTime;
-        SpyManager.Instance.UpdateSpyProgress(spyTimer, spyingNPC.DetectionTime);
+
+        if (SpyManager.Instance != null)
+        {
+            SpyManager.Instance.UpdateSpyProgress(
+                spyTimer,
+                spyingNPC.DetectionTime
+            );
+        }
 
         if (spyTimer >= npc.DetectionTime)
         {
             BeDetected();
         }
+    }
+
+    private void HandleInventory()
+    {
+        if (!Input.GetKeyDown(inventoryKey))
+        {
+            return;
+        }
+
+        if(InventoryManager.Instance == null)
+        {
+            return;
+        }
+        InventoryUI.Instance.ToggleInventory();
     }
 
     private void StopSpying()
@@ -149,37 +190,37 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void BeDetected()
-{
-    NPCInteractable detectedNPC = spyingNPC;
-
-    if (detectedNPC == null)
     {
-        return;
+        NPCInteractable detectedNPC = spyingNPC;
+
+        if (detectedNPC == null)
+        {
+            return;
+        }
+
+        spyBlockedUntilRelease = true;
+
+        if (SpyManager.Instance != null)
+        {
+            SpyManager.Instance.StopListening();
+        }
+
+        spyingNPC = null;
+        spyTimer = 0f;
+
+        detectedNPC.SpyConversation?.RestartConversation();
+
+        DialogueData detectedDialogue =
+            detectedNPC.DetectedDialogue;
+
+        if (detectedDialogue != null &&
+            DialogueManager.Instance != null)
+        {
+            DialogueManager.Instance.StartDialogue(
+                detectedDialogue
+            );
+        }
     }
-
-    spyBlockedUntilRelease = true;
-
-    if (SpyManager.Instance != null)
-    {
-        SpyManager.Instance.StopListening();
-    }
-
-    spyingNPC = null;
-    spyTimer = 0f;
-
-    detectedNPC.SpyConversation?.RestartConversation();
-
-    DialogueData detectedDialogue =
-        detectedNPC.DetectedDialogue;
-
-    if (detectedDialogue != null &&
-        DialogueManager.Instance != null)
-    {
-        DialogueManager.Instance.StartDialogue(
-            detectedDialogue
-        );
-    }
-}
 
     private void FindClosestInteractable()
     {

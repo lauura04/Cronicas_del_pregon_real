@@ -106,6 +106,8 @@ public class InventoryManager : MonoBehaviour
 
     public bool HasItemById(string itemId)
     {
-        return GetItemCountById(itemId)>0;
+        return GetItemCountById(itemId) > 0;
     }
+
+    
 }

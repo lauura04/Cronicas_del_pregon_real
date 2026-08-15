@@ -26,7 +26,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void Play()
     {
-        SceneLoader.Instance.LoadScene("ChapterIntro");
+       ChapterManager.Instance.StartChapter(GameChapter.Tutorial);
     }
 
     public void Quit()

@@ -2,37 +2,47 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static InventoryUI Instance { get; private set; }
+
+    [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private InventorySlotUI[] slots;
-    [SerializeField] private NecklaceCrafting necklaceCrafting;
+
+    public bool IsOpen =>
+        inventoryPanel != null &&
+        inventoryPanel.activeSelf;
 
     private void Awake()
     {
+        Instance = this;
+
         if (slots == null || slots.Length == 0)
         {
-            slots = GetComponentsInChildren<InventorySlotUI>(true);
+            slots =
+                GetComponentsInChildren<InventorySlotUI>(true);
         }
 
-        Debug.Log(
-            "InventoryUI ha encontrado " +
-            slots.Length +
-            " slots."
-        );
+        if (inventoryPanel != null)
+        {
+            inventoryPanel.SetActive(false);
+        }
     }
 
-    private void OnEnable()
+    public void ToggleInventory()
     {
-        Debug.Log("INVENTORY UI ACTIVADA");
-
-        if (InventoryManager.Instance != null)
+        if (IsOpen)
         {
-            InventoryManager.Instance.OnInventoryChanged += Refresh;
+            CloseInventory();
         }
         else
         {
-            Debug.LogError(
-                "InventoryManager.Instance es NULL"
-            );
+            OpenInventory();
+        }
+    }
 
+    public void OpenInventory()
+    {
+        if (inventoryPanel == null)
+        {
             return;
         }
 
@@ -41,69 +51,38 @@ public class InventoryUI : MonoBehaviour
 
         if (necklaceCrafting != null)
         {
-            Debug.Log("NecklaceCrafting encontrado desde InventoryUI");
-
             necklaceCrafting.CraftNecklaceIfReady();
         }
-        else
-        {
-            Debug.Log("No se ha encontrado NecklaceCrafting");
-        }
+
+        inventoryPanel.SetActive(true);
 
         Refresh();
     }
-    private void OnDisable()
-    {
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.OnInventoryChanged -= Refresh;
-        }
-    }
 
-    public void OpenInventory()
+    public void CloseInventory()
     {
-        NecklaceCrafting necklaceCrafting =
-            FindFirstObjectByType<NecklaceCrafting>();
-
-        if (necklaceCrafting != null)
+        if (inventoryPanel == null)
         {
-            necklaceCrafting.CraftNecklaceIfReady();
+            return;
         }
 
-       PauseMenuManager.Instance.ShowInventory();
+        inventoryPanel.SetActive(false);
     }
 
     public void Refresh()
     {
         if (InventoryManager.Instance == null)
         {
-            Debug.LogError(
-                "No existe InventoryManager al hacer Refresh"
-            );
-
             return;
         }
 
-        var items = InventoryManager.Instance.Items;
-
-        Debug.Log(
-            "REFRESH INVENTARIO | Items: " +
-            items.Count +
-            " | Slots: " +
-            slots.Length
-        );
+        var items =
+            InventoryManager.Instance.Items;
 
         for (int i = 0; i < slots.Length; i++)
         {
             if (i < items.Count)
             {
-                Debug.Log(
-                    "Poniendo " +
-                    items[i].itemName +
-                    " en slot " +
-                    i
-                );
-
                 slots[i].SetItem(items[i]);
             }
             else

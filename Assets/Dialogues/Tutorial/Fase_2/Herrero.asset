@@ -20,3 +20,6 @@ MonoBehaviour:
     text: "Si vuesa merced me hace el favor de descubrir el misterio del l\xEDquido
       granate que esconden los monjes de este convento con tanto recelo le dar\xE9
       aquello que le ser\xE1 de ayuda."
+  - character: {fileID: 11400000, guid: 50aed25c8fb2f8a418a5af5c1ce990ff, type: 2}
+    text: "Mas los monjes se negar\xE1n a hablar, tendr\xE1s que pensar en algo para
+      escucharlos sin que te detecten."

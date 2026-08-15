@@ -4,7 +4,26 @@ using UnityEngine.UI;
 
 public class IntroController : MonoBehaviour
 {
-    public static IntroController Instance { get; private set; }
+
+    private ChapterIntroData introData;
+    private void Start()
+    {
+        introData = ChapterManager.Instance.GetCurrentIntro();
+
+        if(introData == null)
+        {
+            Debug.LogError("No se ha encontrado la introducción del capítulo");
+            return;
+        }
+
+        DialogueManager.Instance.StartDialogue(introData.Dialogue, OnIntroFinished);
+    }
+
+    private void OnIntroFinished()
+    {
+        SceneLoader.Instance.LoadScene(introData.GameplayScene);
+    }
+    /*public static IntroController Instance { get; private set; }
 
     [SerializeField] private DialogueData Introduccion;
     private void Awake()
@@ -29,5 +48,5 @@ public class IntroController : MonoBehaviour
     private void FinishIntro()
     {
         SceneLoader.Instance.LoadScene("Tutorial");
-    }
+    }*/
 }

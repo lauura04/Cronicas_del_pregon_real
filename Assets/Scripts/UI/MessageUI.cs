@@ -14,8 +14,11 @@ public class MessageUI : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("AWAKE MESSAGE UI: " + gameObject.name);
+
         if (Instance != null && Instance != this)
         {
+            Debug.Log("MESSAGE UI DUPLICADO, destruyendo: " + gameObject.name);
             Destroy(gameObject);
             return;
         }
@@ -47,6 +50,11 @@ public class MessageUI : MonoBehaviour
 
     public void HideMessage()
     {
+        Debug.Log(
+            "HIDEMESSAGE desde: " + gameObject.name +
+            " | Instance: " + Instance?.gameObject.name
+        );
+
         if (hideCoroutine != null)
         {
             StopCoroutine(hideCoroutine);
@@ -62,5 +70,19 @@ public class MessageUI : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         HideMessage();
+    }
+
+     public void Close()
+    {
+        Debug.Log("CLOSE BUTTON");
+
+        if (MessageUI.Instance != null)
+        {
+            MessageUI.Instance.HideMessage();
+        }
+        else
+        {
+            Debug.LogError("MessageUI.Instance es null");
+        }
     }
 }

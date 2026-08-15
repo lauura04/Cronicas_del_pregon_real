@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "\xA1Vamos mi peque\xF1o aprendiz! \xA1Utiliza W, A, S, D para vernir hacia
+    text: "\xA1Vamos mi peque\xF1o aprendiz! \xA1Utiliza W, A, S, D para venir hacia
       m\xED!"

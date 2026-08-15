@@ -16,3 +16,5 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "Con que joyas quiere su majestad, pues joyas tendr\xE1. Si no sabes por
       d\xF3nde empezar, aqu\xED te dejo un hilo para el dichoso collar."
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: Puedes verlo en el Inventario pulsando I.

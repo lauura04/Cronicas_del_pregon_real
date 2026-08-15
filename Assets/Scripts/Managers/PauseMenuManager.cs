@@ -6,7 +6,6 @@ public class PauseMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
-    [SerializeField] private GameObject inventoryPanel;
 
     public bool IsPaused { get; private set; }
 
@@ -23,7 +22,6 @@ public class PauseMenuManager : MonoBehaviour
 
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
-        inventoryPanel.SetActive(false);
     }
 
     public void PauseGame()
@@ -83,15 +81,9 @@ public class PauseMenuManager : MonoBehaviour
         optionsPanel.SetActive(true);
     }
 
-    public void ShowInventory()
-    {
-        pausePanel.SetActive(false);
-        optionsPanel.SetActive(false);
-        inventoryPanel.SetActive(true);
-    }
+   
     public void BackToPauseMenu()
     {
-        inventoryPanel.SetActive(false);
         optionsPanel.SetActive(false);
         pausePanel.SetActive(true);
     }

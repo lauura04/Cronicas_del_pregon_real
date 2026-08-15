@@ -2,14 +2,9 @@ using UnityEngine;
 
 public class ChapterManager : MonoBehaviour
 {
-    public enum GameChapter{
-        Tutorial,
-        Chapter1,
-        Chapter2,
-        Chapter3
-    }
+    
    public static ChapterManager Instance {get;private set;}
-
+   [SerializeField] private ChapterIntroData[] chapterIntros;
    public GameChapter CurrentChapter {get; private set;}
 
    private void Awake()
@@ -28,12 +23,26 @@ public class ChapterManager : MonoBehaviour
     {
         CurrentChapter = newChapter;
 
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.ClearInventory();
-        }
+       SceneLoader.Instance.LoadScene("ChapterIntro");
 
         Debug.Log($"Capítulo iniciado {newChapter}");
     }
+
+    public ChapterIntroData GetCurrentIntro()
+    {
+        foreach(ChapterIntroData intro in chapterIntros)
+        {
+            if(intro.Chapter == CurrentChapter)
+            {
+                return intro;
+            }
+
+            
+        }
+        Debug.LogError("No existe introducción para " + CurrentChapter);
+            return null;
+    }
+
+
 }
    
