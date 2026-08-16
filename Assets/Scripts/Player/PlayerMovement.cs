@@ -22,10 +22,18 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {
-        Instance = this;
-        playerRigidbody = GetComponent<Rigidbody>();
-    }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        Instance = this;
+
+        playerRigidbody = GetComponent<Rigidbody>();
+
+        DontDestroyOnLoad(gameObject);
+    }
     private void Update()
     {
         if (!canMove)
@@ -82,14 +90,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SetMovementEnabled(bool enabled)
-{
-    canMove = enabled;
-    movementInput = Vector3.zero;
-
-    if (!canMove)
     {
+        canMove = enabled;
+        movementInput = Vector3.zero;
+
+        if (!canMove)
+        {
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
+        }
+    }
+
+    public void TeleportTo(Vector3 position)
+    {
+        movementInput = Vector3.zero;
+
         playerRigidbody.velocity = Vector3.zero;
         playerRigidbody.angularVelocity = Vector3.zero;
+
+        playerRigidbody.position = position;
     }
-}
 }

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (3)Cs_2
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: "\xBFY d\xF3nde dice que estamos? \xBFY qu\xE9 se supone que celebran?"
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: "En Medina del Campo frente al Palacio Real de sus Majestados nos encontramos,
+      y respecto a la celebraci\xF3n..."
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: "Pens\xE9 que ustedes sabr\xEDan algo, al fin y al cabo, sois los que llegasteis
+      pegando voces."
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: "Pens\xE9 que ustedes sabr\xEDan algo, al fin y al cabo, sois los que llegasteis
+      pegando voces."
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "\xA1Benjam\xEDn! \xA1Viejo pupilo! \xBFC\xF3mo has estado? \xBFEn qu\xE9
+      l\xEDos te metes ahora?"
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Mi maestro, cu\xE1nto tiempo sin verle, ya veo que ha estado muy ocupado.
+      Pues ver\xE1, resulta y acontece"
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "que la Infanta qued\xF3 tan encandilada con el dichoso collar que sus
+      padres me hicieron llamar a la corte para servirles."
+  - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
+    text: "\xBFY qu\xE9 se supone que pasa? \xBFNo estar\xE1n esperando a los c\xF3micos
+      de Alburquerque?"
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "No s\xE9 de qu\xE9 c\xF3micos me habl\xE1is, mas lo que aqu\xED ocurre
+      es un sinf\xEDn de mensajeros que no hacen m\xE1s que intercambiar mensajes "
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "con C\xF3rdoba y Portugal y ya no s\xE9 si hay boda, si hay entierro o
+      si a los mud\xE9jares vamos a cristianar."
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xBFY vosotros, qu\xE9 hac\xE9is aqu\xED?"
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Ha llegado a mis o\xEDdos, que en aqueste lugar, Medina del Campo, se
+      est\xE1n tratando ciertas capitulaciones,"
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "y que el rey portugu\xE9s algo quiere obtener, mas ser\xE1 despu\xE9s
+      de nuestra funci\xF3n que te ayudaremos en tu misi\xF3n."

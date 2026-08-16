@@ -1,10 +1,12 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventorySlotUI : MonoBehaviour
 {
    [SerializeField] private Image itemIcon;
+   [SerializeField] private TMP_Text itemName;
    private ItemData currentItem;
    public ItemData CurrentItem => currentItem;
 
@@ -18,6 +20,9 @@ public class InventorySlotUI : MonoBehaviour
         }
         itemIcon.sprite = item.Icon;
         itemIcon.enabled = true;
+
+        itemName.text = item.itemName;
+        itemName.gameObject.SetActive(true);
     }
 
     public void ClearSlot()
@@ -25,5 +30,8 @@ public class InventorySlotUI : MonoBehaviour
         currentItem = null;
         itemIcon.sprite= null;
         itemIcon.enabled = false;
+
+        itemName.text="";
+        itemName.gameObject.SetActive(false);
     }
 }

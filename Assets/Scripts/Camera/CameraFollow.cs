@@ -43,6 +43,10 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerMovement.Instance != null)
+    {
+        target = PlayerMovement.Instance.transform;
+    }
         ResetCameraImmediate();
     }
 
