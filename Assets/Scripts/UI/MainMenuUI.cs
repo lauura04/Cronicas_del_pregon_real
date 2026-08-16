@@ -6,10 +6,12 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private AudioClip menuMusic;
 
     private void Start()
     {
         ShowMainMenu();
+        MusicManager.Instance.PlayMusic(menuMusic);
     }
 
     public void ShowOptions()

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TutorialController : MonoBehaviour
 {
     public static TutorialController Instance {get;private set;}
+    [SerializeField] private AudioClip tutorialClip;
 
     [Header("Chapter")]
     [SerializeField] private ChapterData tutorialChapter;
@@ -40,6 +41,7 @@ public class TutorialController : MonoBehaviour
     private void Start()
     {
         GameProgressManager.Instance.StartChapter(tutorialChapter, introPhase);
+        MusicManager.Instance.PlayMusic(tutorialClip);
         DialogueManager.Instance.StartDialogue(
             initialDialogue, StartTutorial
         );

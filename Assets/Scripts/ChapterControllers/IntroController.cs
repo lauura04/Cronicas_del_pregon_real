@@ -6,6 +6,8 @@ public class IntroController : MonoBehaviour
 {
 
     private ChapterIntroData introData;
+
+    [SerializeField] private AudioClip introClip;
     private void Start()
     {
         introData = ChapterManager.Instance.GetCurrentIntro();
@@ -15,6 +17,7 @@ public class IntroController : MonoBehaviour
             Debug.LogError("No se ha encontrado la introducción del capítulo");
             return;
         }
+        MusicManager.Instance.PlayMusic(introClip);
 
         DialogueManager.Instance.StartDialogue(introData.Dialogue, OnIntroFinished);
     }

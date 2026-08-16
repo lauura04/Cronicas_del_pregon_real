@@ -579,6 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1362395419}
   optionsPanel: {fileID: 1989610187}
+  menuMusic: {fileID: 8300000, guid: 9df77c0c067d34d459e8f2b3f924b4ba, type: 3}
 --- !u!4 &377099864
 Transform:
   m_ObjectHideFlags: 0
@@ -1195,7 +1196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &631919641
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1207,7 +1208,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 245fe47764207404caa1c77ed2faf967,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: da242b4a2aa06a74eb8cf32f0367cb2f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9df77c0c067d34d459e8f2b3f924b4ba, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

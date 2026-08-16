@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a2a71b6018e14cada32e21c892b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialClip: {fileID: 8300000, guid: 5c107d98834d78746a1b225253dfa116, type: 3}
   tutorialChapter: {fileID: 11400000, guid: e9066f86ccf72c145ad78011da6fedeb, type: 2}
   introPhase: {fileID: 11400000, guid: 639fb4c342b0bd548aefd3dcb0e6b3e5, type: 2}
   giftIdea: {fileID: 11400000, guid: 4d01138f883ebb5488d9a59385b5253d, type: 2}
@@ -858,7 +859,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
