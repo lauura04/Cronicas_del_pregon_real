@@ -5,6 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Ground Settings")]
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundRayHeight = 2f;
+    [SerializeField] private float groundRayDistance = 5f;
+    [SerializeField] private float groundSkin = 0.02f;
+
+    private CapsuleCollider capsuleCollider;
+    
+    
+    
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 1f;
 
@@ -31,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         Instance = this;
 
         playerRigidbody = GetComponent<Rigidbody>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -56,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ReadMovementInput()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         movementInput = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
@@ -85,7 +96,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (movementInput.sqrMagnitude < 0.01f)
+        {
+            return;
+        }
         Vector3 newPosition = playerRigidbody.position + movementInput * moveSpeed * Time.fixedDeltaTime;
+
+        Vector3 rayOrigin = new Vector3(newPosition.x, playerRigidbody.position.y + groundRayHeight,newPosition.z);
+
+        if(Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer)){
+            float feetDistance = playerRigidbody.position.y-capsuleCollider.bounds.min.y;
+
+            newPosition.y = hit.point.y + feetDistance + groundSkin;
+        }
         playerRigidbody.MovePosition(newPosition);
     }
 

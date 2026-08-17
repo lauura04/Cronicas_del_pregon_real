@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class KeyMinigameManager : MonoBehaviour
 {
+    
+    public static KeyMinigameManager Instance {get; private set;}
     [Header("UI")]
     [SerializeField] private GameObject minigamePanel;
     [SerializeField] private TMP_Text keyText;
@@ -13,12 +15,15 @@ public class KeyMinigameManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float requiredTime = 10f;
     [SerializeField] private int maxMistakes = 3;
+    [SerializeField] private float timePerKey = 4f;
+    [SerializeField] private float timePenalty = 3f;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onMinigameCompleted;
     [SerializeField] private UnityEvent onMinigameFailed;
 
     private float currentTime;
+    private float currentKeyTime;
     private int mistakes;
 
     private KeyCode currentKey;
@@ -27,31 +32,35 @@ public class KeyMinigameManager : MonoBehaviour
 
     private readonly KeyCode[] availableKeys =
     {
-        KeyCode.A,
+        
         KeyCode.B,
         KeyCode.C,
-        KeyCode.D,
-        KeyCode.E,
         KeyCode.F,
         KeyCode.G,
         KeyCode.H,
         KeyCode.I,
-        KeyCode.J,
         KeyCode.K,
         KeyCode.L,
         KeyCode.M,
         KeyCode.N,
-        KeyCode.O,
-        KeyCode.Q,
-        KeyCode.R,
-        KeyCode.S,
+        KeyCode.O,        
         KeyCode.T,
         KeyCode.U,
         KeyCode.V,
-        KeyCode.W,
         KeyCode.X,
         KeyCode.Z
     };
+
+    private void Awake()
+    {
+        if(Instance!=null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -66,6 +75,7 @@ public class KeyMinigameManager : MonoBehaviour
         }
 
         UpdateTimer();
+        UpdateKeyTimer();
         CheckInput();
     }
 
@@ -91,6 +101,15 @@ public class KeyMinigameManager : MonoBehaviour
         if (currentTime >= requiredTime)
         {
             CompleteMinigame();
+        }
+    }
+
+    private void UpdateKeyTimer()
+    {
+        currentKeyTime+=Time.deltaTime;
+        if (currentKeyTime >= timePerKey)
+        {
+            KeyTimeExpired();
         }
     }
 
@@ -141,6 +160,7 @@ public class KeyMinigameManager : MonoBehaviour
         currentKey = availableKeys[randomIndex];
 
         keyText.text = currentKey.ToString();
+        currentKeyTime = 0f;
     }
 
     private void UpdateUI()
@@ -160,7 +180,37 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void CompleteMinigame()
     {
-        
+        isPlaying = false;
+        minigamePanel.SetActive(false);
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(true);
+        }
+
+        onMinigameCompleted?.Invoke();
+    }
+
+    public void CancelMinigame()
+    {
+        isPlaying = false;
+        minigamePanel.SetActive(false);
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(true);
+        }
+    }
+
+    private void KeyTimeExpired()
+    {
+        mistakes++;
+        requiredTime+=timePenalty;
+        UpdateUI();
+        if (mistakes > maxMistakes)
+        {
+            RestartMinigame();
+            return;
+        }
+        GenerateNewKey();
     }
 }
 
