@@ -3,19 +3,20 @@ using TMPro;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine.UI;
 
 public class LetterPuzzleManager : MonoBehaviour
 {
-    public static LetterPuzzleManager Instance{get;private set;}
+    public static LetterPuzzleManager Instance { get; private set; }
 
     [Header("UI")]
     [SerializeField] private GameObject puzzlePanel;
     [SerializeField] private Transform slotsParent;
     [SerializeField] private TMP_Text letterSlotPrefab;
+    [SerializeField] private Image letterBackground;
 
     [Header("Puzzle")]
-    [TextArea]
-    [SerializeField] private string correctText = "LA REINA LLEGARA MAÑANA";
+    private LetterPuzzleData currentPuzzle;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onCorrect;
@@ -30,7 +31,7 @@ public class LetterPuzzleManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance!=null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -47,16 +48,24 @@ public class LetterPuzzleManager : MonoBehaviour
 
     private void Update()
     {
-        if(!isPlaying)
+        if (!isPlaying)
             return;
         HandleInput();
     }
-    
-    public void StartPuzzle()
+
+    public void StartPuzzle(LetterPuzzleData puzzleData)
     {
+        if (puzzleData == null)
+        {
+            Debug.LogError("No se ha asignado ningún LetterPuzzleData")
+;            return;
+        }
+        currentPuzzle = puzzleData;
         isPlaying = true;
         currentPosition = 0;
         puzzlePanel.SetActive(true);
+
+        letterBackground.sprite = currentPuzzle.letterBackground;
 
         CreatePuzzle();
 
@@ -68,16 +77,18 @@ public class LetterPuzzleManager : MonoBehaviour
 
     private void CreatePuzzle()
     {
-        foreach(Transform child in slotsParent)
+        foreach (Transform child in slotsParent)
         {
             Destroy(child.gameObject);
         }
 
         letterSlots.Clear();
 
+        string correctText = currentPuzzle.correctText;
+
         currentAnswer = new StringBuilder(correctText.Length);
 
-        for(int i = 0; i<correctText.Length; i++)
+        for (int i = 0; i < correctText.Length; i++)
         {
             char character = correctText[i];
 
@@ -87,7 +98,7 @@ public class LetterPuzzleManager : MonoBehaviour
 
             if (char.IsLetter(character))
             {
-                slot.text="_";
+                slot.text = "_";
                 currentAnswer.Append('_');
             }
 
@@ -103,7 +114,7 @@ public class LetterPuzzleManager : MonoBehaviour
 
     private void HandleInput()
     {
-        foreach(char input in Input.inputString)
+        foreach (char input in Input.inputString)
         {
             if (char.IsLetter(input))
             {
@@ -111,20 +122,21 @@ public class LetterPuzzleManager : MonoBehaviour
             }
         }
 
-        /*if (HandleInput.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Remove.Letter();
+            RemoveLetter();
         }
 
-        if (HandleInput.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             CheckAnswer();
-        }*/
+        }
     }
 
     private void AddLetter(char letter)
     {
-        if(currentPosition >= correctText.Length)
+        string correctText = currentPuzzle.correctText;
+        if (currentPosition >= correctText.Length)
         {
             return;
         }
@@ -134,7 +146,7 @@ public class LetterPuzzleManager : MonoBehaviour
             MoveToNextLetter();
         }
 
-        if(currentPosition >= correctText.Length)
+        if (currentPosition >= correctText.Length)
         {
             return;
         }
@@ -145,45 +157,54 @@ public class LetterPuzzleManager : MonoBehaviour
 
         currentPosition++;
         MoveToNextLetter();
+
+        if (currentPosition >= correctText.Length)
+        {
+            CheckAnswer();
+        }
     }
 
     private void MoveToNextLetter()
     {
-        while(currentPosition<correctText.Length && !char.IsLetter(correctText[currentPosition]))
+        string correctText = currentPuzzle.correctText;
+
+        while (currentPosition < correctText.Length && !char.IsLetter(correctText[currentPosition]))
         {
             currentPosition++;
         }
     }
-    
+
     private void RemoveLetter()
     {
+        string correctText = currentPuzzle.correctText;
         if (currentPosition <= 0)
         {
             return;
         }
 
         currentPosition--;
-        while(currentPosition>=0 && !char.IsLetter(correctText[currentPosition]))
+        while (currentPosition >= 0 && !char.IsLetter(correctText[currentPosition]))
         {
             currentPosition--;
         }
 
-        if(currentPosition < 0)
+        if (currentPosition < 0)
         {
             currentPosition = 0;
             MoveToNextLetter();
             return;
         }
 
-        currentAnswer[currentPosition]='_';
+        currentAnswer[currentPosition] = '_';
         letterSlots[currentPosition].text = "_";
     }
 
     private void CheckAnswer()
     {
         string answer = currentAnswer.ToString();
+        string correctText = currentPuzzle.correctText;
 
-        if(answer.Equals(correctText, System.StringComparison.OrdinalIgnoreCase))
+        if (answer.Equals(correctText, System.StringComparison.OrdinalIgnoreCase))
         {
             CompletePuzzle();
         }
@@ -197,7 +218,7 @@ public class LetterPuzzleManager : MonoBehaviour
     {
         Debug.Log("La frase no es correcta");
         onIncorrect?.Invoke();
-    }    
+    }
 
     private void CompletePuzzle()
     {
