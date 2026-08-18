@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1555ce94d46ebb478d7e033d7c073dc, type: 3}
   m_Name: Bufon
   m_EditorClassIdentifier: 
-  characterName: "Benjam\xEDn el Buf\xF3n"
-  protrait: {fileID: 0}
+  characterName: "Benjam\xEDn"
+  portrait: {fileID: 0}
