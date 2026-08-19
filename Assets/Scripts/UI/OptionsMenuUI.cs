@@ -6,7 +6,7 @@ public class OptionsMenuUI : MonoBehaviour
 {
     [Header("Componentes")]
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
+   
 
     [Header("Paneles")]
     [SerializeField] private GameObject optionsPanel;
@@ -31,11 +31,10 @@ public class OptionsMenuUI : MonoBehaviour
             return;
         }
 
-        if (volumeSlider == null || resolutionDropdown == null)
+        if (volumeSlider == null )
         {
             Debug.LogError(
-                "El Slider de volumen o el Dropdown de resolución " +
-                "no están asignados en OptionsMenuUI."
+                "El Slider de volumen no está asignado en OptionsMenuUI."
             );
 
             return;
@@ -44,7 +43,6 @@ public class OptionsMenuUI : MonoBehaviour
         isInitializing = true;
 
         ConfigureVolumeSlider();
-        ConfigureResolutionDropdown();
 
         isInitializing = false;
     }
@@ -60,14 +58,7 @@ public class OptionsMenuUI : MonoBehaviour
         );
     }
 
-    private void ConfigureResolutionDropdown()
-    {
-        int resolutionIndex =
-            SettingsManager.Instance.GetCurrentResolutionIndex();
-
-        resolutionDropdown.SetValueWithoutNotify(resolutionIndex);
-        resolutionDropdown.RefreshShownValue();
-    }
+    
 
     public void OnVolumeChanged(float newVolume)
     {
@@ -79,15 +70,7 @@ public class OptionsMenuUI : MonoBehaviour
         SettingsManager.Instance.SetVolume(newVolume);
     }
 
-    public void OnResolutionChanged(int newResolutionIndex)
-    {
-        if (isInitializing)
-        {
-            return;
-        }
-
-        SettingsManager.Instance.SetResolution(newResolutionIndex);
-    }
+   
 
     public void ReturnToPreviousPanel()
     {

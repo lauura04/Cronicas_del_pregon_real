@@ -28,6 +28,8 @@ public class TutorialController : MonoBehaviour
     public bool MonksUnlocked {get; private set;}
     public bool SheepUnlocked{get; private set;}
 
+    public bool HasTalkedToInfanta{get;private set;}
+
     private void Awake()
     {
         if(Instance!=null && Instance != this){
@@ -94,6 +96,11 @@ public class TutorialController : MonoBehaviour
     public bool CanCollectWool()
     {
         return SheepUnlocked && GameProgressManager.Instance.CurrentPhase == findMaterials;
+    }
+
+    public void InfantaDialogueFinished()
+    {
+        HasTalkedToInfanta = true;
     }
 
     public void EndTutorial()

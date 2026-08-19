@@ -5,6 +5,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 {
     [Header("Interaction / Speak with E")]
     [SerializeField] private PhaseDialogue[] interactionDialogues;
+    [SerializeField] private bool requiresInfantaDialogue = false;
 
     private int currentDialogueIndex;
     private PhaseDialogue lastInteractionPhaseDialogue;
@@ -111,6 +112,11 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             Debug.LogError(
                 "DialogueManager instance is not found."
             );
+            return;
+        }
+
+        if(requiresInfantaDialogue && !TutorialController.Instance.HasTalkedToInfanta)
+        {
             return;
         }
 
