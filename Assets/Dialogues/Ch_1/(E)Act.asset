@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1555ce94d46ebb478d7e033d7c073dc, type: 3}
-  m_Name: Soldado
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (E)Act
   m_EditorClassIdentifier: 
-  characterName: Soldado
-  portrait: {fileID: 21300000, guid: eda1245dda723784bbd336becda633dc, type: 3}
+  lines:
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Ya sab\xEDa yo que no me defraudar\xEDas, vamos ahora a un sitio m\xE1s
+      discreto."

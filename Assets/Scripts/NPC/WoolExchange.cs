@@ -12,11 +12,13 @@ public class WoolExchange : MonoBehaviour
     [Header("Dialogues")]
     [SerializeField] private DialogueData successDialogue;
     [SerializeField] private DialogueData notEnoughDialogue;
+   
 
     private bool exchangeCompleted;
 
     public void TryExchange()
     {
+        
         if (exchangeCompleted)
         {
             return;

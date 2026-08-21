@@ -39,4 +39,9 @@ public class SFXManager : MonoBehaviour
             return;
         audioSource.PlayOneShot(clip,volume);
     }
+
+    public void StopSFX()
+    {
+        audioSource.Stop();
+    }
 }

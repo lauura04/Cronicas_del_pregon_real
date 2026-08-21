@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (5)Cartas
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "No perdamos m\xE1s el tiempo que algo grande se acerca."
+  - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
+    text: Dicen las malas lenguas que a la infanta quieren volver a casar.
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: Y es con el rey Don Manuel con quien planean el enlace.
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Pero para que eso suceda las capitulaciones tendr\xE1n que acordar mas
+      entre coronas no acaban de coincidir."
+  - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
+    text: "Dicen que a todo jud\xEDo y ex-jud\xEDo quieren echar."
+  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+    text: Otros dicen que solo a aquellos que no se conviertieron.
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Mas yo he escuchado que quieren echar a todo aquel que tenga alg\xFAn
+      tipo de relaci\xF3n con cualquier religi\xF3n ajena a la cristiana."
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "Si informaci\xF3n al respecto quieres descifrar, te las tendr\xE1s que
+      ingeniar para hacerte con 2 cartas, "
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "la enviada por la Corona Castellana y la respuesta portuguesa. Juan de
+      Coloma es uno de tus hombres, y Jo\xE3o de Madureira, el otro."

@@ -231,4 +231,14 @@ public class LetterPuzzleManager : MonoBehaviour
 
         onCorrect?.Invoke();
     }
+
+    public void Close()
+    {
+        isPlaying = true;
+        puzzlePanel.SetActive(true);
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(true);
+        }
+    }
 }

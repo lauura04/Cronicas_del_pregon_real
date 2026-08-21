@@ -10,6 +10,8 @@ public class CharmableNPC : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent onCharmSuccess;
 
+    [SerializeField] private AudioClip charmSound;
+
     private bool isCharmed;
 
     public bool IsCharmed => isCharmed;
@@ -45,6 +47,7 @@ public class CharmableNPC : MonoBehaviour
     }
 
     isCharmed = true;
+    SFXManager.Instance.PlaySFX(charmSound);
 
     DialogueManager.Instance?.StartDialogue(
         sucessCharmDialogue,

@@ -26,6 +26,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [Header("Events")]
     [SerializeField] private UnityEvent onInteractionFinished;
     [SerializeField] private UnityEvent onCharmFinished;
+    
 
     private bool hasBeenCharmed;
     private bool isBusy;
@@ -39,6 +40,13 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public DialogueData DetectedDialogue =>
         GetDialogueForCurrentPhase(detectedDialogues);
+
+
+     [SerializeField] private AudioClip sheepSound;
+     [SerializeField] private AudioClip interactionSound;
+     [SerializeField] private AudioClip spySound;
+
+     public AudioClip SpySound => spySound;
 
 
     private void OnEnable()
@@ -121,7 +129,10 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         }
 
         isBusy = true;
-
+        if (interactionSound != null)
+        {
+            SFXManager.Instance.PlaySFX(interactionSound);
+        }
         DialogueManager.Instance.StartDialogue(
             currentDialogueStep.dialogue,
             HandleInteractionFinished
@@ -185,6 +196,10 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         );
         return;
     }
+        if (isSheep)
+        {
+            SFXManager.Instance.PlaySFX(sheepSound);
+        }
 
     CharmableNPC charmableNPC =
         GetComponent<CharmableNPC>();
@@ -201,6 +216,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         $"Iniciando minijuego Charm con {gameObject.name}"
     );
 
+    
     charmableNPC.TryCharm();
 }
 
@@ -322,6 +338,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     private void HandleInteractionFinished()
     {
+        SFXManager.Instance.StopSFX();
         isBusy = false;
 
         currentDialogueStep?

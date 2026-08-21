@@ -807,6 +807,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
 --- !u!1 &98298353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4884442740529778249, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -1851,6 +1854,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!114 &295437473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2430,6 +2436,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
 --- !u!1 &420999146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,18 +2528,6 @@ MonoBehaviour:
       onDialogueFinished:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 295437471}
-            m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
-            m_MethodName: MoveTo
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 1615718671}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
           - m_Target: {fileID: 1015965081}
             m_TargetAssemblyTypeName: TransformActions, Assembly-CSharp
             m_MethodName: MoveTo
@@ -2603,6 +2600,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!1 &432177183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2077374674081505722, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -2679,6 +2679,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 449119289}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!4 &449119287
 Transform:
   m_ObjectHideFlags: 0
@@ -2785,6 +2788,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  charmSound: {fileID: 8300000, guid: b15ba5eb02a4cc74387df95b3a79a862, type: 3}
 --- !u!1 &473156067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,6 +3442,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
 --- !u!114 &716146610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3523,9 +3530,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1127340698855164803, guid: 7637798a2f4a8d143ba885b7c782da90,
-    type: 3}
-  m_Color: {r: 0.05154108, g: 0.084905684, b: 0.046858326, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 23528aabe1dd1b94f918d4dd92cd4600, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3941,6 +3947,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
 --- !u!114 &851681100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4284,6 +4293,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
 --- !u!1 &949364699
 GameObject:
   m_ObjectHideFlags: 0
@@ -4782,6 +4794,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
 --- !u!114 &1015965081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6760,6 +6775,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!114 &1561669308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6789,6 +6807,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  charmSound: {fileID: 8300000, guid: b15ba5eb02a4cc74387df95b3a79a862, type: 3}
 --- !u!1 &1579869137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,37 +6867,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3315799505918987197, guid: 92d75df775f66cb4799269d1b2bafc6a, type: 3}
---- !u!1 &1615718670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1615718671}
-  m_Layer: 0
-  m_Name: position4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1615718671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615718670}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.283, y: 0.72568136, z: -17.836}
-  m_LocalScale: {x: 0.28598884, y: 0.28598878, z: 0.28598884}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1646698528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7616431993885141609, guid: c3f1c71cd6206b648b1708e9585b6d79,
@@ -7569,6 +7557,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1812024801}
+  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!114 &1812024801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7598,6 +7589,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  charmSound: {fileID: 8300000, guid: b15ba5eb02a4cc74387df95b3a79a862, type: 3}
 --- !u!1 &1824971795
 GameObject:
   m_ObjectHideFlags: 0
@@ -7774,6 +7766,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1824971803}
+  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
 --- !u!114 &1824971803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7803,6 +7798,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  charmSound: {fileID: 8300000, guid: b15ba5eb02a4cc74387df95b3a79a862, type: 3}
 --- !u!1 &1828561388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3798869762385945882, guid: 92d75df775f66cb4799269d1b2bafc6a,
@@ -8023,6 +8019,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 8300000, guid: 9b5ba72f035d7bd4a8deb0586cbdef25, type: 3}
+  spySound: {fileID: 0}
 --- !u!114 &1852416979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8627,6 +8626,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
 --- !u!4 &1942286864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 754937694740342573, guid: c3f1c71cd6206b648b1708e9585b6d79,
@@ -9036,6 +9038,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 8300000, guid: de2d8e821ae2fe34fb91d707013de7be, type: 3}
+  spySound: {fileID: 0}
 --- !u!114 &1987636156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9424,9 +9429,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1127340698855164803, guid: 7637798a2f4a8d143ba885b7c782da90,
-    type: 3}
-  m_Color: {r: 0.05154108, g: 0.084905684, b: 0.046858326, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 23528aabe1dd1b94f918d4dd92cd4600, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9688,7 +9692,6 @@ SceneRoots:
   - {fileID: 754759009}
   - {fileID: 1208022825}
   - {fileID: 1125950510}
-  - {fileID: 1615718671}
   - {fileID: 1969522319}
   - {fileID: 1019534822}
   - {fileID: 21966063}

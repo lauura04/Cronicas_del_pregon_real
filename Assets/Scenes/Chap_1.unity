@@ -1132,6 +1132,7 @@ GameObject:
   - component: {fileID: 962907700}
   - component: {fileID: 962907707}
   - component: {fileID: 962907706}
+  - component: {fileID: 962907708}
   m_Layer: 3
   m_Name: Arlequino (1)
   m_TagString: Arlequino
@@ -1233,6 +1234,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
       advanceAutomatically: 1
+  requiresInfantaDialogue: 0
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5
@@ -1322,6 +1324,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca6a022632b8af4ebf998fc49528223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &962907708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962907699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a12bc6c354b0e4db3f9eb4cdc3e1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1006511903
@@ -2232,6 +2246,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
       advanceAutomatically: 0
+  requiresInfantaDialogue: 0
   spyConversation: {fileID: 0}
   spyDialogues: []
   detectionTime: 5

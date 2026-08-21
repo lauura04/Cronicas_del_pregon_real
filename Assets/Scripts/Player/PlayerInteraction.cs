@@ -112,8 +112,6 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        // Comprobamos si existe diálogo de espionaje
-        // para la fase actual
         DialogueData spyDialogue =
             npc.GetSpyDialogueForCurrentPhase();
 
@@ -140,6 +138,10 @@ public class PlayerInteraction : MonoBehaviour
                 SpyManager.Instance.StartListening(
                     npc.SpyConversation
                 );
+            }
+            if (npc.SpySound != null)
+            {
+                SFXManager.Instance.PlaySFX(npc.SpySound);
             }
         }
 
@@ -185,6 +187,11 @@ public class PlayerInteraction : MonoBehaviour
             SpyManager.Instance.StopListening();
         }
 
+        if (SFXManager.Instance != null)
+        {
+            SFXManager.Instance.StopSFX();
+        }
+
         spyingNPC = null;
         spyTimer = 0f;
     }
@@ -203,6 +210,10 @@ public class PlayerInteraction : MonoBehaviour
         if (SpyManager.Instance != null)
         {
             SpyManager.Instance.StopListening();
+        }
+         if (SFXManager.Instance != null)
+        {
+            SFXManager.Instance.StopSFX();
         }
 
         spyingNPC = null;

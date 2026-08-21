@@ -22,6 +22,8 @@ public class SpyConversation : MonoBehaviour
     public DialogueLine CurrentLine => currentLine;
     public string CurrentText => currentlyWrittenText;
 
+
+
     private void Start()
     {
         if (spyDialogue == null)
