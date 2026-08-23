@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mercader
   m_EditorClassIdentifier: 
   characterName: Mercader
-  protrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 01c59b20f9e1a91469943b36bd8dd231, type: 3}

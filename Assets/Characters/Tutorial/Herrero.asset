@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Herrero
   m_EditorClassIdentifier: 
   characterName: Herrero
-  protrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 458c4285e78df6f43ba1e5273fcc0f43, type: 3}

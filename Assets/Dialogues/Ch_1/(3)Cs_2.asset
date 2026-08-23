@@ -15,14 +15,11 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
     text: "\xBFY d\xF3nde dice que estamos? \xBFY qu\xE9 se supone que celebran?"
-  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "En Medina del Campo frente al Palacio Real de sus Majestados nos encontramos,
       y respecto a la celebraci\xF3n..."
-  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Pens\xE9 que ustedes sabr\xEDan algo, al fin y al cabo, son los que llegaron
-      pegando voces."
-  - character: {fileID: 11400000, guid: ee740ebbb82d34040bbc2a6ba2f128ad, type: 2}
-    text: "Pens\xE9 que ustedes sabr\xEDan algo, al fin y al cabo, sois los que llegasteis
       pegando voces."
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "\xA1Benjam\xEDn! \xA1Viejo pupilo! \xBFC\xF3mo has estado? \xBFEn qu\xE9

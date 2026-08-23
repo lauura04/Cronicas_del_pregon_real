@@ -163,6 +163,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleInventory()
     {
+        if(LetterPuzzleManager.Instance!=null && LetterPuzzleManager.Instance.IsPlaying)
+            return;
         if (!Input.GetKeyDown(inventoryKey))
         {
             return;

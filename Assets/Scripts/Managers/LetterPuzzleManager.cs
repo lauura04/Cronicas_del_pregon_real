@@ -21,6 +21,7 @@ public class LetterPuzzleManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    [SerializeField] private DialogueData wrongAnswer;
 
     private List<TMP_Text> letterSlots = new List<TMP_Text>();
 
@@ -28,6 +29,7 @@ public class LetterPuzzleManager : MonoBehaviour
 
     private int currentPosition;
     private bool isPlaying;
+    public bool IsPlaying => isPlaying;
 
     private void Awake()
     {
@@ -218,6 +220,16 @@ public class LetterPuzzleManager : MonoBehaviour
     {
         Debug.Log("La frase no es correcta");
         onIncorrect?.Invoke();
+        puzzlePanel.SetActive(false);
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementEnabled(true);
+        }
+        if(DialogueManager.Instance == null)
+        {
+            return;
+        }
+        DialogueManager.Instance.StartDialogue(wrongAnswer);
     }
 
     private void CompletePuzzle()
@@ -235,7 +247,7 @@ public class LetterPuzzleManager : MonoBehaviour
     public void Close()
     {
         isPlaying = true;
-        puzzlePanel.SetActive(true);
+        puzzlePanel.SetActive(false);
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);

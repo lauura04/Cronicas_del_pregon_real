@@ -24442,6 +24442,46 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
+  - name: mano_der
+    spriteName: mano_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 621b2d137ae9720499afc4f9759d62ec
+    layerID: 194
+    mosaicPosition: {x: 3654, y: 2043}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: mano_iz
+    spriteName: mano_iz
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a7adfba074cb53f40a09fb02a6b2c562
+    layerID: 193
+    mosaicPosition: {x: 726, y: 2661}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: antebrazo_izq
+    spriteName: antebrazo_izq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3b70de3da1dc32b4492d0c5e84101890
+    layerID: 192
+    mosaicPosition: {x: 4, y: 3716}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: antebrazo_der
+    spriteName: antebrazo_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 12fe6c23fd624e642a2f86cb68258315
+    layerID: 191
+    mosaicPosition: {x: 3136, y: 2043}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: cadera - copia
     spriteName: cadera - copia
     isGroup: 0
@@ -24449,16 +24489,6 @@ ScriptedImporter:
     spriteID: 2456ebcbdd264d045a3be552db71f2ce
     layerID: 202
     mosaicPosition: {x: 3345, y: 919}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: cadera
-    spriteName: cadera
-    isGroup: 0
-    parentIndex: 0
-    spriteID: be3c547eb2b67d6459611673dbe21475
-    layerID: 201
-    mosaicPosition: {x: 2268, y: 919}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -24512,6 +24542,16 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
+  - name: cadera
+    spriteName: cadera
+    isGroup: 0
+    parentIndex: 0
+    spriteID: be3c547eb2b67d6459611673dbe21475
+    layerID: 201
+    mosaicPosition: {x: 2268, y: 919}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: muslo_izq
     spriteName: muslo_izq
     isGroup: 0
@@ -24519,46 +24559,6 @@ ScriptedImporter:
     spriteID: 325f4946701d72542877c2876c0e99a9
     layerID: 195
     mosaicPosition: {x: 4, y: 2950}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: mano_der
-    spriteName: mano_der
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 621b2d137ae9720499afc4f9759d62ec
-    layerID: 194
-    mosaicPosition: {x: 3654, y: 2043}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: mano_iz
-    spriteName: mano_iz
-    isGroup: 0
-    parentIndex: 0
-    spriteID: a7adfba074cb53f40a09fb02a6b2c562
-    layerID: 193
-    mosaicPosition: {x: 726, y: 2661}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: antebrazo_izq
-    spriteName: antebrazo_izq
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 3b70de3da1dc32b4492d0c5e84101890
-    layerID: 192
-    mosaicPosition: {x: 4, y: 3716}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: antebrazo_der
-    spriteName: antebrazo_der
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 12fe6c23fd624e642a2f86cb68258315
-    layerID: 191
-    mosaicPosition: {x: 3136, y: 2043}
     flatten: 0
     isImported: 1
     isVisible: 1
