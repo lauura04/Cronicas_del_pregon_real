@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class KeyMinigameStarter : MonoBehaviour
 {
+    
   public void StartMinigame()
     {
         if (KeyMinigameManager.Instance != null)
@@ -14,3 +15,4 @@ public class KeyMinigameStarter : MonoBehaviour
         }
     }
 }
+//posibiliadd de eliminar el starter este

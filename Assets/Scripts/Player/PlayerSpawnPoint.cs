@@ -5,13 +5,28 @@ using UnityEngine;
 public class PlayerSpawnPoint : MonoBehaviour
 {
     [SerializeField] private bool setRotation = false;
+    [SerializeField] private bool spawnOnStart = false;
     private void Start()
     {
-        if (PlayerMovement.Instance == null)
+        if (spawnOnStart)
         {
-            Debug.LogError("No existe el PlayerMovement.Instance");
+          TeleportPlayer();  
+        }
+        
+    }
+
+    public void TeleportPlayer()
+    {
+        if(PlayerMovement.Instance == null)
+        {
+            Debug.LogError("No existe playermovement");
             return;
         }
+
         PlayerMovement.Instance.TeleportTo(transform.position);
+        if (setRotation)
+        {
+            PlayerMovement.Instance.transform.rotation = transform.rotation;
+        }
     }
 }

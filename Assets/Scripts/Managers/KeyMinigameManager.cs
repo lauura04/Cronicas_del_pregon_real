@@ -31,14 +31,12 @@ public class KeyMinigameManager : MonoBehaviour
     private bool isPlaying;
 
     private readonly KeyCode[] availableKeys =
-    {
-        
+    {        
         KeyCode.B,
         KeyCode.C,
         KeyCode.F,
         KeyCode.G,
         KeyCode.H,
-        KeyCode.I,
         KeyCode.K,
         KeyCode.L,
         KeyCode.M,

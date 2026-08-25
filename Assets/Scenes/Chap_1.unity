@@ -328,15 +328,18 @@ MonoBehaviour:
   initialDialogue: {fileID: 11400000, guid: da37a01f942cea74a842adf035150032, type: 2}
   secondDialogue: {fileID: 11400000, guid: 82fffcb402ebe9141943baa0d2257325, type: 2}
   thirdDialogue: {fileID: 11400000, guid: 9f57dd55d174c664ba17dd7776362451, type: 2}
+  performanceDialogue: {fileID: 11400000, guid: ecb74ce1842f65b4a84ea993371bcda9,
+    type: 2}
   dottore: {fileID: 1653810239}
   dottoreDestination: {fileID: 1481007218}
   arlequino: {fileID: 962907709}
   arlequinoDestination: {fileID: 984380629}
   colombina: {fileID: 2118356076}
   colombinaDestination: {fileID: 320330064}
-  dottoreAct: {fileID: 0}
-  arlequinoAct: {fileID: 0}
-  colombinaAct: {fileID: 0}
+  dottoreAct: {fileID: 1886231438}
+  arlequinoAct: {fileID: 1361643575}
+  colombinaAct: {fileID: 156784435}
+  performanceSpawnPoint: {fileID: 1629465238}
 --- !u!4 &129289343
 Transform:
   m_ObjectHideFlags: 0
@@ -377,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 156784434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1513433, y: -3.371424, z: 3.0631263}
+  m_LocalPosition: {x: -5.1513433, y: -2.556, z: 3.0631263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1124,6 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setRotation: 0
+  spawnOnStart: 1
 --- !u!4 &748330364
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,7 +1137,7 @@ Transform:
   m_GameObject: {fileID: 748330362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.36, y: 0, z: -7.9}
+  m_LocalPosition: {x: 16.08, y: 0, z: -9.16}
   m_LocalScale: {x: 0.28598878, y: 0.28598878, z: 0.28598878}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1709,7 +1713,7 @@ GameObject:
   - component: {fileID: 1169535825}
   - component: {fileID: 1169535824}
   m_Layer: 0
-  m_Name: Actuation
+  m_Name: Performance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,8 +1747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMode: 0
-  cameraOffset: {x: 0, y: 3, z: -5}
-  cameraRotation: {x: 45, y: 0, z: 0}
+  cameraOffset: {x: 0, y: 6, z: 2}
+  cameraRotation: {x: 45, y: 180, z: 0}
   fixedCameraPoint: {fileID: 0}
   resetOnExit: 1
 --- !u!65 &1169535825
@@ -1830,7 +1834,7 @@ Transform:
   m_GameObject: {fileID: 1361643574}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4113436, y: -3.371424, z: 1.7431263}
+  m_LocalPosition: {x: -2.4113436, y: -2.66, z: 1.7431263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2655,6 +2659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1629465237}
+  - component: {fileID: 1629465238}
   m_Layer: 0
   m_Name: B_Pos
   m_TagString: Untagged
@@ -2677,6 +2682,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 193425466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1629465238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629465236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e11977ff35b994ba98c5f17202f08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setRotation: 0
+  spawnOnStart: 0
 --- !u!1 &1653810229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3122,7 @@ Transform:
   m_GameObject: {fileID: 1886231437}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.69, y: -3.3714244, z: 3.4}
+  m_LocalPosition: {x: -4.69, y: -2.556, z: 3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

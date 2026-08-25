@@ -19,11 +19,13 @@ public class FirstChapterController : MonoBehaviour
     [Header("Forth Phase")]
     [SerializeField] private ChapterPhaseData endPhase;
 
-    [Header("INTRO")]
+    [Header("DIALOGUES")]
     [SerializeField] private DialogueData initialDialogue;
     [SerializeField] private DialogueData secondDialogue;
     [SerializeField] private DialogueData thirdDialogue;
+    [SerializeField] private DialogueData performanceDialogue;
 
+    [Header("CHARACTERS")]
     [SerializeField] private NPCMovement dottore;
     [SerializeField] private Transform dottoreDestination;
 
@@ -37,6 +39,8 @@ public class FirstChapterController : MonoBehaviour
     [SerializeField] private Transform dottoreAct;
     [SerializeField] private Transform arlequinoAct;
     [SerializeField] private Transform colombinaAct;
+
+    [SerializeField] private PlayerSpawnPoint performanceSpawnPoint;
 
     //variables de las que depende la continuidad de las fases
     public bool firstLetter { get; private set; } //si ha acertado o no la primera carta --> enlazar con onCorrect del puzzle
@@ -89,16 +93,34 @@ public class FirstChapterController : MonoBehaviour
     }
     private void OnThirdDialogueFinished()
     {
-        ScreenFade.Instance.FadeOutAndIn(2f);
         StartCoroutine(ChangeScenePosition());
-
     }
 
     private IEnumerator ChangeScenePosition()
     {
         yield return ScreenFade.Instance.FadeOutCoroutine();
+        
+        MoveCharactersToPerformance();
+        performanceSpawnPoint.TeleportPlayer();
 
-        dottore.transform.SetPositionAndRotation(dottoreAct.position, dottoreAct.rotation);
+        GameProgressManager.Instance.SetPhase(performancePhase);
+
+        yield return ScreenFade.Instance.FadeInCoroutine();
+        StartPerformance();
+    }
+
+    private void StartPerformance()
+    {
+        DialogueManager.Instance.StartDialogue(performanceDialogue, OnPerformanceDialogueFinished);
+    }
+
+    private void OnPerformanceDialogueFinished()
+    {
+        KeyMinigameManager.Instance.StartMinigame();
+    }
+    private void MoveCharactersToPerformance()
+    {
+         dottore.transform.SetPositionAndRotation(dottoreAct.position, dottoreAct.rotation);
         colombina.transform.SetPositionAndRotation(colombinaAct.position, colombinaAct.rotation);
         arlequino.transform.SetPositionAndRotation(arlequinoAct.position, arlequinoAct.rotation);
     }

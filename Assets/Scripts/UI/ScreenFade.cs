@@ -69,4 +69,9 @@ public class ScreenFade : MonoBehaviour
     {
         yield return Fade(0f,1f);
     }
+
+    public IEnumerator FadeInCoroutine()
+    {
+        yield return Fade(1f, 0f);
+    }
 }
