@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: b9b0087617929dc439c1bb38753f05b3, type: 2}
-    text: "Si ginja quieres conseguir, el agua en llamas se ha de utilizar. Pero
-      no cualquier cantidad pues las guindas se han de ahogar, y una ramita de canela
-      se ha de a\xF1adir."
+    text: Si ginja quieres conseguir, el agua en llamas se ha de utilizar. Pero no
+      cualquier cantidad pues las guindas
+  - character: {fileID: 11400000, guid: b9b0087617929dc439c1bb38753f05b3, type: 2}
+    text: " se han de ahogar, y una ramita de canela se ha de a\xF1adir."

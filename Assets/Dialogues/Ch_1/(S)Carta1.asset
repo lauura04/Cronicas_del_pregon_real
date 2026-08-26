@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (S)Carta1
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: cfccb681168a41246a94ebf928aeae7f, type: 2}
+    text: Uno, dos y tres, tres saltos hacia delante
+  - character: {fileID: 11400000, guid: f025d440a6e2e6044b2abeae83c4bc37, type: 2}
+    text: "\xBFY por qu\xE9 no dos hacia atr\xE1s?"
+  - character: {fileID: 11400000, guid: d8de498397ea0ab4f98da7d95c3797e8, type: 2}
+    text: "Porque hacia atr\xE1s ya hemos estado y dos no es un buen n\xFAmero. Si
+      queremos ganar tenemos que avanzar."

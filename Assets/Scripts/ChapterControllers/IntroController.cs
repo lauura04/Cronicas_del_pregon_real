@@ -8,22 +8,34 @@ public class IntroController : MonoBehaviour
     private ChapterIntroData introData;
 
     [SerializeField] private AudioClip introClip;
+    [SerializeField] private Image backgroundImage;
     private void Start()
     {
         introData = ChapterManager.Instance.GetCurrentIntro();
 
-        if(introData == null)
+        if (introData == null)
         {
             Debug.LogError("No se ha encontrado la introducción del capítulo");
             return;
         }
+        if (backgroundImage != null && introData.Background != null)
+        {
+            backgroundImage.sprite = introData.Background;
+        }
         MusicManager.Instance.PlayMusic(introClip);
+        DialogueManager.Instance.SetUIType(DialogueUIType.Intro);
 
-        DialogueManager.Instance.StartDialogue(introData.Dialogue, OnIntroFinished);
+        DialogueManager.Instance.StartDialogue(
+            introData.Dialogue,
+            OnIntroFinished
+        );
+
     }
 
     private void OnIntroFinished()
     {
+         DialogueManager.Instance.SetUIType(DialogueUIType.Gameplay);
+
         SceneLoader.Instance.LoadScene(introData.GameplayScene);
     }
     /*public static IntroController Instance { get; private set; }

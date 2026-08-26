@@ -22,4 +22,6 @@ MonoBehaviour:
     text: "Pero, \xBFc\xF3mo que mis presentes? Si no tengo cosa alguna que mis encantos."
   - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
     text: "\xA1\xBFOsas presentarte ante los monarcas de dos reinos con las manos
-      vac\xEDas?! Si esto no cambia al final de la celebraci\xF3n atente a las consecuencias."
+      vac\xEDas?! Si esto no cambia"
+  - character: {fileID: 11400000, guid: c837f56ff48dda44aa5d31bbc4c98f2b, type: 2}
+    text: "al final de la celebraci\xF3n atente a las consecuencias."

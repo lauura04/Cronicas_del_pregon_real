@@ -15,5 +15,6 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: dfbaa2dc0eba40a40825b794f43cdcbd, type: 2}
     text: "\xA1Joyas, sedas y otros enseres! Como puede apreciar mi mercanc\xEDa
-      es de gran variedad, mas si tu intenci\xF3n es complacer a una dama, sin conocimiento
-      alguno mis productos no son de mucho."
+      es de gran variedad, mas si tu intenci\xF3n es complacer a una dama, "
+  - character: {fileID: 11400000, guid: dfbaa2dc0eba40a40825b794f43cdcbd, type: 2}
+    text: sin conocimiento alguno mis productos no son de mucho.

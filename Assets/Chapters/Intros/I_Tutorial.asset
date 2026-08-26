@@ -15,3 +15,7 @@ MonoBehaviour:
   chapter: 0
   dialogue: {fileID: 11400000, guid: 17e27eebccbc784498d887738de0c22d, type: 2}
   gameplayScene: Tutorial
+  chapterTitle: 
+  chapterSubtitle: 
+  background: {fileID: 21300000, guid: 9e1d68453ece5404a90d18983412993b, type: 3}
+  music: {fileID: 0}

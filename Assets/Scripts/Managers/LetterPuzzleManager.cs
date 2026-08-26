@@ -14,6 +14,7 @@ public class LetterPuzzleManager : MonoBehaviour
     [SerializeField] private Transform slotsParent;
     [SerializeField] private TMP_Text letterSlotPrefab;
     [SerializeField] private Image letterBackground;
+    [SerializeField] private int charactersPerLine = 29;
 
     [Header("Puzzle")]
     private LetterPuzzleData currentPuzzle;
@@ -78,40 +79,83 @@ public class LetterPuzzleManager : MonoBehaviour
     }
 
     private void CreatePuzzle()
+{
+    foreach (Transform child in slotsParent)
     {
-        foreach (Transform child in slotsParent)
+        Destroy(child.gameObject);
+    }
+
+    letterSlots.Clear();
+
+    string correctText = currentPuzzle.correctText;
+
+    currentAnswer = new StringBuilder(correctText.Length);
+
+    int visualPosition = 0;
+
+    for (int i = 0; i < correctText.Length; i++)
+    {
+        char character = correctText[i];
+
+        // Si estamos al principio de una palabra,
+        // comprobamos si cabe entera en esta línea.
+        if (char.IsLetter(character) &&
+            (i == 0 || !char.IsLetter(correctText[i - 1])))
         {
-            Destroy(child.gameObject);
+            int wordLength = GetWordLength(correctText, i);
+
+            int remainingSpace =
+                charactersPerLine - (visualPosition % charactersPerLine);
+
+            if (wordLength > remainingSpace &&
+                remainingSpace != charactersPerLine)
+            {
+                // Rellenamos lo que queda de línea
+                // para que la palabra pase entera abajo.
+                for (int j = 0; j < remainingSpace; j++)
+                {
+                    TMP_Text filler = Instantiate(
+                        letterSlotPrefab,
+                        slotsParent
+                    );
+
+                    filler.text = "";
+                    visualPosition++;
+                }
+            }
         }
 
-        letterSlots.Clear();
+        TMP_Text slot = Instantiate(
+            letterSlotPrefab,
+            slotsParent
+        );
 
-        string correctText = currentPuzzle.correctText;
+        letterSlots.Add(slot);
 
-        currentAnswer = new StringBuilder(correctText.Length);
-
-        for (int i = 0; i < correctText.Length; i++)
+        if (char.IsLetter(character))
         {
-            char character = correctText[i];
-
-            TMP_Text slot = Instantiate(letterSlotPrefab, slotsParent);
-
-            letterSlots.Add(slot);
-
-            if (char.IsLetter(character))
-            {
-                slot.text = "_";
-                currentAnswer.Append('_');
-            }
-
-            else
-            {
-                slot.text = character.ToString();
-                currentAnswer.Append(character);
-            }
+            slot.text = "_";
+            currentAnswer.Append('_');
+        }
+        else
+        {
+            slot.text = character.ToString();
+            currentAnswer.Append(character);
         }
 
-        MoveToNextLetter();
+        visualPosition++;
+    }
+
+    MoveToNextLetter();
+}
+
+private int GetWordLength(string text, int startIndex)
+    {
+        int length = 0;
+        for(int i = startIndex; i<text.Length && char.IsLetter(text[i]);i++){
+         length++;   
+        }
+        return length;
     }
 
     private void HandleInput()

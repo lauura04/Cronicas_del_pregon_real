@@ -35,3 +35,8 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "la enviada por la Corona Castellana y la respuesta portuguesa. Juan de
       Coloma es uno de tus hombres, y Jo\xE3o de Madureira, el otro."
+  - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
+    text: "Mas las cartas est\xE1n cifradas, quiz\xE1s poniendo el o\xEDdo sin ser
+      visto descubres algo."
+  - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
+    text: Pero que no se te olvide volver para contarnos aquello que descubras.

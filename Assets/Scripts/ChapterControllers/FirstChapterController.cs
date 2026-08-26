@@ -24,6 +24,7 @@ public class FirstChapterController : MonoBehaviour
     [SerializeField] private DialogueData secondDialogue;
     [SerializeField] private DialogueData thirdDialogue;
     [SerializeField] private DialogueData performanceDialogue;
+    [SerializeField] private DialogueData investigationDialogue;
 
     [Header("CHARACTERS")]
     [SerializeField] private NPCMovement dottore;
@@ -35,12 +36,21 @@ public class FirstChapterController : MonoBehaviour
     [SerializeField] private NPCMovement colombina;
     [SerializeField] private Transform colombinaDestination;
 
-    [Header("Posiciones post Fade")]
+    [Header("Posiciones pre Performance")]
     [SerializeField] private Transform dottoreAct;
     [SerializeField] private Transform arlequinoAct;
     [SerializeField] private Transform colombinaAct;
-
     [SerializeField] private PlayerSpawnPoint performanceSpawnPoint;
+
+    [Header("Posiciones post Performance")]
+    [SerializeField] private Transform dottorePost;
+    [SerializeField] private Transform arlequinoPost;
+    [SerializeField] private Transform colombinaPost;
+    [SerializeField] private PlayerSpawnPoint letterSpawnPoint;
+
+    [Header("Letters")]
+    [SerializeField] private LetterPuzzleData firstLetterData;
+    
 
     //variables de las que depende la continuidad de las fases
     public bool firstLetter { get; private set; } //si ha acertado o no la primera carta --> enlazar con onCorrect del puzzle
@@ -99,7 +109,7 @@ public class FirstChapterController : MonoBehaviour
     private IEnumerator ChangeScenePosition()
     {
         yield return ScreenFade.Instance.FadeOutCoroutine();
-        
+
         MoveCharactersToPerformance();
         performanceSpawnPoint.TeleportPlayer();
 
@@ -116,12 +126,43 @@ public class FirstChapterController : MonoBehaviour
 
     private void OnPerformanceDialogueFinished()
     {
-        KeyMinigameManager.Instance.StartMinigame();
+        LetterPuzzleManager.Instance.StartPuzzle(firstLetterData);
     }
     private void MoveCharactersToPerformance()
     {
-         dottore.transform.SetPositionAndRotation(dottoreAct.position, dottoreAct.rotation);
+        dottore.transform.SetPositionAndRotation(dottoreAct.position, dottoreAct.rotation);
         colombina.transform.SetPositionAndRotation(colombinaAct.position, colombinaAct.rotation);
         arlequino.transform.SetPositionAndRotation(arlequinoAct.position, arlequinoAct.rotation);
     }
+
+    private void OnPerformanceMinigameCompleted()
+    {
+        Debug.Log("Actuación completada");
+        
+        StartCoroutine(ChangeToInvestigation());
+    }
+
+    private IEnumerator ChangeToInvestigation()
+    {
+        yield return ScreenFade.Instance.FadeOutCoroutine();
+
+        MoveCharactersPostPerformance();
+        letterSpawnPoint.TeleportPlayer();
+        GameProgressManager.Instance.SetPhase(investigatePhase);
+        yield return ScreenFade.Instance.FadeInCoroutine();
+        StartInvestigation();
+    }
+
+    private void MoveCharactersPostPerformance()
+    {
+        dottore.transform.SetPositionAndRotation(dottorePost.position, dottorePost.rotation);
+         colombina.transform.SetPositionAndRotation(colombinaPost.position, colombinaPost.rotation);
+        arlequino.transform.SetPositionAndRotation(arlequinoPost.position, arlequinoPost.rotation);
+    }
+
+    private void StartInvestigation()
+    {
+        DialogueManager.Instance.StartDialogue(investigationDialogue);
+    }
+    
 }

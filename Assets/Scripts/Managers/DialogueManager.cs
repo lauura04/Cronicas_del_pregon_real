@@ -3,6 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum DialogueUIType
+{
+    Gameplay,
+    Intro
+}
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
@@ -11,11 +16,17 @@ public class DialogueManager : MonoBehaviour
     [Header("Configuración")]
     [SerializeField] private float typingSpeed = 0.05f;
 
-    [Header("Interfaz de diálogo")]
+    [Header("GamePlay UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private Image characterPortraitImage;
+
+    [Header("Intro UI")]
+    [SerializeField] private GameObject introDialoguePanel;
+    [SerializeField] private TMP_Text introDialogueText;
+    [SerializeField] private TMP_Text introCharacterNameText;
+    [SerializeField] private Image introCharacterPortraitImage;
 
     private DialogueData currentDialogue;
     private int currentLineIndex;
@@ -28,6 +39,18 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
     private string currentLineText;
 
+    private DialogueUIType currentUIType = DialogueUIType.Gameplay;
+
+    private GameObject currentPanel;
+    private TMP_Text currentDialogueTextUI;
+    private TMP_Text currentCharacterNameTextUI;
+    private Image currentCharacterPortraitImageUI;
+
+    public void SetUIType(DialogueUIType type)
+    {
+        currentUIType = type;
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -39,11 +62,29 @@ public class DialogueManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
+    private void SelectCurrentUI()
+    {
+        if (currentUIType == DialogueUIType.Intro)
+        {
+            currentPanel = introDialoguePanel;
+            currentDialogueTextUI = introDialogueText;
+            currentCharacterNameTextUI = introCharacterNameText;
+            currentCharacterPortraitImageUI = introCharacterPortraitImage;
+        }
+        else
+        {
+            currentPanel = dialoguePanel;
+            currentDialogueTextUI = dialogueText;
+            currentCharacterNameTextUI = characterNameText;
+            currentCharacterPortraitImageUI = characterPortraitImage;
+        }
+    }
     public void StartDialogue(
     DialogueData dialogue,
     System.Action onFinished = null)
     {
+        SelectCurrentUI();
+
         if (dialogue == null || dialogue.Lines == null ||
             dialogue.Lines.Count == 0)
         {
@@ -53,10 +94,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (dialoguePanel == null ||
-            dialogueText == null ||
-            characterNameText == null ||
-            characterPortraitImage == null)
+        if (currentPanel == null ||
+            currentDialogueTextUI == null ||
+            currentCharacterNameTextUI == null ||
+            currentCharacterPortraitImageUI == null)
         {
             Debug.LogError(
                 "La interfaz de diálogo no está completamente asignada."
@@ -68,12 +109,14 @@ public class DialogueManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
         }
+
         HUDManager.Instance?.HideHUD();
-        dialoguePanel.SetActive(true);
+
+        currentPanel.SetActive(true);
+
         currentDialogue = dialogue;
         onDialogueFinished = onFinished;
         currentLineIndex = 0;
-
 
         ShowCurrentLine();
     }
@@ -85,17 +128,24 @@ public class DialogueManager : MonoBehaviour
 
         if (line.Character != null)
         {
-            characterNameText.text = line.Character.CharacterName;
+            currentCharacterNameTextUI.text =
+                line.Character.CharacterName;
 
             Sprite portrait = line.Character.Portrait;
-            characterPortraitImage.sprite = portrait;
-            characterPortraitImage.gameObject.SetActive(portrait != null);
+
+            currentCharacterPortraitImageUI.sprite = portrait;
+
+            currentCharacterPortraitImageUI.gameObject.SetActive(
+                portrait != null
+            );
         }
         else
         {
-            characterNameText.text = "";
-            characterPortraitImage.sprite = null;
-            characterPortraitImage.gameObject.SetActive(false);
+            currentCharacterNameTextUI.text = "";
+
+            currentCharacterPortraitImageUI.sprite = null;
+
+            currentCharacterPortraitImageUI.gameObject.SetActive(false);
         }
 
         if (typingCoroutine != null)
@@ -131,11 +181,13 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator TypeWriterEffect(string text)
     {
         isTyping = true;
-        dialogueText.text = "";
+
+        currentDialogueTextUI.text = "";
 
         foreach (char character in text)
         {
-            dialogueText.text += character;
+            currentDialogueTextUI.text += character;
+
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -151,7 +203,8 @@ public class DialogueManager : MonoBehaviour
             typingCoroutine = null;
         }
 
-        dialogueText.text = currentLineText;
+        currentDialogueTextUI.text = currentLineText;
+
         isTyping = false;
     }
 
@@ -162,12 +215,13 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
         }
-        
-        dialogueText.text = "";
-        characterNameText.text = "";
 
-        characterPortraitImage.sprite = null;
-        characterPortraitImage.gameObject.SetActive(false);
+        currentDialogueTextUI.text = "";
+        currentCharacterNameTextUI.text = "";
+
+        currentCharacterPortraitImageUI.sprite = null;
+
+        currentCharacterPortraitImageUI.gameObject.SetActive(false);
 
         System.Action finishedAction = onDialogueFinished;
 
@@ -177,7 +231,8 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
         isTyping = false;
 
-        dialoguePanel.SetActive(false);
+        currentPanel.SetActive(false);
+
         HUDManager.Instance?.ShowHUD();
 
         if (PlayerMovement.Instance != null)

@@ -15,4 +15,6 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 50aed25c8fb2f8a418a5af5c1ce990ff, type: 2}
     text: Por mucho que la Infanta sea hija de su Majestad el Rey quien muchas guerras
-      ha batallado, dudo que alguna de mis armas sea del gusto de Nossa Infanta.
+      ha batallado, dudo que alguna de mis armas
+  - character: {fileID: 11400000, guid: 50aed25c8fb2f8a418a5af5c1ce990ff, type: 2}
+    text: ' sea del gusto de Nossa Infanta.'

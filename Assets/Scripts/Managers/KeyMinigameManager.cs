@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class KeyMinigameManager : MonoBehaviour
 {
-    
-    public static KeyMinigameManager Instance {get; private set;}
+
+    public static KeyMinigameManager Instance { get; private set; }
     [Header("UI")]
     [SerializeField] private GameObject minigamePanel;
     [SerializeField] private TMP_Text keyText;
@@ -21,17 +21,23 @@ public class KeyMinigameManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent onMinigameCompleted;
     [SerializeField] private UnityEvent onMinigameFailed;
+    [SerializeField] private DialogueData completeDialogue;
+    [SerializeField] private DialogueData failDialouge;
 
     private float currentTime;
     private float currentKeyTime;
+    private float targetTime;
     private int mistakes;
 
     private KeyCode currentKey;
 
     private bool isPlaying;
 
+    private System.Action onCompletedCallback;
+    private System.Action onFailedCallback;
+
     private readonly KeyCode[] availableKeys =
-    {        
+    {
         KeyCode.B,
         KeyCode.C,
         KeyCode.F,
@@ -41,7 +47,7 @@ public class KeyMinigameManager : MonoBehaviour
         KeyCode.L,
         KeyCode.M,
         KeyCode.N,
-        KeyCode.O,        
+        KeyCode.O,
         KeyCode.T,
         KeyCode.U,
         KeyCode.V,
@@ -51,7 +57,7 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance!=null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -77,12 +83,15 @@ public class KeyMinigameManager : MonoBehaviour
         CheckInput();
     }
 
-    public void StartMinigame()
+    public void StartMinigame(System.Action onCompleted = null, System.Action onFailed = null)
     {
+        onCompletedCallback = onCompleted;
+        onFailedCallback = onFailed;
+
         isPlaying = true;
         currentTime = 0f;
         mistakes = 0;
-
+        targetTime = requiredTime;
         minigamePanel.SetActive(true);
         GenerateNewKey();
         UpdateUI();
@@ -95,8 +104,8 @@ public class KeyMinigameManager : MonoBehaviour
     private void UpdateTimer()
     {
         currentTime += Time.deltaTime;
-        timerText.text = currentTime.ToString("0.0") + " / " + requiredTime.ToString("0.0");
-        if (currentTime >= requiredTime)
+        timerText.text = currentTime.ToString("0.0") + " / " + targetTime.ToString("0.0");
+        if (currentTime >= targetTime)
         {
             CompleteMinigame();
         }
@@ -104,7 +113,7 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void UpdateKeyTimer()
     {
-        currentKeyTime+=Time.deltaTime;
+        currentKeyTime += Time.deltaTime;
         if (currentKeyTime >= timePerKey)
         {
             KeyTimeExpired();
@@ -146,7 +155,7 @@ public class KeyMinigameManager : MonoBehaviour
     {
         mistakes++;
         UpdateUI();
-        if (mistakes > maxMistakes)
+        if (mistakes >= maxMistakes)
         {
             RestartMinigame();
         }
@@ -163,29 +172,65 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        mistakesText.text = "Fallos: "+ mistakes + " / " + maxMistakes;
+        mistakesText.text = "Fallos: " + mistakes + " / " + maxMistakes;
     }
 
     private void RestartMinigame()
     {
+        isPlaying = false;
         onMinigameFailed?.Invoke();
-        currentTime = 0f;
-        mistakes = 0;
+        if (failDialouge != null && DialogueManager.Instance != null)
+        {
+            minigamePanel.SetActive(false);
+            DialogueManager.Instance.StartDialogue(failDialouge, RestartAfterFailDialogue);
+        }
+        else
+        {
+            RestartAfterFailDialogue();
+        }
 
+    }
+    private void RestartAfterFailDialogue()
+    {
+        currentTime=0f;
+        currentKeyTime=0f;
+        mistakes=0;
+        targetTime=requiredTime;
+        minigamePanel.SetActive(true);
         GenerateNewKey();
         UpdateUI();
+
+        isPlaying=true;
     }
 
     private void CompleteMinigame()
     {
         isPlaying = false;
         minigamePanel.SetActive(false);
+
+        if(completeDialogue!=null && DialogueManager.Instance != null)
+        {
+            DialogueManager.Instance.StartDialogue(completeDialogue, FinishMinigame);
+        }
+
+        else
+        {
+            FinishMinigame();
+        }
+    }
+
+    private void FinishMinigame()
+    {
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
         }
 
         onMinigameCompleted?.Invoke();
+        onCompletedCallback?.Invoke();
+
+        onCompletedCallback = null;
+        onFailedCallback = null;
     }
 
     public void CancelMinigame()
@@ -201,9 +246,9 @@ public class KeyMinigameManager : MonoBehaviour
     private void KeyTimeExpired()
     {
         mistakes++;
-        requiredTime+=timePenalty;
+        targetTime += timePenalty;
         UpdateUI();
-        if (mistakes > maxMistakes)
+        if (mistakes >= maxMistakes)
         {
             RestartMinigame();
             return;

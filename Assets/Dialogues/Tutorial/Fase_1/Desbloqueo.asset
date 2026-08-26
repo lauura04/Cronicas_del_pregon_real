@@ -20,5 +20,6 @@ MonoBehaviour:
       cuentas, puede conseguir el animal que quiera en cualquier otro momento.
   - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
     text: "Ni animales, ni manjares ni otro tipo de v\xEDveres, las joyas es lo que
-      m\xE1s congratula a su majestad, si agradarla quer\xE9is m\xE1s os vale buscar
-      una joya sin igual"
+      m\xE1s congratula a su majestad, "
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: "si agradarla quer\xE9is m\xE1s os vale buscar una joya sin igual"

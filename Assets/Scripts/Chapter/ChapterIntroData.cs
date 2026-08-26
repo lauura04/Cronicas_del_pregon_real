@@ -15,4 +15,5 @@ public class ChapterIntroData : ScriptableObject
     public GameChapter Chapter => chapter;
     public DialogueData Dialogue => dialogue;
     public string GameplayScene => gameplayScene;   
+    public Sprite Background => background;
 }

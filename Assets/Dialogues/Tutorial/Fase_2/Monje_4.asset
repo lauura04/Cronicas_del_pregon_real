@@ -15,5 +15,7 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 88310d0d7fdaef145b4730fc616ef992, type: 2}
     text: "Para poder tomar dicho elixir hay que ser paciente, ya lo dijo Nuestro
-      Se\xF1or, quien determin\xF3 el tiempo a esperar con los d\xEDas que tard\xF3
-      en hacer la creaci\xF3n de todo lo que hoy conocemos."
+      Se\xF1or, quien determin\xF3 el tiempo a esperar "
+  - character: {fileID: 11400000, guid: 88310d0d7fdaef145b4730fc616ef992, type: 2}
+    text: "con los d\xEDas que tard\xF3 en hacer la creaci\xF3n de todo lo que hoy
+      conocemos."

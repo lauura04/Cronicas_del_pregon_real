@@ -15,8 +15,10 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: dfbaa2dc0eba40a40825b794f43cdcbd, type: 2}
     text: "Ya sab\xEDa yo que la de arriesgarme en el mar me iba a ser \xFAtil. Si
-      mis perlas quieres, a cambio tendr\xE1s que conseguirme lana, se acerca el
-      invierno y pr\xF3ximamente necesitar\xE9 abrigarme."
+      mis perlas quieres, a cambio tendr\xE1s que "
+  - character: {fileID: 11400000, guid: dfbaa2dc0eba40a40825b794f43cdcbd, type: 2}
+    text: "conseguirme lana, se acerca el invierno y pr\xF3ximamente necesitar\xE9
+      abrigarme."
   - character: {fileID: 11400000, guid: dfbaa2dc0eba40a40825b794f43cdcbd, type: 2}
     text: "Pero tendr\xE1s que ingeni\xE1rtelas, pues las ovejas no se dejan coger
       as\xED como as\xED, quiz\xE1s algo de m\xFAsica..."
