@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine.UI;
@@ -32,6 +33,9 @@ public class LetterPuzzleManager : MonoBehaviour
     private bool isPlaying;
     public bool IsPlaying => isPlaying;
 
+    private Action onPuzzleCorrect;
+    
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,7 +60,7 @@ public class LetterPuzzleManager : MonoBehaviour
         HandleInput();
     }
 
-    public void StartPuzzle(LetterPuzzleData puzzleData)
+    public void StartPuzzle(LetterPuzzleData puzzleData, Action onCorrect = null)
     {
         if (puzzleData == null)
         {
@@ -67,6 +71,7 @@ public class LetterPuzzleManager : MonoBehaviour
         isPlaying = true;
         currentPosition = 0;
         puzzlePanel.SetActive(true);
+        onPuzzleCorrect = onCorrect;
 
         letterBackground.sprite = currentPuzzle.letterBackground;
 
@@ -286,6 +291,9 @@ private int GetWordLength(string text, int startIndex)
         }
 
         onCorrect?.Invoke();
+        onPuzzleCorrect?.Invoke();
+
+        onPuzzleCorrect=null;
     }
 
     public void Close()

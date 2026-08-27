@@ -25,6 +25,7 @@ public class FirstChapterController : MonoBehaviour
     [SerializeField] private DialogueData thirdDialogue;
     [SerializeField] private DialogueData performanceDialogue;
     [SerializeField] private DialogueData investigationDialogue;
+    [SerializeField] private DialogueData lastDialogue;
 
     [Header("CHARACTERS")]
     [SerializeField] private NPCMovement dottore;
@@ -49,12 +50,26 @@ public class FirstChapterController : MonoBehaviour
     [SerializeField] private PlayerSpawnPoint letterSpawnPoint;
 
     [Header("Letters")]
-    [SerializeField] private LetterPuzzleData firstLetterData;
-    
+    [SerializeField] private LetterPuzzleData firstLetterPuzzle;
+    [SerializeField] private LetterPuzzleData secondLetterPuzzle;
+    [SerializeField] private DialogueData noLetterDialogue;
+
+    [SerializeField] private DialogueData correctFirstLetterDialogue;
+
+    [SerializeField] private GameObject secondLetterObject;
+
+
+
+    [Header("People")]
+    [SerializeField] private GameObject performancePeople;
+    [SerializeField] private GameObject investigationPeople;
+    [SerializeField] private GameObject normalPeople;
+
+
 
     //variables de las que depende la continuidad de las fases
     public bool firstLetter { get; private set; } //si ha acertado o no la primera carta --> enlazar con onCorrect del puzzle
-
+    public bool secondLetter{get;private set;}
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -67,8 +82,14 @@ public class FirstChapterController : MonoBehaviour
     }
     private void Start()
     {
+        firstLetter = false;
+        if (secondLetterObject != null)
+        {
+            secondLetterObject.SetActive(false);
+        }
         GameProgressManager.Instance.StartChapter(firstChapter, introPhase);
         DialogueManager.Instance.StartDialogue(initialDialogue, StartChapter);
+
 
     }
 
@@ -114,6 +135,8 @@ public class FirstChapterController : MonoBehaviour
         performanceSpawnPoint.TeleportPlayer();
 
         GameProgressManager.Instance.SetPhase(performancePhase);
+        performancePeople.SetActive(true);
+        normalPeople.SetActive(false);
 
         yield return ScreenFade.Instance.FadeInCoroutine();
         StartPerformance();
@@ -126,7 +149,7 @@ public class FirstChapterController : MonoBehaviour
 
     private void OnPerformanceDialogueFinished()
     {
-        LetterPuzzleManager.Instance.StartPuzzle(firstLetterData);
+        KeyMinigameManager.Instance.StartMinigame(OnPerformanceMinigameCompleted);
     }
     private void MoveCharactersToPerformance()
     {
@@ -138,7 +161,7 @@ public class FirstChapterController : MonoBehaviour
     private void OnPerformanceMinigameCompleted()
     {
         Debug.Log("Actuación completada");
-        
+
         StartCoroutine(ChangeToInvestigation());
     }
 
@@ -149,6 +172,8 @@ public class FirstChapterController : MonoBehaviour
         MoveCharactersPostPerformance();
         letterSpawnPoint.TeleportPlayer();
         GameProgressManager.Instance.SetPhase(investigatePhase);
+        performancePeople.SetActive(false);
+        investigationPeople.SetActive(true);
         yield return ScreenFade.Instance.FadeInCoroutine();
         StartInvestigation();
     }
@@ -156,7 +181,7 @@ public class FirstChapterController : MonoBehaviour
     private void MoveCharactersPostPerformance()
     {
         dottore.transform.SetPositionAndRotation(dottorePost.position, dottorePost.rotation);
-         colombina.transform.SetPositionAndRotation(colombinaPost.position, colombinaPost.rotation);
+        colombina.transform.SetPositionAndRotation(colombinaPost.position, colombinaPost.rotation);
         arlequino.transform.SetPositionAndRotation(arlequinoPost.position, arlequinoPost.rotation);
     }
 
@@ -164,5 +189,67 @@ public class FirstChapterController : MonoBehaviour
     {
         DialogueManager.Instance.StartDialogue(investigationDialogue);
     }
-    
+    public void CheckLetterProgress()
+    {
+        if (!firstLetter)
+        {
+            CheckFirstLetter();
+            return;
+        }
+        if (!secondLetter)
+        {
+            CheckSecondLetter();
+            return;
+        }
+    }
+    public void CheckFirstLetter()
+    {
+        if (InventoryManager.Instance.HasItemById("Carta1"))
+        {
+            LetterPuzzleManager.Instance.StartPuzzle(firstLetterPuzzle,OnFirstLetterCorrect);
+        }
+        else
+        {
+            DialogueManager.Instance.StartDialogue(noLetterDialogue, null);
+        }
+    }
+
+    public void OnFirstLetterCorrect()
+    {
+        Debug.Log("Primera carta descifrada correctamente");
+        firstLetter = true;
+        DialogueManager.Instance.StartDialogue(correctFirstLetterDialogue, UnlockSecondLetter);
+    }
+
+    private void UnlockSecondLetter()
+    {
+        if(secondLetterObject!=null)
+            secondLetterObject.SetActive(true);
+        Debug.Log("Segunda carta desbloqueada");
+    }
+
+    public void CheckSecondLetter()
+    {
+        if (InventoryManager.Instance.HasItemById("Carta2"))
+        {
+            LetterPuzzleManager.Instance.StartPuzzle(secondLetterPuzzle, onSecondLetterCorrect);
+        }
+        else
+        {
+            DialogueManager.Instance.StartDialogue(noLetterDialogue, null);
+        }
+    }
+
+    public void onSecondLetterCorrect()
+    {
+        Debug.Log("Segunda carta descifrada correctamente");
+        DialogueManager.Instance.StartDialogue(lastDialogue, onLastDialogueFinished);
+        secondLetter=true;
+    }
+
+    public void onLastDialogueFinished()
+    {
+        ChapterManager.Instance.StartChapter(GameChapter.Chapter2);
+    }
+
 }

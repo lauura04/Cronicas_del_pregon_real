@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private Image characterPortraitImage;
+    [SerializeField] private Image leftDialogueImage;
+    [SerializeField] private Image rightDialogueImage;
 
     [Header("Intro UI")]
     [SerializeField] private GameObject introDialoguePanel;
@@ -125,6 +127,7 @@ public class DialogueManager : MonoBehaviour
         DialogueLine line = currentDialogue.Lines[currentLineIndex];
 
         currentLineText = line.Text;
+        UpdateDialogueImages(line);
 
         if (line.Character != null)
         {
@@ -222,6 +225,8 @@ public class DialogueManager : MonoBehaviour
         currentCharacterPortraitImageUI.sprite = null;
 
         currentCharacterPortraitImageUI.gameObject.SetActive(false);
+        SetDialogueImage(leftDialogueImage, null);
+    SetDialogueImage(rightDialogueImage, null);
 
         System.Action finishedAction = onDialogueFinished;
 
@@ -241,5 +246,25 @@ public class DialogueManager : MonoBehaviour
         }
 
         finishedAction?.Invoke();
+    }
+
+    private void UpdateDialogueImages(DialogueLine line)
+    {
+        SetDialogueImage(leftDialogueImage,line.LeftImage);
+        SetDialogueImage(rightDialogueImage, line.RightImage);
+
+    }
+    private void SetDialogueImage(Image image, Sprite sprite)
+    {
+        if (sprite != null)
+        {
+            image.sprite = sprite;
+            image.gameObject.SetActive(true);
+        }
+        else
+        {
+            image.sprite = null;
+            image.gameObject.SetActive(false);
+        }
     }
 }

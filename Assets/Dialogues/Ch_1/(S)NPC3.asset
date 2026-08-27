@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (S)NPC3
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Esta ma\xF1ana han pasado varios jinetes camino del palacio."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Los vi. No parec\xEDan simples viajeros."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: Mi hermano dice que se preparan asuntos importantes en la corte.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Tu hermano tambi\xE9n dijo que el invierno pasado nevar\xEDa un mes..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: "Alg\xFAn d\xEDa acertar\xE1."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 62b418f5bb4446447a22dabd0a9b08f1, type: 2}
+    text: "Sea lo que sea, cuando la corte se mueve, el pueblo acaba enter\xE1ndose."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

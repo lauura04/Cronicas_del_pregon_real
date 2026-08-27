@@ -15,11 +15,23 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: Con que rechazan a todo aquel que no sea cristiano viejo...
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
     text: "Solo espero que su majestad el Rey Don Manuel tenga en gracia a todos
       sus sirvientes y amigos que una vez fueron jud\xEDos y musulmanes"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 51aea730027631d498d507983c6a63d1, type: 2}
     text: y rechace esta misiva real.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "Mi buen amigo, parece que esto acaba de empezar, tendr\xE1s que hacerte
       con la respuesta portuguesa si tranquilos queremos estar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: Y que no se te olvide volver cuando la consigas.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

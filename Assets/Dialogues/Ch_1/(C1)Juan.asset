@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (C1)Juan
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Don Juan, me han dicho que guard\xE1is una carta que debe llegar a Portugal."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: Y a vos os han dicho demasiado.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Solo pretend\xEDa ahorraros el trabajo. Podr\xEDa llevarla yo mismo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: "\xBFConfiar una carta de la Corona a un buf\xF3n?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Precisamente. Nadie sospechar\xEDa de m\xED."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: "Yo s\xED."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Qu\xE9 poca fe ten\xE9is en mis talentos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: En vuestros talentos tengo plena confianza, mas no en vuestras intenciones.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Entonces...\xBFno hay forma de que me la entregu\xE9is?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: Ninguna.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Comprendo, comprendo... Tendr\xE9 que resultar un poco m\xE1s convincente,
+      quiz\xE1s algo de m\xFAsica..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 549a04d03ce32b042824db4a845d7f3a, type: 2}
+    text: "No s\xE9 qu\xE9 \xE9stais tramando, pero la carta se queda conmigo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

@@ -18,4 +18,4 @@ MonoBehaviour:
     con vuestra hija.\r\nMas en cuanto a los jud\xEDos de mis reinos, mandar\xE9
     salir solamente a aquellos que se negaren a recibir el bautismo y abrazar la
     fe cristiana. Quienes aceptaren convertirse podr\xE1n permanecer bajo mi Corona.\r"
-  letterBackground: {fileID: 0}
+  letterBackground: {fileID: 21300000, guid: 09d62f87692052541b7f58c67429af14, type: 3}

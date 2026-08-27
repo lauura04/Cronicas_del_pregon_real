@@ -17,5 +17,5 @@ MonoBehaviour:
   gameplayScene: Chap_1
   chapterTitle: 
   chapterSubtitle: 
-  background: {fileID: 0}
-  music: {fileID: 0}
+  background: {fileID: 21300000, guid: 3a5b79313f259064b845a9a534c7f573, type: 3}
+  music: {fileID: 8300000, guid: cd2fae1f09b3f4f4cb829d064a2a23f1, type: 3}

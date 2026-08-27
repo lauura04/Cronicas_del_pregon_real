@@ -6,6 +6,8 @@ public class CharmableNPC : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private DialogueData failedCharmDialogue;
     [SerializeField] private DialogueData sucessCharmDialogue;
+    [SerializeField] private bool requireDialogueBeforeCharm = false;
+    private bool hasTalk=false;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onCharmSuccess;
@@ -15,10 +17,23 @@ public class CharmableNPC : MonoBehaviour
     private bool isCharmed;
 
     public bool IsCharmed => isCharmed;
+public bool CanCharm()
+    {
+        return !requireDialogueBeforeCharm||hasTalk;
+    }
 
+    public void UnlockCharm()
+    {
+        hasTalk=true;
+    }
     public void TryCharm()
     {
         if (isCharmed)
+        {
+            return;
+        }
+
+        if (!CanCharm())
         {
             return;
         }

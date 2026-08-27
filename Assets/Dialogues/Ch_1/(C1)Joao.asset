@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (C1)Joao
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Buen hombre, lleg\xE1is de lejos. \xBFPortugal, quiz\xE1?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "De all\xED vengo. \xBFQui\xE9n pregunta?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Alguien que puede ahorraros unos cuantos pasos. Imagino que tra\xE9is
+      correspondencia para la corte."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "Puede ser. \xBFY qu\xE9 tiene que ver un buf\xF3n con los asuntos de la
+      corte?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "M\xE1s de lo que parece. Me han encargado recoger la carta y llevarla
+      personalmente."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "Curioso. A m\xED me ordenaron entregarla en otras manos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Ya sab\xE9is c\xF3mo son estas cosas. Una orden por la ma\xF1ana, otra
+      distinta despu\xE9s de comer..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "Entonces decidme qui\xE9n os env\xEDa."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: ...
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: Eso pensaba.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Veo que sois dif\xEDcil de enga\xF1ar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "Y vos bastante f\xE1cil de descubrir."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "No dir\xEDa f\xE1cil. Qu\xE9 son los pocos minutos que llevamos comparados
+      con toda la eternidad."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bcc85d7b79ca7e848987d8049f24dd3c, type: 2}
+    text: "La carta no saldr\xE1 de mis manos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Est\xE1 bien... Tendr\xE9 que convencerle de otra forma."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

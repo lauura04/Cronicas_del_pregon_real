@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Letter 1
   description: Carta que roba a Juan de Coloma sobre las capitulaciones
   Icon: {fileID: 0}
-  itemId: 
+  itemId: Carta1
