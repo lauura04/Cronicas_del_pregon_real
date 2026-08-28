@@ -105,6 +105,7 @@ public class TutorialController : MonoBehaviour
 
     public void EndTutorial()
     {
+        SaveManager.Instance.UnlockChapter(1);
         ChapterManager.Instance.StartChapter(GameChapter.Chapter1);
     }
 

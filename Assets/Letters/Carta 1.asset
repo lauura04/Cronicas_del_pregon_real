@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Carta 1
   m_EditorClassIdentifier: 
   puzzleName: First Letter
-  correctText: "Al muy poderoso don Manuel I, rey de Portugal\n\r\nNos, don Fernando
+  correctText: "Al muy poderoso don Manuel I, rey de Portugal\nNos, don Fernando
     y do\xF1a Isabel, reyes de Castilla y Arag\xF3n, hacemos saber a Vuestra Alteza
     que, para consentir el matrimonio con nuestra muy amada hija, deber\xE1 mandar
     salir de sus reinos a los jud\xEDos conversos y por convertir, as\xED como a
-    los moros que permanezcan en su ley.\r\nCumplida esta condici\xF3n, podr\xE1n
-    proseguir los acuerdos de dicho matrimonio.\r\n\r"
+    los moros que permanezcan en su ley.\r\n\r\n\r"
   letterBackground: {fileID: 21300000, guid: 0f4f77587a697e3498c95bb4dc18fe53, type: 3}

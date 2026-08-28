@@ -3121,6 +3121,7 @@ MonoBehaviour:
     type: 2}
   sucessCharmDialogue: {fileID: 11400000, guid: 386594d3d97199849805df7c5139419c,
     type: 2}
+  requireDialogueBeforeCharm: 0
   onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -7642,7 +7643,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
-  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
 --- !u!114 &1561669308
@@ -7659,6 +7660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failedCharmDialogue: {fileID: 0}
   sucessCharmDialogue: {fileID: 0}
+  requireDialogueBeforeCharm: 0
   onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -8668,7 +8670,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1812024801}
-  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
 --- !u!114 &1812024801
@@ -8685,6 +8687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failedCharmDialogue: {fileID: 0}
   sucessCharmDialogue: {fileID: 0}
+  requireDialogueBeforeCharm: 0
   onCharmSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -8869,7 +8872,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1824971803}
-  sheepSound: {fileID: 8300000, guid: e5bbec241d9285c4484056349e862c2a, type: 3}
+  sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
 --- !u!114 &1824971803
@@ -8886,6 +8889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failedCharmDialogue: {fileID: 0}
   sucessCharmDialogue: {fileID: 0}
+  requireDialogueBeforeCharm: 0
   onCharmSuccess:
     m_PersistentCalls:
       m_Calls:

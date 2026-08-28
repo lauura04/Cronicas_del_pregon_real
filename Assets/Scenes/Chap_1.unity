@@ -501,6 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cc46829b5c6de4b90b5ee38192fcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstChapterClip: {fileID: 8300000, guid: 02668c5752cd618449db2f1ae6d8b0b1, type: 3}
+  performanceClip: {fileID: 8300000, guid: 6026a131dbe363e4286abf38be66dfeb, type: 3}
   firstChapter: {fileID: 11400000, guid: 5aa197418a069004685b397a1de6576c, type: 2}
   introPhase: {fileID: 11400000, guid: fc3c66334e5817a4b9bfe1db68c98611, type: 2}
   performancePhase: {fileID: 11400000, guid: 0390330289592ac4484d86d722334c99, type: 2}

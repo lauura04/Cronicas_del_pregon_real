@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class FirstChapterController : MonoBehaviour
 {
     public static FirstChapterController Instance { get; private set; }
-
+    [SerializeField] private AudioClip firstChapterClip;
+    [SerializeField] private AudioClip performanceClip;
     [Header("Chapter")]
     [SerializeField] private ChapterData firstChapter;
     [Header("Initial Phase")]
@@ -69,7 +70,7 @@ public class FirstChapterController : MonoBehaviour
 
     //variables de las que depende la continuidad de las fases
     public bool firstLetter { get; private set; } //si ha acertado o no la primera carta --> enlazar con onCorrect del puzzle
-    public bool secondLetter{get;private set;}
+    public bool secondLetter { get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -87,6 +88,7 @@ public class FirstChapterController : MonoBehaviour
         {
             secondLetterObject.SetActive(false);
         }
+         MusicManager.Instance.PlayMusic(firstChapterClip);
         GameProgressManager.Instance.StartChapter(firstChapter, introPhase);
         DialogueManager.Instance.StartDialogue(initialDialogue, StartChapter);
 
@@ -144,6 +146,8 @@ public class FirstChapterController : MonoBehaviour
 
     private void StartPerformance()
     {
+        MusicManager.Instance.StopMusic();
+        MusicManager.Instance.PlayMusic(performanceClip);
         DialogueManager.Instance.StartDialogue(performanceDialogue, OnPerformanceDialogueFinished);
     }
 
@@ -161,6 +165,8 @@ public class FirstChapterController : MonoBehaviour
     private void OnPerformanceMinigameCompleted()
     {
         Debug.Log("Actuación completada");
+        MusicManager.Instance.StopMusic();
+        MusicManager.Instance.PlayMusic(firstChapterClip);
 
         StartCoroutine(ChangeToInvestigation());
     }
@@ -206,7 +212,7 @@ public class FirstChapterController : MonoBehaviour
     {
         if (InventoryManager.Instance.HasItemById("Carta1"))
         {
-            LetterPuzzleManager.Instance.StartPuzzle(firstLetterPuzzle,OnFirstLetterCorrect);
+            LetterPuzzleManager.Instance.StartPuzzle(firstLetterPuzzle, OnFirstLetterCorrect);
         }
         else
         {
@@ -223,7 +229,7 @@ public class FirstChapterController : MonoBehaviour
 
     private void UnlockSecondLetter()
     {
-        if(secondLetterObject!=null)
+        if (secondLetterObject != null)
             secondLetterObject.SetActive(true);
         Debug.Log("Segunda carta desbloqueada");
     }
@@ -244,11 +250,12 @@ public class FirstChapterController : MonoBehaviour
     {
         Debug.Log("Segunda carta descifrada correctamente");
         DialogueManager.Instance.StartDialogue(lastDialogue, onLastDialogueFinished);
-        secondLetter=true;
+        secondLetter = true;
     }
 
     public void onLastDialogueFinished()
     {
+        SaveManager.Instance.UnlockChapter(2);
         ChapterManager.Instance.StartChapter(GameChapter.Chapter2);
     }
 

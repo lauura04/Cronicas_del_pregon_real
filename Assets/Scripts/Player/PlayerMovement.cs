@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canMove = true;
     public bool CanMove => canMove;
+    private bool isAutoMoving = false;
     public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {
@@ -47,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        if (isAutoMoving)
+        {
+            return;
+        }
         if (!canMove)
         {
             movementInput = Vector3.zero;
@@ -57,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isAutoMoving)
+        {
+            return;
+        }
         if (!canMove)
         {
             movementInput = Vector3.zero;
@@ -133,4 +142,40 @@ public class PlayerMovement : MonoBehaviour
 
         playerRigidbody.position = position;
     }
+
+//para hacer "animación automática" de movimiento
+    
+    public IEnumerator AutoMoveTo(Transform destination, float speed = 3f)
+    {
+        canMove = false;
+        isAutoMoving = true;
+        
+        while (Vector3.Distance(playerRigidbody.position, destination.position) > 0.05f)
+        {
+            Vector3 direction = destination.position-playerRigidbody.position;
+            direction.y=0f;
+            direction.Normalize();
+
+            movementInput = direction;
+
+            Vector3 newPosition = playerRigidbody.position + direction*speed*Time.fixedDeltaTime;
+            Vector3 rayOrigin = new Vector3(newPosition.x, playerRigidbody.position.y + groundRayHeight, newPosition.z);
+
+            if(Physics.Raycast(rayOrigin,Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer))
+            {
+                float feetDistance = playerRigidbody.position.y - capsuleCollider.bounds.min.y;
+
+                newPosition.y = hit.point.y + feetDistance + groundSkin;
+            }
+
+            playerRigidbody.MovePosition(newPosition);
+
+            yield return new WaitForFixedUpdate();
+        }
+        movementInput = Vector3.zero;
+        isAutoMoving = false;
+        playerRigidbody.velocity = Vector3.zero;
+        playerRigidbody.angularVelocity = Vector3.zero;
+    }
+    
 }
