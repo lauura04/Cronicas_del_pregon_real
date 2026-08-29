@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: "(4.1.3)Ni\xF1a2"
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "D\xE9jame adivinar. A ti tambi\xE9n te lo dieron."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 785237e172ab0af4dbdab7f48e7e25a4, type: 2}
+    text: "S\xED. \xA1Pero yo eleg\xED la m\xE1s bonita!"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xBFHab\xEDa m\xE1s?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 785237e172ab0af4dbdab7f48e7e25a4, type: 2}
+    text: "Un mont\xF3n, dentro de una bolsa."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

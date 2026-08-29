@@ -14,6 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: A
+    text: "Que traj\xEDn el que me traigo, que si voy y que si vuelvo, que ya no
+      saben los pies si flotan, o van andando."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Y esto es el colmo se\xF1ores, pues estos de la realeza que s\xF3lo mandan
+      y ordenan, mi labor no es revisar si esto est\xE1 bien o mal,"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "o si con cintas, o especias me tengo que hacer. Y por si no fuera poco
+      hasta la m\xFAsica tengo que revisar. "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Que para eso tienen criados y syo soy buf\xF3n real."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (2)Horca
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xA1Dejad mercados, c\xE1ntaros y cotilleos para despu\xE9s! \xA1Traigo
+      noticias de boda! La infanta Isabel y el rey Manuel de Portugal han de casar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "Pero, \xBFqu\xE9 haces bobo? \xBFNo est\xE1s viendo que una ejecuci\xF3n
+      vamos a realizar?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xBFY por eso es este barullo? Gritos, llantos y pedradas. \xBFA qu\xE9
+      viene esta algarada? \xBFQu\xE9 hacen esas humildes personas all\xED colgadas?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: Humildes dice, se trata de tres reos con distintos cargos, cada cual peor
+      que el anterior y por ello han de morir.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "Al primero lo cazaron robando, el muy brib\xF3n, una bolsa llena de monedas
+      y joyas de su amo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "La segunda por bruja deb\xEDo de haber ardido hace meses. La hechicer\xEDa
+      corre por sus venas y se atrevi\xF3 a usar al gato de un vecino en uno de sus
+      rituales."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "El \xFAltimo es el peor de todos, finge abrazar la fe cristiana, pero
+      se le vio cambiando sus s\xE1banas y ase\xE1ndose el pasado viernes sin raz\xF3n
+      alguna"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "por lo que sigue rezando al dios jud\xEDo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "Como puede ver de inocente no tienen nada y han de morir al final del
+      d\xEDa."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Pero \xBFno hay forma de salvarles? \xBFY si demuestro su inocencia?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: De ser capaz de ello prometo soltarles, pero necesito pruebas de su inocencia.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class KeyMinigameManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class KeyMinigameManager : MonoBehaviour
     [SerializeField] private TMP_Text keyText;
     [SerializeField] private TMP_Text mistakesText;
     [SerializeField] private TMP_Text timerText;
+    [SerializeField] private Image characterImage;
+    [SerializeField] private Sprite[] characterSprites;
+
+    
 
     [Header("Settings")]
     [SerializeField] private float requiredTime = 10f;
@@ -28,6 +33,8 @@ public class KeyMinigameManager : MonoBehaviour
     private float currentKeyTime;
     private float targetTime;
     private int mistakes;
+
+    private int currentSpriteIndex = 0;
 
     private KeyCode currentKey;
 
@@ -148,6 +155,7 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void CorrectInput()
     {
+        ChangeCharacterImage();
         GenerateNewKey();
     }
 
@@ -254,6 +262,17 @@ public class KeyMinigameManager : MonoBehaviour
             return;
         }
         GenerateNewKey();
+    }
+//funcion para hacer cambiar el sprite de la actuación --> cambiar prox a animator
+    private void ChangeCharacterImage()
+    {
+        if(characterImage==null || characterSprites.Length==0)
+            return;
+        currentSpriteIndex++;
+        if(currentSpriteIndex>=characterSprites.Length)
+            currentSpriteIndex=0;
+        
+        characterImage.sprite = characterSprites[currentSpriteIndex];
     }
 }
 

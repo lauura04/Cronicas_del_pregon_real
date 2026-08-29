@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Colombina
   m_EditorClassIdentifier: 
   characterName: Colombina
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0049d447970f93d42aeaa3487c836f13, type: 3}

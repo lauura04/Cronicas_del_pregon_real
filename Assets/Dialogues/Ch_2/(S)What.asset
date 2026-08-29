@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (S)What
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: cfccb681168a41246a94ebf928aeae7f, type: 2}
+    text: "\xBFPero de d\xF3nde has sacado esa piedra tan brillante? \xBFSe lo has
+      robado a tu madre?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: f025d440a6e2e6044b2abeae83c4bc37, type: 2}
+    text: No, no. Hago eso y mi madre me castiga por siempre.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: d8de498397ea0ab4f98da7d95c3797e8, type: 2}
+    text: "La consigui\xF3 hace un rato. Un amigo suyo trajo una bolsa llena de monedas
+      y otras cosas brillantes."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

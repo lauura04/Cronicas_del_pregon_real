@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: I_Ch2
   m_EditorClassIdentifier: 
   chapter: 2
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: ca1fc8986c0ad794a8eff9b7fe557e5a, type: 2}
   gameplayScene: Chap_2
   chapterTitle: 
   chapterSubtitle: 

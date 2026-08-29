@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: "(3.3)Jud\xEDo"
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "Benjam\xEDn, viejo amigo. Como bien sabes yo no tengo salvaci\xF3n, pues
+      realmente soy jud\xEDo. "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "Solo soy un pobre zapatero aficionado a la m\xFAsica que trabaja para
+      sacar a su familia adelante. No hago da\xF1o a nadie. Mas..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "si consiguieras salvarme de la soga te prometo que te compensar\xE9 con
+      lo que necesites, sabes que siempre te ayud\xE9 cuando lo necesitaste."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "Quiz\xE1s si hablas con nuestros captores consigues algo..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

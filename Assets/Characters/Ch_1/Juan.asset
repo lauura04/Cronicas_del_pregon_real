@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Juan
   m_EditorClassIdentifier: 
   characterName: Juan de Coloma
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 069c97cb500ae364cb74da11be343b85, type: 3}
