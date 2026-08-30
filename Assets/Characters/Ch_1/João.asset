@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: "Jo\xE3o"
   m_EditorClassIdentifier: 
   characterName: "Jo\xE3o de Madureira"
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7fed6db5ca243e24ebba4af99b37d259, type: 3}

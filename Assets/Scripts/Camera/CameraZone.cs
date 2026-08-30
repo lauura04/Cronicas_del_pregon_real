@@ -26,6 +26,11 @@ public class CameraZone : MonoBehaviour
     [Header("Salida")]
     [SerializeField] private bool resetOnExit = true;
 
+    [Header("Controles de movimiento")]
+    [SerializeField] private bool invertHorizontal = false;
+    [SerializeField] private bool invertVertical = false;
+    [SerializeField] private bool swapAxes = false;
+
     private void Awake()
     {
         GetComponent<BoxCollider>().isTrigger = true;
@@ -36,6 +41,11 @@ public class CameraZone : MonoBehaviour
         if (!other.CompareTag("Player"))
         {
             return;
+        }
+         //controles
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.SetMovementMapping(invertHorizontal,invertVertical,swapAxes);
         }
 
         if (CameraFollow.Instance == null)
@@ -74,6 +84,10 @@ public class CameraZone : MonoBehaviour
         if (!other.CompareTag("Player"))
         {
             return;
+        }
+       if(PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.ResetMovementMapping();
         }
 
         if (CameraFollow.Instance == null)

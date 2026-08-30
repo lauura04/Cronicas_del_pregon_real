@@ -15421,7 +15421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   stoppingDistance: 0.05
-  animator: {fileID: 0}
+  animationController: {fileID: 0}
 --- !u!1 &1597604063
 GameObject:
   m_ObjectHideFlags: 0

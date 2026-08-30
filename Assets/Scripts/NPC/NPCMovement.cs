@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCMovement : MonoBehaviour
@@ -8,88 +7,104 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float stoppingDistance = 0.05f;
 
-    
-    [Header("Animation")] // TODAVIA NO ESTÁ ANIMADO
-    [SerializeField] private Animator animator;
+    [Header("Animation")]
+    [SerializeField] private NPCAnimationController animationController;
+
     private bool isMoving;
+
     public bool IsMoving => isMoving;
 
-    public void MoveTo(Transform target, System.Action onArrival=null)
+    public void MoveTo(
+        Transform target,
+        System.Action onArrival = null)
     {
         if (target == null)
         {
-            Debug.LogWarning("NPC Movement no tiene destino");
+            Debug.LogWarning(
+                "NPC Movement no tiene destino"
+            );
+
             return;
         }
+
         StopAllCoroutines();
-        StartCoroutine(MoveCoroutine(target,onArrival));
+
+        StartCoroutine(
+            MoveCoroutine(target, onArrival)
+        );
     }
 
-    private IEnumerator MoveCoroutine(Transform target, System.Action onArrival)
+  private IEnumerator MoveCoroutine(
+    Transform target,
+    System.Action onArrival)
+{
+    isMoving = true;
+
+    while (GetHorizontalDistance(target.position) > stoppingDistance)
     {
-        isMoving = true;
+        Vector3 direction = target.position - transform.position;
 
-        
-        if (animator != null)
-        {
-            animator.SetBool("IsMoving", true);
-        }
+        direction.y = 0f;
+        direction.Normalize();
 
-        while(GetHorizontalDistance(target.position) > stoppingDistance)
-        {
-            Vector3 direction = target.position - transform.position;
+        animationController.UpdateDirection(direction);
 
-            //NO MOVIMIENTO VERTICAL
-            direction.y = 0f;
+        Vector3 nextPosition =
+            transform.position +
+            direction * moveSpeed * Time.deltaTime;
 
-            direction.Normalize();
-            
-            //UpdateAnimation(direction);
+        nextPosition.y = transform.position.y;
 
-            Vector3 nextPosition = transform.position + direction*moveSpeed*Time.deltaTime;
+        transform.position = nextPosition;
 
-            //conservar altura
-            nextPosition.y = transform.position.y;
-
-            transform.position = nextPosition;
-
-            yield return null;
-        }
-
-        transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
-        transform.rotation = target.rotation;
-        isMoving = false;
-
-
-        
-        if(animator!=null){
-        animator.SetBool("IsMoving", false);
-        }
-        
-
-        onArrival?.Invoke();
+        yield return null;
     }
 
-    private float GetHorizontalDistance(Vector3 targetPosition)
+    transform.position = new Vector3(
+        target.position.x,
+        transform.position.y,
+        target.position.z
+    );
+
+    transform.rotation = target.rotation;
+
+    isMoving = false;
+
+    // AQUÍ se pone IsMoving = false
+    if (animationController != null)
+    {
+        animationController.StopMoving();
+    }
+
+    // Si es null, simplemente no hace nada
+    onArrival?.Invoke();
+}
+
+    private float GetHorizontalDistance(
+        Vector3 targetPosition)
     {
         Vector3 current = transform.position;
 
-        Vector2 currentXZ = new Vector2(current.x, current.z);
-        Vector2 targetXZ = new Vector2(targetPosition.x, targetPosition.z);
+        Vector2 currentXZ =
+            new Vector2(
+                current.x,
+                current.z
+            );
 
-        return Vector2.Distance(currentXZ, targetXZ);
+        Vector2 targetXZ =
+            new Vector2(
+                targetPosition.x,
+                targetPosition.z
+            );
+
+        return Vector2.Distance(
+            currentXZ,
+            targetXZ
+        );
     }
+
     public void SetMoveSpeed(float speed)
     {
         moveSpeed = speed;
-    }
-
-    private void UpdateAnimation(Vector3 direction)
-    {
-        if(animator==null)
-            return;
-        
-        animator.SetFloat("MoveX", direction.x);
-        animator.SetFloat("MoveZ", direction.z);
     }
 }

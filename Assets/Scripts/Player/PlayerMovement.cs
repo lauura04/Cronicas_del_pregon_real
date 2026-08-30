@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     public bool CanMove => canMove;
     private bool isAutoMoving = false;
+
+    //variables cambio de eje x angulo
+    private bool invertHorizontal;
+    private bool invertVertical;
+    private bool swapAxes;
     public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {
@@ -45,6 +50,20 @@ public class PlayerMovement : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetMovementMapping(bool invertHorizontal, bool invertVertical, bool swapAxes)
+    {
+        this.invertHorizontal = invertHorizontal;
+        this.invertVertical = invertVertical;
+        this.swapAxes = swapAxes;
+    }
+
+    public void ResetMovementMapping()
+    {
+        invertHorizontal=false;
+        invertVertical=false;
+        swapAxes=false;
     }
     private void Update()
     {
@@ -77,7 +96,25 @@ public class PlayerMovement : MonoBehaviour
     private void ReadMovementInput()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (invertHorizontal)
+        {
+            horizontalInput*=-1;
+        }
+
         float verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (invertVertical)
+        {
+            verticalInput*=-1;
+        }
+
+        if (swapAxes)
+        {
+            float temp = horizontalInput;
+            horizontalInput = verticalInput;
+            verticalInput = temp;
+        }
 
         movementInput = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
