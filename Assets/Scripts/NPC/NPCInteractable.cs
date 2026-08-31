@@ -26,7 +26,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [Header("Events")]
     [SerializeField] private UnityEvent onInteractionFinished;
     [SerializeField] private UnityEvent onCharmFinished;
-    
+
 
     private bool hasBeenCharmed;
     private bool isBusy;
@@ -40,15 +40,30 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public DialogueData DetectedDialogue =>
         GetDialogueForCurrentPhase(detectedDialogues);
+    [Header("PUZZLES CHAP2")]
+    [SerializeField] private CatPuzzle catPuzzle;
+    [SerializeField] private InquisitorPuzzleController inquisitorPuzzle;
 
+    [SerializeField] private bool requieresInquisitorUnlock = false;
 
-     [SerializeField] private AudioClip sheepSound;
-     [SerializeField] private AudioClip interactionSound;
-     [SerializeField] private AudioClip spySound;
+    [Header("SOUNDS")]
+    [SerializeField] private AudioClip sheepSound;
+    [SerializeField] private AudioClip interactionSound;
+    [SerializeField] private AudioClip spySound;
 
-     public AudioClip SpySound => spySound;
+    public AudioClip SpySound => spySound;
 
-
+    private void Awake()
+    {
+        if (catPuzzle == null)
+        {
+            catPuzzle = GetComponent<CatPuzzle>();
+        }
+        if (inquisitorPuzzle == null)
+        {
+            inquisitorPuzzle=GetComponent<InquisitorPuzzleController>();
+        }
+    }
     private void OnEnable()
     {
         GameProgressManager.OnPhaseChanged += HandlePhaseChanged;
@@ -75,7 +90,24 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         {
             return;
         }
+        if (catPuzzle != null)
+        {
+            catPuzzle.Interact();
+            return;
+        }
+        if (inquisitorPuzzle != null)
+        {
+            inquisitorPuzzle.Interact();
+            return;
+        }
 
+        if (requieresInquisitorUnlock)
+        {
+            if (InquisitorPuzzleController.Instance == null || !InquisitorPuzzleController.Instance.ItemsUnlocked)
+            {
+                return;
+            }
+        }
         PhaseDialogue phaseDialogue =
             GetPhaseDialogueForCurrentPhase(
                 interactionDialogues
@@ -123,7 +155,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             return;
         }
 
-        if(requiresInfantaDialogue && !TutorialController.Instance.HasTalkedToInfanta)
+        if (requiresInfantaDialogue && !TutorialController.Instance.HasTalkedToInfanta)
         {
             return;
         }
@@ -179,46 +211,46 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     // R - CHARM
     // =========================
 
-   public void Charm()
-{
-    if (isBusy ||
-        !canBeCharmed ||
-        (charmOnlyOnce && hasBeenCharmed))
+    public void Charm()
     {
-        return;
-    }
+        if (isBusy ||
+            !canBeCharmed ||
+            (charmOnlyOnce && hasBeenCharmed))
+        {
+            return;
+        }
 
-    if (isSheep &&
-        !TutorialController.Instance.SheepUnlocked)
-    {
-        Debug.Log(
-            "Las ovejas no están desbloqueadas"
-        );
-        return;
-    }
+        if (isSheep &&
+            !TutorialController.Instance.SheepUnlocked)
+        {
+            Debug.Log(
+                "Las ovejas no están desbloqueadas"
+            );
+            return;
+        }
         if (isSheep)
         {
             SFXManager.Instance.PlaySFX(sheepSound);
         }
 
-    CharmableNPC charmableNPC =
-        GetComponent<CharmableNPC>();
+        CharmableNPC charmableNPC =
+            GetComponent<CharmableNPC>();
 
-    if (charmableNPC == null)
-    {
-        Debug.LogError(
-            $"{gameObject.name} no tiene CharmableNPC."
+        if (charmableNPC == null)
+        {
+            Debug.LogError(
+                $"{gameObject.name} no tiene CharmableNPC."
+            );
+            return;
+        }
+
+        Debug.Log(
+            $"Iniciando minijuego Charm con {gameObject.name}"
         );
-        return;
+
+
+        charmableNPC.TryCharm();
     }
-
-    Debug.Log(
-        $"Iniciando minijuego Charm con {gameObject.name}"
-    );
-
-    
-    charmableNPC.TryCharm();
-}
 
 
     // =========================

@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 136f1f9b9073de646ab6412264fb747e, type: 2}
-    text: "Me acusan de ser bruja, pero se equivocan. Tan solo buscaba los ingredientes
-      de un viejo remedio para sanar a mi hijo que est\xE1 enfermo de tos."
+    text: Me acusan de ser bruja, pero se equivocan. Tan solo buscaba los ingredientes
+      de un viejo remedio para sanar a mi hijo
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 136f1f9b9073de646ab6412264fb747e, type: 2}
-    text: "Del gato qu\xE9 voy a saber yo, si todo el barrio sabe lo mucho que le
-      gusta esconderse, andar\xE1 en el lugar menos esperado. \xA1Por Dios, no quiero
-      morir! "
+    text: " que est\xE1 enfermo de tos. Del gato qu\xE9 voy a saber yo, si todo el
+      barrio sabe lo mucho que le gusta esconderse, "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 136f1f9b9073de646ab6412264fb747e, type: 2}
+    text: "andar\xE1 en el lugar menos esperado.  \xA1Por Dios, no quiero morir! "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

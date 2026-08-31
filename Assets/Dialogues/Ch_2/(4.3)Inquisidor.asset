@@ -10,14 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
-  m_Name: (4.2.1.1)Gata
+  m_Name: (4.3)Inquisidor
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: Creo que veo algo...
+    text: "Ese hombre es amigo m\xEDo e inocente de todo lo que le acusan. D\xE9jele
+      marchar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "Ni hablar. Hay una acusaci\xF3n contra \xE9l."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "\xA1Oh no! Se me ha escapado. \xBFA d\xF3nde habr\xE1 ido?"
+    text: "\xBFY sus cosas?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "Requisadas. Hasta que se decida qu\xE9 hacer con \xE9l."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

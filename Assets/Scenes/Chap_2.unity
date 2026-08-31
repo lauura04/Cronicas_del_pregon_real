@@ -122,6 +122,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &25444098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25444099}
+  - component: {fileID: 25444100}
+  m_Layer: 3
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &25444099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25444098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.149, z: 0}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 270889161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &25444100
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25444098}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 29d5c84ce5a785548a6b4444bf0b5c89, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 30.000002, y: 40}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &44047111
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44047112}
   - component: {fileID: 44047113}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1o1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,8 +232,8 @@ Transform:
   m_GameObject: {fileID: 44047111}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.282332, z: -0, w: 0.9593168}
-  m_LocalPosition: {x: 0, y: -0.605, z: 0.239}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0.45000076, y: -0.19, z: 0.45301914}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 174274452}
@@ -216,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64470014}
   - component: {fileID: 64470015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pueblo4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +387,7 @@ GameObject:
   - component: {fileID: 65849650}
   - component: {fileID: 65849649}
   - component: {fileID: 65849652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bruja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 65849647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 2.87, z: -0.48}
+  m_LocalPosition: {x: -1.92, y: 2.87, z: -1.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,7 +424,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -434,6 +518,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -447,7 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124465868}
   - component: {fileID: 124465869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pueblo6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +621,7 @@ GameObject:
   - component: {fileID: 174274455}
   - component: {fileID: 174274454}
   - component: {fileID: 174274453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Ni\xF1os1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,6 +698,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -689,7 +779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178982453}
   - component: {fileID: 178982454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pueblo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,9 +863,10 @@ GameObject:
   m_Component:
   - component: {fileID: 270889161}
   - component: {fileID: 270889160}
-  - component: {fileID: 270889159}
   - component: {fileID: 270889158}
-  m_Layer: 0
+  - component: {fileID: 270889162}
+  - component: {fileID: 270889163}
+  m_Layer: 3
   m_Name: Inquisidor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -805,48 +896,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &270889159
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270889157}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &270889160
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -867,9 +916,65 @@ Transform:
   m_LocalPosition: {x: 59, y: 0.94, z: 321.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 25444099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &270889162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270889157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  requiresInfantaDialogue: 0
+  spyConversation: {fileID: 0}
+  spyDialogues: []
+  detectionTime: 5
+  detectedDialogues: []
+  canBeCharmed: 0
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  isSheep: 0
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 270889163}
+  requieresInquisitorUnlock: 0
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
+--- !u!114 &270889163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270889157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1112f48ded4e4f4abb528477ed0ba2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstDialogue: {fileID: 11400000, guid: 0c776a883a73d5c4193a8897a3ab86b1, type: 2}
+  missingEvidenceDialogue: {fileID: 11400000, guid: da37a01f942cea74a842adf035150032,
+    type: 2}
+  correctEvidenceDialogue: {fileID: 11400000, guid: 21b8e434502cf564da74038ed2b48636,
+    type: 2}
+  coinsID: bolsa
+  catID: gata
+  sheetID: sabana_manchada
 --- !u!1 &312018842
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +1000,7 @@ Transform:
   m_GameObject: {fileID: 312018842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.77952, y: -0.7287957, z: 322.09598}
+  m_LocalPosition: {x: 53.77952, y: -1.23, z: 322.09598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -913,10 +1018,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 367099793}
+  - component: {fileID: 367099796}
   - component: {fileID: 367099790}
+  - component: {fileID: 367099795}
   - component: {fileID: 367099789}
   - component: {fileID: 367099794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: culpable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,8 +1055,8 @@ MonoBehaviour:
   spyDialogues: []
   detectionTime: 5
   detectedDialogues: []
-  canBeCharmed: 0
-  charmDialogue: {fileID: 0}
+  canBeCharmed: 1
+  charmDialogue: {fileID: 11400000, guid: a9555a8f1341bbd428209272660d8c28, type: 2}
   charmOnlyOnce: 1
   isSheep: 0
   onInteractionFinished:
@@ -957,8 +1064,23 @@ MonoBehaviour:
       m_Calls: []
   onCharmFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -994,8 +1116,8 @@ Transform:
   m_GameObject: {fileID: 367099788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.45066777, z: -0, w: 0.8926918}
-  m_LocalPosition: {x: 64.12301, y: 0.397, z: 315.90198}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 64.255, y: 0.788, z: 315.90198}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1052,6 +1174,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &367099795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367099788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: e3e02f812f116da449c6703871024f48, type: 2}
+  giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+--- !u!114 &367099796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367099788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a60f5113404340b71920e9861d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failedCharmDialogue: {fileID: 0}
+  sucessCharmDialogue: {fileID: 11400000, guid: a9555a8f1341bbd428209272660d8c28,
+    type: 2}
+  requireDialogueBeforeCharm: 0
+  onCharmSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 367099795}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  charmSound: {fileID: 8300000, guid: b15ba5eb02a4cc74387df95b3a79a862, type: 3}
 --- !u!1 &401329475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401329476}
   - component: {fileID: 401329477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,8 +1247,8 @@ Transform:
   m_GameObject: {fileID: 401329475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9056614, z: -0, w: 0.42400175}
-  m_LocalPosition: {x: 0.112, y: -0.436, z: -0.282}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0.153, y: -0.11, z: -0.282}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 523426036}
@@ -1145,7 +1314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434597726}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,6 +1349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445792936}
   - component: {fileID: 445792935}
+  - component: {fileID: 445792937}
   m_Layer: 0
   m_Name: ChapterController
   m_TagString: Untagged
@@ -1205,6 +1375,7 @@ MonoBehaviour:
   endPhase: {fileID: 11400000, guid: d2ff1b2da6898fb49a5cea0112ae6ca1, type: 2}
   initialDialogue: {fileID: 11400000, guid: c0d654371169ae949b3a7752d5e6e09e, type: 2}
   secondDialogue: {fileID: 11400000, guid: dc65fffda4c24284da1dc9263be8bdc7, type: 2}
+  endDialogue: {fileID: 0}
   playerDestination: {fileID: 2086241248}
 --- !u!4 &445792936
 Transform:
@@ -1221,6 +1392,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &445792937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445792934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df98861255efd84e944a40d14d95e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItemIds:
+  - sabana
+  - tinte
+  resultItem: {fileID: 11400000, guid: e2a46b8c249d6714f8ee91d1a55571fd, type: 2}
+  readyMessage: Tienes todos los objetos necesarios
+  craftedMessage: 
+  craftedDialogue: {fileID: 11400000, guid: bba15c64b1e9ac54280bef870366ecfc, type: 2}
+  onCrafted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &487322869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1519,7 @@ GameObject:
   - component: {fileID: 523426039}
   - component: {fileID: 523426038}
   - component: {fileID: 523426037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Ni\xF1os2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,6 +1596,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -1429,6 +1625,68 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &530734520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530734521}
+  m_Layer: 0
+  m_Name: ThirdPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530734521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530734520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.14, y: 0.33, z: -9.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 780910359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &545923188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545923189}
+  m_Layer: 0
+  m_Name: SecondPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545923189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545923188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.22, y: 0.4, z: -5.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 780910359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &582060778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582060779}
   - component: {fileID: 582060780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,8 +1713,8 @@ Transform:
   m_GameObject: {fileID: 582060778}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.445, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: -0.101, z: 0}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 523426036}
@@ -1522,11 +1780,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594277310}
-  - component: {fileID: 594277313}
-  - component: {fileID: 594277312}
   - component: {fileID: 594277311}
   - component: {fileID: 594277314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Judio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,10 +1798,11 @@ Transform:
   m_GameObject: {fileID: 594277309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.09, y: 2.87, z: -0.48}
+  m_LocalPosition: {x: 2.09, y: 2.87, z: -1.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1268596340}
   m_Father: {fileID: 312018843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &594277311
@@ -1563,7 +1820,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1571,56 +1828,6 @@ CapsuleCollider:
   m_Height: 3.8987358
   m_Direction: 1
   m_Center: {x: -0.13724506, y: -0.9493679, z: 0.002670288}
---- !u!23 &594277312
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594277309}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &594277313
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594277309}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &594277314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,6 +1864,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -1672,7 +1882,7 @@ GameObject:
   - component: {fileID: 674464780}
   - component: {fileID: 674464779}
   - component: {fileID: 674464784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1715,6 +1925,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -1750,8 +1963,8 @@ Transform:
   m_GameObject: {fileID: 674464778}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.80904055, z: -0, w: 0.5877528}
-  m_LocalPosition: {x: 63.642006, y: 0.385, z: 315.61298}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 63.431, y: 0.746, z: 315.61298}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1820,7 +2033,7 @@ GameObject:
   - component: {fileID: 701736568}
   - component: {fileID: 701736567}
   - component: {fileID: 701736572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,6 +2076,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -1898,8 +2114,8 @@ Transform:
   m_GameObject: {fileID: 701736566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.977005, y: 0.418, z: 315.61298}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 64.023, y: 0.788, z: 315.498}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1956,6 +2172,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &780910358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780910359}
+  m_Layer: 0
+  m_Name: cat_positions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780910359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780910358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.33597, y: 0, z: 312.0662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 545923189}
+  - {fileID: 530734521}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877197913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +2215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877197914}
   - component: {fileID: 877197915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,8 +2231,8 @@ Transform:
   m_GameObject: {fileID: 877197913}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.81363803, z: -0, w: 0.58137184}
-  m_LocalPosition: {x: -0.163, y: -0.653, z: 0.011}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: -0.163, y: -0.266, z: 0.011}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1068982763}
@@ -2053,7 +2302,7 @@ GameObject:
   - component: {fileID: 947139282}
   - component: {fileID: 947139281}
   - component: {fileID: 947139284}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Ladr\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2318,7 @@ Transform:
   m_GameObject: {fileID: 947139279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.98, y: 2.87, z: -0.48}
+  m_LocalPosition: {x: -5.98, y: 2.87, z: -0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2090,7 +2339,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2184,6 +2433,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -2199,7 +2451,7 @@ GameObject:
   - component: {fileID: 1068982766}
   - component: {fileID: 1068982765}
   - component: {fileID: 1068982764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Ni\xF1os3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2276,6 +2528,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -2311,7 +2566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078573446}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Espiar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2349,7 +2604,7 @@ GameObject:
   - component: {fileID: 1135505821}
   - component: {fileID: 1135505820}
   - component: {fileID: 1135505825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2392,6 +2647,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -2427,8 +2685,8 @@ Transform:
   m_GameObject: {fileID: 1135505819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.767006, y: 0.392, z: 315.93597}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 63.767006, y: 0.734, z: 316.077}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2485,6 +2743,358 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1144322889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144322894}
+  - component: {fileID: 1144322893}
+  - component: {fileID: 1144322892}
+  - component: {fileID: 1144322891}
+  - component: {fileID: 1144322890}
+  - component: {fileID: 1144322895}
+  m_Layer: 3
+  m_Name: PuestoZapatero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1144322890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: 66c1101b07d799440bbd3cd9ac4958aa, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1144322895}
+            m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+            m_MethodName: Give
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 0
+  requiresInfantaDialogue: 0
+  spyConversation: {fileID: 0}
+  spyDialogues: []
+  detectionTime: 5
+  detectedDialogues: []
+  canBeCharmed: 0
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  isSheep: 0
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 1
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
+--- !u!65 &1144322891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1144322892
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: df76030c9b0e24340a561c0e5691e14b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1144322893
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1144322894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.54303604, z: -0, w: 0.8397094}
+  m_LocalPosition: {x: 39.56, y: 1.26, z: 317.49}
+  m_LocalScale: {x: 2.7236, y: 2.7236, z: 2.7236}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -65.781, z: 0}
+--- !u!114 &1144322895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 3fcff089d3e10254189bece83ba77462, type: 2}
+  giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+--- !u!1 &1179991327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179991333}
+  - component: {fileID: 1179991332}
+  - component: {fileID: 1179991331}
+  - component: {fileID: 1179991330}
+  - component: {fileID: 1179991329}
+  - component: {fileID: 1179991328}
+  m_Layer: 3
+  m_Name: Casa_Sabanas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1179991328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1179991329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues:
+  - phase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+    dialogues:
+    - dialogue: {fileID: 11400000, guid: cbddccb117159d9468d7e78eb823eb6b, type: 2}
+      onDialogueFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1179991330}
+            m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+            m_MethodName: Give
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      advanceAutomatically: 0
+  requiresInfantaDialogue: 0
+  spyConversation: {fileID: 0}
+  spyDialogues: []
+  detectionTime: 5
+  detectedDialogues: []
+  canBeCharmed: 0
+  charmDialogue: {fileID: 0}
+  charmOnlyOnce: 1
+  isSheep: 0
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 1
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
+--- !u!114 &1179991330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 857553f6b22aec9408d50ecfdb6d7b35, type: 2}
+  giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+--- !u!23 &1179991331
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1bb5dde3afe94cc4cb76b49bd9d53f80, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1179991332
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1179991333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179991327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 64.01, y: 0.92, z: 307.69}
+  m_LocalScale: {x: 1.7425, y: 1.7425, z: 1.7425}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1195703232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +3108,7 @@ GameObject:
   - component: {fileID: 1195703236}
   - component: {fileID: 1195703235}
   - component: {fileID: 1195703234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Adultos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2514,7 +3124,7 @@ Transform:
   m_GameObject: {fileID: 1195703232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.67, y: 3.3, z: -22.77}
+  m_LocalPosition: {x: -3.67, y: 3.3, z: -18.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2573,6 +3183,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -2641,6 +3254,90 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1268596339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268596340}
+  - component: {fileID: 1268596341}
+  m_Layer: 3
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1268596340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268596339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 594277310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1268596341
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268596339}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: dd81d03d1ac72244880139291241e14b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 30.000002, y: 40}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1273515973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,7 +3348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273515974}
   - component: {fileID: 1273515975}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2667,8 +3364,8 @@ Transform:
   m_GameObject: {fileID: 1273515973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.621, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0.45, y: -0.285, z: 0.15}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 174274452}
@@ -2781,7 +3478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571650432}
   - component: {fileID: 1571650431}
-  - component: {fileID: 1571650430}
+  - component: {fileID: 1571650433}
   m_Layer: 0
   m_Name: Grupo Culpable
   m_TagString: Untagged
@@ -2789,57 +3486,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1571650430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571650429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionDialogues:
-  - phase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
-    dialogues:
-    - dialogue: {fileID: 11400000, guid: accb3a43107c5314aaff4670c86e5347, type: 2}
-      onDialogueFinished:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1571650429}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      advanceAutomatically: 0
-  requiresInfantaDialogue: 0
-  spyConversation: {fileID: 0}
-  spyDialogues: []
-  detectionTime: 5
-  detectedDialogues: []
-  canBeCharmed: 0
-  charmDialogue: {fileID: 0}
-  charmOnlyOnce: 1
-  isSheep: 0
-  onInteractionFinished:
-    m_PersistentCalls:
-      m_Calls: []
-  onCharmFinished:
-    m_PersistentCalls:
-      m_Calls: []
-  charmableNPC: {fileID: 0}
-  sheepSound: {fileID: 0}
-  interactionSound: {fileID: 0}
-  spySound: {fileID: 0}
 --- !u!65 &1571650431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2859,8 +3505,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4452133, y: 1.6511424, z: 0.8464966}
-  m_Center: {x: -0.115345, y: -0.32557023, z: -0.20581055}
+  m_Size: {x: 2.3085785, y: 1.6511424, z: 2.2373047}
+  m_Center: {x: -0.30989075, y: -0.32557023, z: -0.3317566}
 --- !u!4 &1571650432
 Transform:
   m_ObjectHideFlags: 0
@@ -2876,6 +3522,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571650433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571650429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1884902198181478ee388d2463fd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: accb3a43107c5314aaff4670c86e5347, type: 2}
+  triggerOnlyOnce: 1
+  showMessageAfterDialogue: 0
+  messageDuration: 3
+  messageAfterDialogue: 
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1627171860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,7 +3580,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3131,7 +3797,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 52.1, y: 0.38533062, z: 321.56}
-  m_LocalScale: {x: 11.249928, y: 1.874, z: 2.2777}
+  m_LocalScale: {x: 11.249928, y: 0.8813532, z: 2.2777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3146,7 +3812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1677883817}
   - component: {fileID: 1677883818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1o2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3162,8 +3828,8 @@ Transform:
   m_GameObject: {fileID: 1677883816}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.69424444, z: -0, w: 0.7197393}
-  m_LocalPosition: {x: -0.199, y: -0.438, z: -0.187}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: -0.254, y: -0.052, z: -0.187}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 523426036}
@@ -3230,7 +3896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701204763}
   - component: {fileID: 1701204764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1a3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3246,8 +3912,8 @@ Transform:
   m_GameObject: {fileID: 1701204762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.635, z: 0.196}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: -0.286, z: 0.196}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1068982763}
@@ -3304,6 +3970,230 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1731711774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731711783}
+  - component: {fileID: 1731711782}
+  - component: {fileID: 1731711781}
+  - component: {fileID: 1731711780}
+  - component: {fileID: 1731711779}
+  - component: {fileID: 1731711778}
+  - component: {fileID: 1731711777}
+  - component: {fileID: 1731711776}
+  m_Layer: 3
+  m_Name: cat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1731711776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335269ff9c2427458629efb193f0cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 3683ab286c776df4fa32e1515de369fa, type: 2}
+  giveOnlyOnce: 1
+  requiredPhase: {fileID: 11400000, guid: 608c573d47667c541a328008b215d70a, type: 2}
+--- !u!114 &1731711777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a60f5113404340b71920e9861d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failedCharmDialogue: {fileID: 0}
+  sucessCharmDialogue: {fileID: 11400000, guid: 0317af9a0bb41d04abb8be24667b7d94,
+    type: 2}
+  requireDialogueBeforeCharm: 1
+  onCharmSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1731711776}
+        m_TargetAssemblyTypeName: GiveItem, Assembly-CSharp
+        m_MethodName: Give
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1731711774}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  charmSound: {fileID: 0}
+--- !u!114 &1731711778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a44ad87bdef85443847fdfeebe6e1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDialogues: []
+  requiresInfantaDialogue: 0
+  spyConversation: {fileID: 0}
+  spyDialogues: []
+  detectionTime: 5
+  detectedDialogues: []
+  canBeCharmed: 1
+  charmDialogue: {fileID: 11400000, guid: 0317af9a0bb41d04abb8be24667b7d94, type: 2}
+  charmOnlyOnce: 1
+  isSheep: 0
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharmFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  charmableNPC: {fileID: 1731711777}
+  catPuzzle: {fileID: 1731711779}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
+  sheepSound: {fileID: 0}
+  interactionSound: {fileID: 0}
+  spySound: {fileID: 0}
+--- !u!114 &1731711779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7b697f9cffee948808a8b5ce8dc1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondPosition: {fileID: 545923189}
+  thirdPosition: {fileID: 530734521}
+  firstEncounterDialogue: {fileID: 11400000, guid: 40cf96250bcbe014d9483d70bf562768,
+    type: 2}
+  secondEncounterDialogue: {fileID: 11400000, guid: 53c36f2fd274366409804de9f426bade,
+    type: 2}
+  thirdEncounterDialogue: {fileID: 11400000, guid: 58a287f9563ab6f4cb0ec732fe4e9f88,
+    type: 2}
+  charmableNPC: {fileID: 1731711777}
+--- !u!65 &1731711780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1731711781
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 32e7f90bac4ac2b428c5b5974d95e278, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1731711782
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1731711783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731711774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.184322, y: 0.325, z: 311.811}
+  m_LocalScale: {x: 0.59341, y: 0.59341, z: 0.59341}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941490414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +4204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941490415}
   - component: {fileID: 1941490416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1o3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3330,8 +4220,8 @@ Transform:
   m_GameObject: {fileID: 1941490414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.44151306, z: -0, w: 0.8972548}
-  m_LocalPosition: {x: 0.177, y: -0.596, z: 0.032}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0.177, y: -0.19, z: 0.032}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1068982763}
@@ -3398,7 +4288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972957990}
   - component: {fileID: 1972957991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "ni\xF1o3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3414,8 +4304,8 @@ Transform:
   m_GameObject: {fileID: 1972957989}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.5583322, z: -0, w: 0.82961744}
-  m_LocalPosition: {x: -0.175, y: -0.598, z: 0.107}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0.12700075, y: -0.217, z: 0.25699425}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 174274452}
@@ -3640,3 +4530,7 @@ SceneRoots:
   - {fileID: 674464783}
   - {fileID: 701736571}
   - {fileID: 367099793}
+  - {fileID: 1731711783}
+  - {fileID: 780910359}
+  - {fileID: 1144322894}
+  - {fileID: 1179991333}

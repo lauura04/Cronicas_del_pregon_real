@@ -15,7 +15,11 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "\xA1Dejad mercados, c\xE1ntaros y cotilleos para despu\xE9s! \xA1Traigo
-      noticias de boda! La infanta Isabel y el rey Manuel de Portugal han de casar."
+      noticias de boda! ."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: La infanta Isabel y el rey Manuel de Portugal han de casar.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
@@ -40,18 +44,21 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
     text: "La segunda por bruja deb\xEDo de haber ardido hace meses. La hechicer\xEDa
-      corre por sus venas y se atrevi\xF3 a usar al gato de un vecino en uno de sus
-      rituales."
+      corre por sus venas "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
+    text: "y se atrevi\xF3 a usar al gato de un vecino en uno de sus rituales."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
     text: "El \xFAltimo es el peor de todos, finge abrazar la fe cristiana, pero
-      se le vio cambiando sus s\xE1banas y ase\xE1ndose el pasado viernes sin raz\xF3n
-      alguna"
+      se le vio cambiando sus s\xE1banas"
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
-    text: "por lo que sigue rezando al dios jud\xEDo."
+    text: "y ase\xE1ndose el pasado viernes sin raz\xF3n alguna por lo que sigue
+      rezando al dios jud\xEDo."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}

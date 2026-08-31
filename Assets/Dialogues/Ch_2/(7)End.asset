@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (7)End
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: cb54ec54409ecca4fbb4c6ce6a83b11e, type: 2}
+    text: "Gracias por lo que has hecho, toma unas cintas, quiz\xE1s te sirvan de
+      algo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 136f1f9b9073de646ab6412264fb747e, type: 2}
+    text: "Que Dios te pague lo que has hecho, poco puedo hacer pero toma unas especias
+      que recog\xED en el campo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "Benjam\xEDn, viejo amigo, muchas gracias por lo que has hecho. No s\xE9
+      si hubiera algo que pudiera hacer por ti para compens\xE1rtelo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xBFPor casualidad no tendr\xE1s algo de m\xFAsica que darme? Tengo una
+      boda que montar y no consigo encontrar nada acorde a la ocasi\xF3n."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa3b64a3cdf074283eb93fc0a69b8f, type: 2}
+    text: "Es tu d\xEDa de suerte, toma este cancionero que consegu\xED el otro d\xEDa
+      en la taberna, es lo menos que puedo hacer por ti."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: Creo que ya tengo lo que necesitaba, va siendo hora de apropincuarme al
+      lugar si todo quiero preparar.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

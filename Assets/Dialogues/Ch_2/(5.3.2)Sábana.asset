@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
-  m_Name: (4.2.1.1)Gata
+  m_Name: "(5.3.2)S\xE1bana"
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: Creo que veo algo...
-    leftImage: {fileID: 0}
-    rightImage: {fileID: 0}
-  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "\xA1Oh no! Se me ha escapado. \xBFA d\xF3nde habr\xE1 ido?"
+    text: "Unas s\xE1banas, justo lo que mencionaban en la acusaci\xF3n... Quiz\xE1s
+      me venga bien cogerlas."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

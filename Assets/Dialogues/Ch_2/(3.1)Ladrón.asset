@@ -19,7 +19,7 @@ MonoBehaviour:
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: cb54ec54409ecca4fbb4c6ce6a83b11e, type: 2}
-    text: "Pregunte al pueblo, a los ni\xF1os, nunca rob\xE9 nada, siempre fui un
-      siervo honrado."
+    text: "Pregunte al pueblo, escuche a los ni\xF1os, nunca rob\xE9 nada, siempre
+      fui un siervo honrado."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

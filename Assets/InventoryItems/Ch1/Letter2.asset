@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Letter 2
   description: "Carta que roba a Jo\xE3o de Madureira sobre las capitulaciones"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1f0e8789e0266004e8beb7b6ee8dd7fc, type: 3}
   itemId: Carta2

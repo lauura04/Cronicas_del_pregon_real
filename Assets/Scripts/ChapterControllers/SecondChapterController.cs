@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SecondChapterController : MonoBehaviour
 {
-    public static SecondChapterController Instance {get; private set;}
+    public static SecondChapterController Instance { get; private set; }
 
     [Header("Chapter")]
     [SerializeField] private ChapterData secondChapter;
@@ -17,6 +17,7 @@ public class SecondChapterController : MonoBehaviour
     [Header("DIALOGUES")]
     [SerializeField] private DialogueData initialDialogue;
     [SerializeField] private DialogueData secondDialogue;
+    [SerializeField] private DialogueData endDialogue;
 
     [Header("POSITIONS")]
     [SerializeField] private Transform playerDestination;
@@ -26,7 +27,7 @@ public class SecondChapterController : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance!=null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -36,27 +37,39 @@ public class SecondChapterController : MonoBehaviour
 
     private void Start()
     {
-        GameProgressManager.Instance.StartChapter(secondChapter, introPhase);
-        StartCoroutine(InitialSequence());
+        GameProgressManager.Instance.StartChapter(secondChapter, investigatePhase);
+        //StartCoroutine(InitialSequence());
     }
 
     private IEnumerator InitialSequence()
     {
         PlayerMovement.Instance.SetMovementEnabled(false);
         bool dialogueFinished = false;
-        DialogueManager.Instance.StartDialogue(initialDialogue, ()=>dialogueFinished=true);
+        DialogueManager.Instance.StartDialogue(initialDialogue, () => dialogueFinished = true);
 
-        yield return StartCoroutine(PlayerMovement.Instance.AutoMoveTo(playerDestination,1f));
+        yield return StartCoroutine(PlayerMovement.Instance.AutoMoveTo(playerDestination, 1f));
 
-        yield return new WaitUntil(()=>dialogueFinished);
+        yield return new WaitUntil(() => dialogueFinished);
 
         bool secondDialogueFinished = false;
 
         DialogueManager.Instance.StartDialogue(secondDialogue, () => secondDialogueFinished = true);
 
-        yield return new WaitUntil(()=>secondDialogueFinished);
+        yield return new WaitUntil(() => secondDialogueFinished);
 
         PlayerMovement.Instance.SetMovementEnabled(true);
         GameProgressManager.Instance.SetPhase(investigatePhase);
+    }
+    public void CompleteInquisitorPuzzle()
+    {
+        GameProgressManager.Instance.SetPhase(
+            endPhase
+        );
+        DialogueManager.Instance.StartDialogue(endDialogue, OnDialogueFinished);
+    }
+    private void OnDialogueFinished()
+    {
+        SaveManager.Instance.UnlockChapter(3);
+        ChapterManager.Instance.StartChapter(GameChapter.Chapter3);
     }
 }

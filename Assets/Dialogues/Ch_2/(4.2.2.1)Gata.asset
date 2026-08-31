@@ -17,3 +17,7 @@ MonoBehaviour:
     text: "\xBFPuede ser que no est\xE9 \xE9l solo?"
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Pardiez, se me volvi\xF3 a escapar. \xBFD\xF3nde estar\xE1 esta vez?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
