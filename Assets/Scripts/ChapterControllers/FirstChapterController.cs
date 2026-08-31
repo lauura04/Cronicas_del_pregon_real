@@ -9,6 +9,7 @@ public class FirstChapterController : MonoBehaviour
     public static FirstChapterController Instance { get; private set; }
     [SerializeField] private AudioClip firstChapterClip;
     [SerializeField] private AudioClip performanceClip;
+    [SerializeField] private AudioClip queenSound;
     [Header("Chapter")]
     [SerializeField] private ChapterData firstChapter;
     [Header("Initial Phase")]
@@ -248,6 +249,7 @@ public class FirstChapterController : MonoBehaviour
 
     public void onSecondLetterCorrect()
     {
+        SFXManager.Instance.PlaySFX(queenSound);
         Debug.Log("Segunda carta descifrada correctamente");
         DialogueManager.Instance.StartDialogue(lastDialogue, onLastDialogueFinished);
         secondLetter = true;

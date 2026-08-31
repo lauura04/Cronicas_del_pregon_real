@@ -25,6 +25,7 @@ public class LetterPuzzleManager : MonoBehaviour
     [SerializeField] private UnityEvent onIncorrect;
     [SerializeField] private DialogueData wrongAnswer;
 
+    [SerializeField] private AudioClip letterAudio;
     private List<TMP_Text> letterSlots = new List<TMP_Text>();
 
     private StringBuilder currentAnswer;
@@ -283,6 +284,7 @@ private int GetWordLength(string text, int startIndex)
 
     private void CompletePuzzle()
     {
+        SFXManager.Instance.PlaySFX(letterAudio);
         isPlaying = false;
         puzzlePanel.SetActive(false);
         if (PlayerMovement.Instance != null)

@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundSkin = 0.02f;
 
     private CapsuleCollider capsuleCollider;
-    
-    
-    
+
+
+
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 1f;
 
@@ -61,9 +61,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResetMovementMapping()
     {
-        invertHorizontal=false;
-        invertVertical=false;
-        swapAxes=false;
+        invertHorizontal = false;
+        invertVertical = false;
+        swapAxes = false;
     }
     private void Update()
     {
@@ -99,14 +99,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (invertHorizontal)
         {
-            horizontalInput*=-1;
+            horizontalInput *= -1;
         }
 
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         if (invertVertical)
         {
-            verticalInput*=-1;
+            verticalInput *= -1;
         }
 
         if (swapAxes)
@@ -148,10 +148,11 @@ public class PlayerMovement : MonoBehaviour
         }
         Vector3 newPosition = playerRigidbody.position + movementInput * moveSpeed * Time.fixedDeltaTime;
 
-        Vector3 rayOrigin = new Vector3(newPosition.x, playerRigidbody.position.y + groundRayHeight,newPosition.z);
+        Vector3 rayOrigin = new Vector3(newPosition.x, playerRigidbody.position.y + groundRayHeight, newPosition.z);
 
-        if(Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer)){
-            float feetDistance = playerRigidbody.position.y-capsuleCollider.bounds.min.y;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer))
+        {
+            float feetDistance = playerRigidbody.position.y - capsuleCollider.bounds.min.y;
 
             newPosition.y = hit.point.y + feetDistance + groundSkin;
         }
@@ -180,39 +181,78 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.position = position;
     }
 
-//para hacer "animación automática" de movimiento
-    
+    //para hacer "animación automática" de movimiento
+
     public IEnumerator AutoMoveTo(Transform destination, float speed = 3f)
     {
         canMove = false;
         isAutoMoving = true;
-        
-        while (Vector3.Distance(playerRigidbody.position, destination.position) > 0.05f)
+
+        while (Vector3.Distance(
+            new Vector3(playerRigidbody.position.x, 0f, playerRigidbody.position.z),
+            new Vector3(destination.position.x, 0f, destination.position.z)
+        ) > 0.02f)
         {
-            Vector3 direction = destination.position-playerRigidbody.position;
-            direction.y=0f;
-            direction.Normalize();
+            Vector3 direction = destination.position - playerRigidbody.position;
+            direction.y = 0f;
 
-            movementInput = direction;
-
-            Vector3 newPosition = playerRigidbody.position + direction*speed*Time.fixedDeltaTime;
-            Vector3 rayOrigin = new Vector3(newPosition.x, playerRigidbody.position.y + groundRayHeight, newPosition.z);
-
-            if(Physics.Raycast(rayOrigin,Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer))
+            if (direction.sqrMagnitude > 0.001f)
             {
-                float feetDistance = playerRigidbody.position.y - capsuleCollider.bounds.min.y;
+                direction.Normalize();
+                movementInput = direction;
+                lastMovementDirection = direction;
+            }
 
-                newPosition.y = hit.point.y + feetDistance + groundSkin;
+            Vector3 targetPosition = new Vector3(
+                destination.position.x,
+                playerRigidbody.position.y,
+                destination.position.z
+            );
+
+            Vector3 newPosition = Vector3.MoveTowards(
+                playerRigidbody.position,
+                targetPosition,
+                speed * Time.fixedDeltaTime
+            );
+
+            Vector3 rayOrigin = new Vector3(
+                newPosition.x,
+                playerRigidbody.position.y + groundRayHeight,
+                newPosition.z
+            );
+
+            if (Physics.Raycast(
+                rayOrigin,
+                Vector3.down,
+                out RaycastHit hit,
+                groundRayDistance,
+                groundLayer))
+            {
+                float feetDistance =
+                    playerRigidbody.position.y - capsuleCollider.bounds.min.y;
+
+                newPosition.y =
+                    hit.point.y + feetDistance + groundSkin;
             }
 
             playerRigidbody.MovePosition(newPosition);
 
             yield return new WaitForFixedUpdate();
         }
+
+        // Dejamos al jugador EXACTAMENTE en el destino
+        Vector3 finalPosition = playerRigidbody.position;
+        finalPosition.x = destination.position.x;
+        finalPosition.z = destination.position.z;
+
+        playerRigidbody.MovePosition(finalPosition);
+
+        // Muy importante para que el Animator detecte que ha parado
         movementInput = Vector3.zero;
-        isAutoMoving = false;
+
         playerRigidbody.velocity = Vector3.zero;
         playerRigidbody.angularVelocity = Vector3.zero;
+
+        isAutoMoving = false;
     }
-    
 }

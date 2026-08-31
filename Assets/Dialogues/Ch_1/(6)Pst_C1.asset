@@ -28,10 +28,11 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "Mi buen amigo, parece que esto acaba de empezar, tendr\xE1s que hacerte
-      con la respuesta portuguesa si tranquilos queremos estar."
+      con la "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: Y que no se te olvide volver cuando la consigas.
+    text: respuesta portuguesa si tranquilos queremos estar.Y que no se te olvide
+      volver cuando la consigas.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

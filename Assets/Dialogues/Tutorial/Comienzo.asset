@@ -15,14 +15,24 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "\xBFQu\xE9 tal fue con sus majestades?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Horrible mi querido mentor, al igual que su madre, la princesa tiene un
       gran car\xE1cter y la de presentarme "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "con las manos vac\xEDas no es algo que le haya agradado."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "\xA1Bobo insensato! Pero c\xF3mo se te ocurre acercarte sin una m\xEDsera
-      ofrenda. Ve a buscar algo "
+      ofrenda. Ve a buscar algo con tal esplendor"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "con tal esplendor que complazca a nuestra se\xF1ora la Infanta. Trata
-      de hacerlo lo mejor posible y vuelve a m\xED cuando creas tener informaci\xF3n."
+    text: " que complazca a nuestra se\xF1ora la Infanta. Trata de hacerlo lo mejor
+      posible y vuelve a m\xED cuando creas tener informaci\xF3n."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

@@ -16,6 +16,7 @@ public class SecondChapterController : MonoBehaviour
 
     [Header("DIALOGUES")]
     [SerializeField] private DialogueData initialDialogue;
+    [SerializeField] private DialogueData secondDialogue;
 
     [Header("POSITIONS")]
     [SerializeField] private Transform playerDestination;
@@ -49,6 +50,13 @@ public class SecondChapterController : MonoBehaviour
 
         yield return new WaitUntil(()=>dialogueFinished);
 
+        bool secondDialogueFinished = false;
+
+        DialogueManager.Instance.StartDialogue(secondDialogue, () => secondDialogueFinished = true);
+
+        yield return new WaitUntil(()=>secondDialogueFinished);
+
         PlayerMovement.Instance.SetMovementEnabled(true);
+        GameProgressManager.Instance.SetPhase(investigatePhase);
     }
 }

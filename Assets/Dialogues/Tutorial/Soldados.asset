@@ -14,13 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
-    text: "Buenas tardes tengan vuesas mercedes. \xBFSer\xEDan tan amables de dejarnos
-      pasar tanto a m\xED como a mi joven pupilo al lugar de la celebraci\xF3n?"
+    text: 'Buenas tardes tengan vuesas mercedes. '
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
+    text: "\xBFSer\xEDan tan amables de dejarnos pasar tanto a m\xED como a mi joven
+      pupilo al lugar de la celebraci\xF3n?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "Hemos sido invitados para amenizar la estancia de sus j\xF3venes majestades."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: a011722f1e9e034418c0a61806b0c672, type: 2}
     text: "Tenemos la orden de no dejar pasar a nadie, mas algo de diversi\xF3n siempre
       viene bien. Tocad para nosotros y aqu\xED permanecer\xE9is."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 3f9d660e59351d6468258772802a4d23, type: 2}
     text: "Dicen que la m\xFAsica amansa a las fieras, pues es la hora de demostrarlo.
       \xBFQuieren m\xFAsica? Pues gracias a ella nos dejar\xE1n pasar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
