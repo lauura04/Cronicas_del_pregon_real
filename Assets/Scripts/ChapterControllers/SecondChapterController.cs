@@ -38,7 +38,7 @@ public class SecondChapterController : MonoBehaviour
     private void Start()
     {
         GameProgressManager.Instance.StartChapter(secondChapter, investigatePhase);
-        //StartCoroutine(InitialSequence());
+        StartCoroutine(InitialSequence());
     }
 
     private IEnumerator InitialSequence()

@@ -15285,7 +15285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18017,7 +18017,7 @@ MonoBehaviour:
   m_text: "\xA1Haz coincidir las notas!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac68b25c27b936d4f9f8254fec5c0a34, type: 2}
-  m_sharedMaterial: {fileID: 881003065632525843, guid: ac68b25c27b936d4f9f8254fec5c0a34,
+  m_sharedMaterial: {fileID: -1958297298176487529, guid: ac68b25c27b936d4f9f8254fec5c0a34,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

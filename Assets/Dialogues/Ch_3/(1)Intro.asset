@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (1)Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "Ya vengo a hacer el encargo que la reina me encomienda, revisar que est\xE1
+      en orden el lugar del casamiento, "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "y que ese dichoso buf\xF3n traiga todo lo mandado."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "\xA1Eh t\xFA! A ti te quer\xEDa yo ver, que por si poco fuera llegas despu\xE9s
+      de la boda."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Perd\xF3n mi buen se\xF1or pero al estar usted tan enfermo tuve que hacer
+      su trabajo y el m\xEDo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "No te vengas tan arriba que solo diste cuatro voces, \xBFy bien? \xBFTraes
+      todo lo que se te encarg\xF3?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

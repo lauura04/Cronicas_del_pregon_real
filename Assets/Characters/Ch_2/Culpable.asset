@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Culpable
   m_EditorClassIdentifier: 
   characterName: "Ni\xF1o"
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 997adcde2228ae843b047e61603de600, type: 3}

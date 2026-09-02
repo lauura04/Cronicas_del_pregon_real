@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: "Ladr\xF3n"
   m_EditorClassIdentifier: 
   characterName: "Ladr\xF3n"
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: a7eb502e557df664d9a4e5df11496aa5, type: 3}

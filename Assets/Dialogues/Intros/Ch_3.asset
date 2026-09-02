@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Ch_3
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: d7f87c407013d8f4dacfa29e3aefd9b5, type: 2}
+    text: "Ya se acerca el desenlace, la historia est\xE1 en su final, pues dos coronas
+      se preparan para un enlace celebrar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: d7f87c407013d8f4dacfa29e3aefd9b5, type: 2}
+    text: "Valencia de Alc\xE1ntara aguarda, villa de frontera y paso, donde Castilla
+      y Portugal hoy estrechar\xE1n sus lazos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: d7f87c407013d8f4dacfa29e3aefd9b5, type: 2}
+    text: "Llegan nobles y enviados, entre festejos y algarab\xEDa, pues Isabel y
+      don Manuel, han de unirse en este d\xEDa."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: d7f87c407013d8f4dacfa29e3aefd9b5, type: 2}
+    text: Todo aquello preparado, cada carta y cada viaje, encuentra al fin su destino
+      con la llegada del enlace.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: d7f87c407013d8f4dacfa29e3aefd9b5, type: 2}
+    text: "Mas no adelantemos hechos, ni demos la historia acabada, que a\xFAn queda
+      un \xFAltimo acto antes de cerrar la jornada."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
