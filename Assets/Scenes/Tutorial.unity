@@ -1054,6 +1054,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
@@ -1937,7 +1940,7 @@ MonoBehaviour:
   cameraRotation: {x: 30, y: -120, z: 0}
   fixedCameraPoint: {fileID: 0}
   resetOnExit: 1
-  invertHorizontal: 1
+  invertHorizontal: 0
   invertVertical: 1
   swapAxes: 1
 --- !u!65 &295165011
@@ -1975,6 +1978,7 @@ GameObject:
   - component: {fileID: 295437472}
   - component: {fileID: 295437473}
   - component: {fileID: 295437474}
+  - component: {fileID: 295437475}
   m_Layer: 3
   m_Name: Arlequino
   m_TagString: Arlequino
@@ -2139,6 +2143,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -2204,6 +2211,21 @@ MonoBehaviour:
   onWrongAnswer:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &295437475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295437467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5993aaa2939e47af9ddc0a5bb97d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightObject: {fileID: 0}
+  keyPrompt: {fileID: 0}
+  interactionKey: 101
 --- !u!1 &311081761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2851,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
@@ -2993,6 +3018,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -3072,6 +3100,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 449119289}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -3952,6 +3983,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
@@ -4659,6 +4693,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
@@ -5004,6 +5041,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
@@ -5539,6 +5579,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 1afaf833df9ac5c4a854645510b8ea15, type: 3}
@@ -7740,6 +7783,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -8767,6 +8813,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1812024801}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -8969,6 +9018,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 1824971803}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 8300000, guid: 0319f6dbf9a45d74fbf7f3330edbfc38, type: 3}
   interactionSound: {fileID: 0}
   spySound: {fileID: 0}
@@ -9172,6 +9224,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 8300000, guid: 9b5ba72f035d7bd4a8deb0586cbdef25, type: 3}
   spySound: {fileID: 0}
@@ -9784,6 +9839,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 0}
   spySound: {fileID: 8300000, guid: 37c397d2c29443141b5500e78d072b79, type: 3}
@@ -10178,6 +10236,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   charmableNPC: {fileID: 0}
+  catPuzzle: {fileID: 0}
+  inquisitorPuzzle: {fileID: 0}
+  requieresInquisitorUnlock: 0
   sheepSound: {fileID: 0}
   interactionSound: {fileID: 8300000, guid: de2d8e821ae2fe34fb91d707013de7be, type: 3}
   spySound: {fileID: 0}

@@ -6,6 +6,7 @@ public class PauseMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject controlsPanel;
 
     public bool IsPaused { get; private set; }
 
@@ -81,6 +82,10 @@ public class PauseMenuManager : MonoBehaviour
         optionsPanel.SetActive(true);
     }
 
+    public void ShowControls()
+    {
+        controlsPanel.SetActive(true);
+    }
    
     public void BackToPauseMenu()
     {

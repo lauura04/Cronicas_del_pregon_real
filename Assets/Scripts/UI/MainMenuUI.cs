@@ -6,6 +6,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject controlsPanel;
     [SerializeField] private AudioClip menuMusic;
 
     private void Start()
@@ -24,6 +25,11 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenuPanel.SetActive(true);
         optionsPanel.SetActive(false);
+    }
+
+    public void ShowControls()
+    {
+        controlsPanel.SetActive(true);
     }
 
     public void Play()

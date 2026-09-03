@@ -91,7 +91,7 @@ public class FirstChapterController : MonoBehaviour
         }
          MusicManager.Instance.PlayMusic(firstChapterClip);
         GameProgressManager.Instance.StartChapter(firstChapter, introPhase);
-        //DialogueManager.Instance.StartDialogue(initialDialogue, StartChapter);
+        DialogueManager.Instance.StartDialogue(initialDialogue, StartChapter);
 
 
     }

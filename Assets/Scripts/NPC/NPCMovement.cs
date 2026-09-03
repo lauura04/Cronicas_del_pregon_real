@@ -34,51 +34,54 @@ public class NPCMovement : MonoBehaviour
         );
     }
 
-  private IEnumerator MoveCoroutine(
-    Transform target,
-    System.Action onArrival)
-{
-    isMoving = true;
-
-    while (GetHorizontalDistance(target.position) > stoppingDistance)
+    private IEnumerator MoveCoroutine(
+      Transform target,
+      System.Action onArrival)
     {
-        Vector3 direction = target.position - transform.position;
+        isMoving = true;
 
-        direction.y = 0f;
-        direction.Normalize();
+        while (GetHorizontalDistance(target.position) > stoppingDistance)
+        {
+            Vector3 direction = target.position - transform.position;
 
-        animationController.UpdateDirection(direction);
+            direction.y = 0f;
+            direction.Normalize();
 
-        Vector3 nextPosition =
-            transform.position +
-            direction * moveSpeed * Time.deltaTime;
+            if (animationController != null)
+            {
+                animationController.UpdateDirection(direction);
+            }
 
-        nextPosition.y = transform.position.y;
+            Vector3 nextPosition =
+                transform.position +
+                direction * moveSpeed * Time.deltaTime;
 
-        transform.position = nextPosition;
+            nextPosition.y = transform.position.y;
 
-        yield return null;
+            transform.position = nextPosition;
+
+            yield return null;
+        }
+
+        transform.position = new Vector3(
+            target.position.x,
+            transform.position.y,
+            target.position.z
+        );
+
+        transform.rotation = target.rotation;
+
+        isMoving = false;
+
+        // AQUÍ se pone IsMoving = false
+        if (animationController != null)
+        {
+            animationController.StopMoving();
+        }
+
+        // Si es null, simplemente no hace nada
+        onArrival?.Invoke();
     }
-
-    transform.position = new Vector3(
-        target.position.x,
-        transform.position.y,
-        target.position.z
-    );
-
-    transform.rotation = target.rotation;
-
-    isMoving = false;
-
-    // AQUÍ se pone IsMoving = false
-    if (animationController != null)
-    {
-        animationController.StopMoving();
-    }
-
-    // Si es null, simplemente no hace nada
-    onArrival?.Invoke();
-}
 
     private float GetHorizontalDistance(
         Vector3 targetPosition)

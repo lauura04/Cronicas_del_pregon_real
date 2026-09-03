@@ -40,6 +40,10 @@ public class KeyMinigameManager : MonoBehaviour
 
     private bool isPlaying;
 
+    private bool minigameCompleted = false;
+
+    public bool MinigameCompleted => minigameCompleted;
+
     private System.Action onCompletedCallback;
     private System.Action onFailedCallback;
 
@@ -229,6 +233,7 @@ public class KeyMinigameManager : MonoBehaviour
 
     private void FinishMinigame()
     {
+        minigameCompleted = true;
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
@@ -244,6 +249,7 @@ public class KeyMinigameManager : MonoBehaviour
     public void CancelMinigame()
     {
         isPlaying = false;
+        currentKeyTime = 0f;
         minigamePanel.SetActive(false);
         if (PlayerMovement.Instance != null)
         {

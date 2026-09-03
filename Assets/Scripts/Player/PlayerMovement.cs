@@ -35,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
     private bool invertHorizontal;
     private bool invertVertical;
     private bool swapAxes;
+    public bool SwapAxes => swapAxes;
+
+    private bool hasPendingMapping = false;
+
+    private bool pendingInvertHorizontal;
+    private bool pendingInvertVertical;
+    private bool pendingSwapAxes;
     public static PlayerMovement Instance { get; private set; }
     private void Awake()
     {
@@ -52,20 +59,55 @@ public class PlayerMovement : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetMovementMapping(bool invertHorizontal, bool invertVertical, bool swapAxes)
+   public void SetMovementMapping(
+    bool invertHorizontal,
+    bool invertVertical,
+    bool swapAxes)
+{
+    float horizontalInput = Input.GetAxisRaw("Horizontal");
+    float verticalInput = Input.GetAxisRaw("Vertical");
+
+    bool isPressingMovementKey =
+        Mathf.Abs(horizontalInput) > 0.01f ||
+        Mathf.Abs(verticalInput) > 0.01f;
+
+    if (isPressingMovementKey)
     {
-        this.invertHorizontal = invertHorizontal;
-        this.invertVertical = invertVertical;
-        this.swapAxes = swapAxes;
+        pendingInvertHorizontal = invertHorizontal;
+        pendingInvertVertical = invertVertical;
+        pendingSwapAxes = swapAxes;
+
+        hasPendingMapping = true;
+
+        return;
     }
 
+    ApplyMovementMapping(
+        invertHorizontal,
+        invertVertical,
+        swapAxes
+    );
+}
+private void ApplyMovementMapping(
+    bool invertHorizontal,
+    bool invertVertical,
+    bool swapAxes)
+{
+    this.invertHorizontal = invertHorizontal;
+    this.invertVertical = invertVertical;
+    this.swapAxes = swapAxes;
+
+    hasPendingMapping = false;
+}
+
     public void ResetMovementMapping()
-    {
-        invertHorizontal = false;
-        invertVertical = false;
-        swapAxes = false;
-    }
-    private void Update()
+{
+    SetMovementMapping(
+        false,
+        false,
+        false
+    );
+}    private void Update()
     {
         if (isAutoMoving)
         {
@@ -93,52 +135,86 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    private void ReadMovementInput()
+   private void ReadMovementInput()
+{
+    float horizontalInput = Input.GetAxisRaw("Horizontal");
+    float verticalInput = Input.GetAxisRaw("Vertical");
+
+    // Si hay un cambio de controles pendiente,
+    // esperamos hasta que el jugador suelte TODO.
+    if (hasPendingMapping)
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        bool noMovementInput =
+            Mathf.Abs(horizontalInput) < 0.01f &&
+            Mathf.Abs(verticalInput) < 0.01f;
 
-        if (invertHorizontal)
+        if (noMovementInput)
         {
-            horizontalInput *= -1;
-        }
-
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
-        if (invertVertical)
-        {
-            verticalInput *= -1;
-        }
-
-        if (swapAxes)
-        {
-            float temp = horizontalInput;
-            horizontalInput = verticalInput;
-            verticalInput = temp;
-        }
-
-        movementInput = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-
-        if (movementInput.sqrMagnitude > 0.01f)
-        {
-            lastMovementDirection = movementInput;
-
-            string newDirection = "";
-
-            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
-            {
-                newDirection = horizontalInput > 0 ? "Right" : "Left";
-            }
-            else
-            {
-                newDirection = verticalInput > 0 ? "Up" : "Down";
-            }
-            if (newDirection != currentDirection)
-            {
-                currentDirection = newDirection;
-                Debug.Log("Player is moving " + currentDirection);
-            }
+            ApplyMovementMapping(
+                pendingInvertHorizontal,
+                pendingInvertVertical,
+                pendingSwapAxes
+            );
         }
     }
+
+    if (invertHorizontal)
+    {
+        horizontalInput *= -1;
+    }
+
+    if (invertVertical)
+    {
+        verticalInput *= -1;
+    }
+
+    if (swapAxes)
+    {
+        float temp = horizontalInput;
+        horizontalInput = verticalInput;
+        verticalInput = temp;
+    }
+
+    movementInput =
+        new Vector3(
+            horizontalInput,
+            0f,
+            verticalInput
+        ).normalized;
+
+    if (movementInput.sqrMagnitude > 0.01f)
+    {
+        lastMovementDirection = movementInput;
+
+        string newDirection = "";
+
+        if (Mathf.Abs(horizontalInput) >
+            Mathf.Abs(verticalInput))
+        {
+            newDirection =
+                horizontalInput > 0
+                    ? "Right"
+                    : "Left";
+        }
+        else
+        {
+            newDirection =
+                verticalInput > 0
+                    ? "Up"
+                    : "Down";
+        }
+
+        if (newDirection != currentDirection)
+        {
+            currentDirection = newDirection;
+
+            Debug.Log(
+                "Player is moving " +
+                currentDirection
+            );
+        }
+    }
+}
 
     private void MovePlayer()
     {
