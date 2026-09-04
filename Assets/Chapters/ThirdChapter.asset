@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapter: 0
   phases:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5ad9b761730143745a77a95f267de51b, type: 2}
+  - {fileID: 11400000, guid: 4104180bd6f3d394b8af4d2feb335986, type: 2}
+  - {fileID: 11400000, guid: c109fc7478f625848bbec7ab0830981b, type: 2}
+  - {fileID: 11400000, guid: cb52f07327ac31b4cb8152d0a6cc6b3f, type: 2}

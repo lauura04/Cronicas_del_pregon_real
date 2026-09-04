@@ -12,6 +12,9 @@ public class ThirdChapterController : MonoBehaviour
     //fases en saber
     [Header("Phases")]
     [SerializeField] private ChapterPhaseData introPhase;
+    [SerializeField] private ChapterPhaseData getThingsPhase;
+    [SerializeField] private ChapterPhaseData lookForMusicianPhase;
+    [SerializeField] private ChapterPhaseData endPhase;
 
     [Header("DIALOGUES")]
     [SerializeField] private DialogueData initialDialogue;
@@ -24,12 +27,15 @@ public class ThirdChapterController : MonoBehaviour
     [SerializeField] private Transform heraldSecondDestination;
     [SerializeField] private NPCMovement firstWoman;
     [SerializeField] private Transform firstWomanDestination;
+    [SerializeField] private Transform firstWomanDestination2;
     [SerializeField] private NPCMovement secondWoman;
     [SerializeField] private Transform secondWomanDestination;
+    [SerializeField] private Transform secondWomanDestination2;
     [SerializeField] private NPCMovement thirdWoman;
     [SerializeField] private Transform thirdWomanDestination;
+    [SerializeField] private Transform thirdWomanDestination2;
 
-     private void Awake()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -42,6 +48,7 @@ public class ThirdChapterController : MonoBehaviour
     private void Start()
     {
         GameProgressManager.Instance.StartChapter(thirdChapter, introPhase);
+
         StartCoroutine(InitialSequence());
     }
 
@@ -54,22 +61,32 @@ public class ThirdChapterController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         herald.MoveTo(heraldSecondDestination, null);
         yield return new WaitForSeconds(1f);
-        firstWoman.MoveTo(firstWomanDestination,null);
+        firstWoman.MoveTo(firstWomanDestination, null);
         secondWoman.MoveTo(secondWomanDestination, null);
         thirdWoman.MoveTo(thirdWomanDestination, null);
         bool secondDialogueFinished = false;
-        DialogueManager.Instance.StartDialogue(secondDialogue, ()=> secondDialogueFinished = true); // se va el heraldo y entrada de las pavas
+        DialogueManager.Instance.StartDialogue(secondDialogue, () => secondDialogueFinished = true); // se va el heraldo y entrada de las pavas
         yield return new WaitUntil(() => secondDialogueFinished);
         yield return new WaitForSeconds(1f);
         OnNPCsArrived();
-        
+
     }
 
     private void OnNPCsArrived()
     {
-        DialogueManager.Instance.StartDialogue(thirdDialogue, null);
+        DialogueManager.Instance.StartDialogue(thirdDialogue, NextPhase);
+    }
+    private void NextPhase()
+    {
+        GameProgressManager.Instance.SetPhase(
+            getThingsPhase
+        );
+        firstWoman.MoveTo(firstWomanDestination2, null);
+        secondWoman.MoveTo(secondWomanDestination2, null);
+        thirdWoman.MoveTo(thirdWomanDestination2, null);
+
     }
 
-    
+
 
 }

@@ -22,6 +22,10 @@ public class SecondChapterController : MonoBehaviour
     [Header("POSITIONS")]
     [SerializeField] private Transform playerDestination;
 
+    [Header("SOUNDS")]
+    [SerializeField] private AudioClip musicClip;
+    [SerializeField] private AudioClip endClip;
+
 
 
 
@@ -37,7 +41,8 @@ public class SecondChapterController : MonoBehaviour
 
     private void Start()
     {
-        GameProgressManager.Instance.StartChapter(secondChapter, investigatePhase);
+       MusicManager.Instance.PlayMusic(musicClip);
+        GameProgressManager.Instance.StartChapter(secondChapter, introPhase);
         StartCoroutine(InitialSequence());
     }
 
@@ -65,6 +70,8 @@ public class SecondChapterController : MonoBehaviour
         GameProgressManager.Instance.SetPhase(
             endPhase
         );
+        MusicManager.Instance.StopMusic();
+        MusicManager.Instance.PlayMusic(endClip);
         DialogueManager.Instance.StartDialogue(endDialogue, OnDialogueFinished);
     }
     private void OnDialogueFinished()

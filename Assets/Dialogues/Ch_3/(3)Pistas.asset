@@ -13,8 +13,52 @@ MonoBehaviour:
   m_Name: (3)Pistas
   m_EditorClassIdentifier: 
   lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xA1Calma doncellas! Pero por nuestro Se\xF1or, \xBFqu\xE9 estr\xE9pito
+      es este?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 83281260bf21207469fd6ed90e747471, type: 2}
+    text: "\xA1Ay! Disc\xFAlpeme vuestra Merced. Intent\xE1bamos llegar a nuestras
+      casas."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
+    text: "Pero d\xEDganos su nombre, para que podamos dirigirnos a usted y as\xED
+      ayudarle en todo lo que necesite."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Mi nombre es Benjam\xEDn, Buf\xF3n Real, para servirles. Vengo de Castilla
+      mandado por sus majestades con la misi\xF3n de asegurarme de que todo est\xE9"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "preparado para la Boda Regia que se dar\xE1 aqu\xED y en breve plazo..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
-    text: 'Pistas, Pistas, Pistas, Pistas, Pistas, Pistas, Pistas, Pistas, Pistas,
-      Pistas, Pistas, Pistas, Pistas, Pistas, Pistas, Pistas, '
+    text: "Breve plazo, s\xED. Pero a\xFAn queda algo de tiempo y si tiene a bien
+      acompa\xF1arme a mi casa, podr\xE9 ofrecerle un refrigerio para "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
+    text: recomponerse de tan calurosa jornada...
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Gracias por el ofrecimiento, pero me veo en la obligaci\xF3n de rechazarlo.
+      Cuando pens\xE9 haber acabado mi tarea me encuentro con que no est\xE1 todo
+      preparado,"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "que si velas, que si miel, pero de d\xF3nde voy a sacar yo tales cosas
+      en un d\xEDa festivo como este."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "que si velas, que si miel, pero de d\xF3nde voy a sacar yo tales cosas
+      en un d\xEDa festivo como este."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

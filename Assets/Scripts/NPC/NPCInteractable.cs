@@ -90,6 +90,10 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         {
             return;
         }
+         if (interactionSound != null)
+        {
+            SFXManager.Instance.PlaySFX(interactionSound);
+        }
         if (catPuzzle != null)
         {
             catPuzzle.Interact();
@@ -161,10 +165,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         }
 
         isBusy = true;
-        if (interactionSound != null)
-        {
-            SFXManager.Instance.PlaySFX(interactionSound);
-        }
+       
         DialogueManager.Instance.StartDialogue(
             currentDialogueStep.dialogue,
             HandleInteractionFinished

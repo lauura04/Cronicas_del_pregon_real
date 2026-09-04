@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,6 +17,9 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Vector2 originalPosition;
 
     private bool placed;
+
+    public int PieceID => pieceID;
+    public bool IsPlaced => placed;
 
     private void Awake()
     {
@@ -56,11 +59,7 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
 
         canvasGroup.blocksRaycasts = true;
-        PuzzleSlot slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<PuzzleSlot>();
-        if(slot!=null && slot.TryPlacePiece(this))
-        {
-            return;
-        }
+       ReturnToOriginalPosition();
     }
 
     public void PlaceInSlot(Transform slot)
@@ -70,7 +69,17 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+
+        rectTransform.anchoredPosition = Vector2.zero;
+
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    private void ReturnToOriginalPosition()
+    {
+        transform.SetParent(originalParent);
+        rectTransform.anchoredPosition = originalPosition;
     }
 
 }
-*/
