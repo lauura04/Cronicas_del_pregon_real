@@ -57,8 +57,43 @@ MonoBehaviour:
       en un d\xEDa festivo como este."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
+    text: "No se preocupe mi buen se\xF1or, si miel es lo que precisas me s\xE9 de
+      la existencia de un panal en la Torre del Homenaje, puede probar suerte all\xED."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
+    text: "Pues yo he o\xEDdo que un vendedor ambulante se aproxima a la villa, tal
+      vez \xE9l tenga velas que comprar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 83281260bf21207469fd6ed90e747471, type: 2}
+    text: "Pero, \xBFqu\xE9 dec\xEDs insensatas? Qu\xE9 importa la miel o las velas
+      si no hay boda. Mi marido, que se encuentra en el cuartel, me ha dicho que
+      ha recibido"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 83281260bf21207469fd6ed90e747471, type: 2}
+    text: "una carta que se ha de entregar a la reina, dicen que trae nuevas sobre
+      la enfermedad del pr\xEDncipe Juan."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
+    text: "Calla mujer, que boda va a haber. Y t\xFA, si tienes dudas al respecto
+      te recomiendo hacerte con ese mensaje y hablar, si puedes, con sus majestades."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
+    text: "Quiz\xE1s te alivien los pesares."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
+    text: Y ahora muchachas espabilad, que tenemos que ir a nuestras casas si queremos
+      llegar a la boda.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "que si velas, que si miel, pero de d\xF3nde voy a sacar yo tales cosas
-      en un d\xEDa festivo como este."
+    text: Muchas gracias por vuestra amabilidad encantadoras damas, me ha servido
+      de mucho esta agradable charla.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}

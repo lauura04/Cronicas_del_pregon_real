@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (4.3)Reina
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: Mi reina, mi reina, noticias traigo.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "Habla buf\xF3n."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Vuestro pr\xEDncipe se\xF1ora, vuestro pr\xEDncipe ral, tras empeorar
+      las sus fiebres el alma quiere a Dios dar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "Y decidme buf\xF3n, \xBFes tanta la gravedad de esas extra\xF1as fiebres
+      que atormentan a Don Juan?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xA1Mucha es Reina y Se\xF1ora! Pues parece que es viruela la causa de
+      todo el mal. Mas el rey le manda unas letras donde describe "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: el estado de nuestro infante real.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "\xA1Mi \xE1ngel! Dios me lo ha dado y ahora me lo quiere quitar. Duras
+      pruebas me ha mandado y las tengo que aceptar, pero ahora me pregunto"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "\xBFqu\xE9 pecado comet\xED para este castigo alcanzar?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Con vuestra venia se\xF1ora con Don Manuel hablar\xE9 para posponer el
+      enlace."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "\xA1Nada parecido ha de hacer! La unidad peninsular depende de aquesta
+      boda y ning\xFAn impedimento la tiene que retrasar. Nada la Infanta ha de saber"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: "hasta entrar en Portugal. Y ahora buf\xF3n, cesemos en nuestros llantos
+      y acudamos a su encuentro que una infanta he de casar."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (5)End
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "Veamos... Todo est\xE1 preparado. No falta nada."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xBFEso significa que por fin puedo descansar?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: Significa que has terminado tu trabajo. El nuestro apenas comienza.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Siempre hay una letrra peque\xF1a..."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "Los preparativos est\xE1n dispuestos, los invitados ocupan sus lugares
+      y la comitiva portuguesa est\xE1 lista."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Despu\xE9s de tantos viajes, cartas y contratiempos, ha llegado el momento."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: "Ve con los dem\xE1s. Hoy, en Valencia de Alc\xE1ntara la infanta Isabel
+      de Arag\xF3n y el rey Manuel de Portugal unir\xE1n sus destinos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
+    text: Que comiencen las celebraciones.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

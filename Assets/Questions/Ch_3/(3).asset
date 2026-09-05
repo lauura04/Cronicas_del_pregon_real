@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
+  m_Name: (3)
+  m_EditorClassIdentifier: 
+  question: "Antes de con don Manuel, Isabel ya hab\xEDa estado casada con alguien
+    de la realeza portuguesa, \xBFcon qui\xE9n?"
+  answers:
+  - answerText: Su hermano Alfonso, rey de Portugal
+    isCorrect: 0
+  - answerText: "Su sobrino Alfonso, pr\xEDncipe de Portugal"
+    isCorrect: 1
+  - answerText: Su primo Fernando, rey de Portugal
+    isCorrect: 0
+  - answerText: Su primo Alfonso, rey de Portugal
+    isCorrect: 0

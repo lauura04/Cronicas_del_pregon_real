@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: (4.1)Anselmo
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: "Gente de bien, humildes vecinos de... \xA1Valencia de Alc\xE1ntara! Pues
+      hasta aqu\xED llego con la fe de que sepan que estos productos milagrosos puedan"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: devolver la felicidad a cualquiera de ustedes.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "\xA1Alto ah\xED!"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: "Miren, por aqu\xED tenemos un claro ejemplar de persona que necesita de
+      mis b\xE1lsamos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "He dicho que alto ah\xED. Deje de instigar a las gentes de la villa con
+      su verborrea, p\xEDcaro parlanch\xEDn."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: "Bien claro est\xE1 que necesita de un brebaje para la ira contenida. No
+      se preocupe que tengo lo que andaba buscando."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "Lo \xFAnico que yo ando buscando son unas velas para la boda de sus majestades.
+      Que hoy acaece el quiz\xE1 m\xE1s importante acto que la historia"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "puede regalar a esta poblaci\xF3n. De modo que como no se espabile y ahueque
+      el ala de aqu\xED, va a pasar la noche y buena parte del"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "d\xEDa entre los barrotes del calabozo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: "No diga eso mi buen se\xF1or, si lo que precisa son velas y no brebajes
+      eso tambi\xE9n se lo puedo proporcionar. Pero para ello tendr\xE1s que responder"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
+    text: "correctamente a mis preguntas, t\xFA, que tanto dices saber sobre bodas
+      y coronas."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

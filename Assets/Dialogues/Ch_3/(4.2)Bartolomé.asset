@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: "(4.2)Bartolom\xE9"
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: Creo que eres el hombre al que busco.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 27f7f6e2ca9f681428bc715cdc305a5b, type: 2}
+    text: "\xBFQu\xE9 se me requiere?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "He conocido a su encantadora mujer hace un rato diciendo no s\xE9 qu\xE9
+      sobre una carta a entregar, si a vuesa merced le conviene puedo "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "encargarme de hac\xE9rsela llegar a la reina."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 27f7f6e2ca9f681428bc715cdc305a5b, type: 2}
+    text: "\xBFY t\xFA qui\xE9n eres? \xBFQu\xE9 ganas t\xFA con todo esto? \xBFNo
+      ser\xE1s un esp\xEDa enviado por los franceses?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
+    text: "No s\xE9 de qu\xE9 esp\xEDas me hablas. Solo soy un enviado por los reyes
+      encargado de preprarar el enlace, si es que hubiera enlace."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 27f7f6e2ca9f681428bc715cdc305a5b, type: 2}
+    text: 'En ese caso, las nuevas que traen esta carta solo ha de entregarse a la
+      reina, no vaya a ser que caiga en malas manos '
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 27f7f6e2ca9f681428bc715cdc305a5b, type: 2}
+    text: "y llegue a o\xEDdos de alguien que no nos convenga."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
