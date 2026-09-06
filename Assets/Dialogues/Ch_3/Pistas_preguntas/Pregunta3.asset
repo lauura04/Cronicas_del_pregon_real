@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Pregunta3
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "No debe ser f\xE1cil para la infanta regresar a Portugal despu\xE9s de
+      lo ocurrido con su primer esposo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Otro Alfonso, \xBFverdad? Entre Alfonsos, Manueles y Fernandos, uno termina
+      perdi\xE9ndose."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Alfonso s\xED, pero no era hermano suyo. Era el heredero portugu\xE9s."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "\xA1El hijo del rey Juan! Entonces, si no me equivoco, era sobrino del
+      hombre con quien va a casarse ahora."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Su primo. La familia real parece empe\xF1ada en convertir los \xE1rboles
+      geneal\xF3gicos en laberintos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

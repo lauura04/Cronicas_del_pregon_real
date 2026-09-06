@@ -8,10 +8,12 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform target;
 
     [Header("Vista normal")]
-    [SerializeField] private Vector3 defaultOffset =
+    [SerializeField]
+    private Vector3 defaultOffset =
         new Vector3(0f, 3f, -5f);
 
-    [SerializeField] private Vector3 defaultRotation =
+    [SerializeField]
+    private Vector3 defaultRotation =
         new Vector3(45f, 0f, 0f);
 
     [Header("Suavizado")]
@@ -44,9 +46,9 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         if (PlayerMovement.Instance != null)
-    {
-        target = PlayerMovement.Instance.transform;
-    }
+        {
+            target = PlayerMovement.Instance.transform;
+        }
         ResetCameraImmediate();
     }
 
@@ -185,4 +187,5 @@ public class CameraFollow : MonoBehaviour
         transform.rotation =
             desiredRotation;
     }
+    
 }

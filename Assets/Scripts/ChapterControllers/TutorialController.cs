@@ -44,6 +44,18 @@ public class TutorialController : MonoBehaviour
     {
         GameProgressManager.Instance.StartChapter(tutorialChapter, introPhase);
         MusicManager.Instance.PlayMusic(tutorialClip);
+        
+        StartCoroutine(StartChapterFade());
+        
+    }
+
+    private IEnumerator StartChapterFade()
+    {
+        yield return null;
+        if(ScreenFade.Instance != null)
+        {
+            yield return ScreenFade.Instance.FadeInCoroutine();
+        }
         DialogueManager.Instance.StartDialogue(
             initialDialogue, StartTutorial
         );

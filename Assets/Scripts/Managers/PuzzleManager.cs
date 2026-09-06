@@ -12,6 +12,7 @@ public class PuzzleManager : MonoBehaviour
 
     [Header("Dialogue")]
     [SerializeField] private DialogueData puzzleCompletedDialogue;
+    [SerializeField] private ItemData Velas;
 
     private int placedPieces;
     private bool puzzleCompleted;
@@ -38,6 +39,7 @@ public class PuzzleManager : MonoBehaviour
 
         placedPieces = 0;
         puzzlePanel.SetActive(true);
+        HUDManager.Instance.HideHUD();
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
@@ -67,12 +69,14 @@ public class PuzzleManager : MonoBehaviour
         {
             ClosePuzzle();
         }
+        InventoryManager.Instance.AddItem(Velas);
     }
 
 
-    private void ClosePuzzle()
+    public void ClosePuzzle()
     {
         puzzlePanel.SetActive(false);
+        HUDManager.Instance.ShowHUD();
         if(PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);

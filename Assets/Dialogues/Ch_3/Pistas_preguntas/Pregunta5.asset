@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Pregunta5
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Nunca hab\xEDa visto tantos portugueses por estas calles."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Tampoco es tan extra\xF1o. Desde aqu\xED, Portugal est\xE1 pr\xE1cticamente
+      al otro lado de la puerta."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: Supongo que por eso llegan tantos viajeros de ambos reinos. Castellanos
+      por un camino, portugueses por el otro...
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: Estas tierras siempre han vivido mirando hacia los dos lados de la frontera.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Aunque con tanta gente importante aqu\xED reunida, casi parece que la
+      villa se haya convertido en el centro de ambos reinos."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Centro no ser\xE1, desde luego. Pero para encontrarse sin que una de las
+      dos cortes tenga que adentrarse demasiado en tierras ajenas,"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: pocos lugares resultan tan convenientes.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

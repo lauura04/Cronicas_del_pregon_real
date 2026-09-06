@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Pregunta1
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Menuda semana llevamos. Entre preparativos y visitantes, ya no s\xE9 ni
+      en qu\xE9 d\xEDa vivo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Pues no hace tanto que comenz\xF3 octubre. Anteayer fue cinco, si eso
+      te ayuda a orientarte."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "\xBFY estamos ya en el a\xF1o noventa y siete? Jurar\xEDa que fue ayer
+      cuando empez\xF3 toda esta historia."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

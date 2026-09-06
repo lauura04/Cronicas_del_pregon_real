@@ -10,11 +10,15 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Mensaje posterior")]
     [SerializeField] private bool showMessageAfterDialogue;
-    [SerializeField]
-    private float messageDuration = 3f;
+    [SerializeField] private bool messageIsQuestion;
+    [SerializeField] private float messageDuration = 3f;
     [SerializeField]
     [TextArea(2, 4)]
     private string messageAfterDialogue;
+
+    [Header("Pregunta")]
+    [SerializeField] private UnityEvent yesAction;
+    [SerializeField] private UnityEvent noAction;
 
     [Header("Eventos posteriores")]
     [SerializeField] private UnityEvent onDialogueFinished;
@@ -87,9 +91,22 @@ public class DialogueTrigger : MonoBehaviour
     $"message: {messageAfterDialogue} | " +
     $"duration: {messageDuration}"
 );
-                MessageUI.Instance.ShowMessage(
-                    messageAfterDialogue, messageDuration
-                );
+                if (messageIsQuestion)
+                {
+                    MessageUI.Instance.ShowMessage(messageAfterDialogue);
+                    MessageUI.Instance.ShowQuestion(
+                        ()=>yesAction?.Invoke(),
+                        ()=>noAction?.Invoke()
+                    );
+                }
+
+                else
+                {
+                    MessageUI.Instance.ShowMessage(
+                        messageAfterDialogue,
+                        messageDuration
+                    );
+                }
             }
         }
 

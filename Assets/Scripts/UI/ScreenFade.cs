@@ -18,6 +18,8 @@ public class ScreenFade : MonoBehaviour
         }
 
         Instance = this;
+
+    DontDestroyOnLoad(gameObject);
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false;
     }

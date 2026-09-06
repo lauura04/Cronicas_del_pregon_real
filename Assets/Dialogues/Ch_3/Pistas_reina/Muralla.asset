@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Muralla
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: Con todo el revuelo de la boda, esperaba ver a la reina rodeada de media
+      corte.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Yo la vi hace rato. Parec\xEDa querer precisamente lo contrario."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "\xBFSe march\xF3?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "No de la villa. Tom\xF3 el camino hacia la muralla acompa\xF1ada de algunos
+      guardias."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Normal. Aqu\xED en la plaza no debe de poder dar dos pasos sin que alguien
+      la importune."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

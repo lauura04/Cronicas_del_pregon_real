@@ -18,8 +18,8 @@ MonoBehaviour:
   - answerText: Su hermano Alfonso, rey de Portugal
     isCorrect: 0
   - answerText: "Su sobrino Alfonso, pr\xEDncipe de Portugal"
-    isCorrect: 1
+    isCorrect: 0
   - answerText: Su primo Fernando, rey de Portugal
     isCorrect: 0
-  - answerText: Su primo Alfonso, rey de Portugal
-    isCorrect: 0
+  - answerText: "Su primo Alfonso, pr\xEDncipe de Portugal"
+    isCorrect: 1

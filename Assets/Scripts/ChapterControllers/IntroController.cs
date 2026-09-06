@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class IntroController : MonoBehaviour
 {
@@ -34,34 +35,14 @@ public class IntroController : MonoBehaviour
 
     private void OnIntroFinished()
     {
-         DialogueManager.Instance.SetUIType(DialogueUIType.Gameplay);
+        StartCoroutine(FinishIntro());
+    }
 
+    private IEnumerator FinishIntro()
+    {
+         DialogueManager.Instance.SetUIType(DialogueUIType.Gameplay);
+  yield return ScreenFade.Instance.FadeOutCoroutine();
         SceneLoader.Instance.LoadScene(introData.GameplayScene);
     }
-    /*public static IntroController Instance { get; private set; }
-
-    [SerializeField] private DialogueData Introduccion;
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
-
-    private void Start()
-    {
-
-        DialogueManager.Instance.StartDialogue(
-            Introduccion, FinishIntro);
-    }
-
-
-    private void FinishIntro()
-    {
-        SceneLoader.Instance.LoadScene("Tutorial");
-    }*/
+   
 }

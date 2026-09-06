@@ -1,6 +1,8 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class MessageUI : MonoBehaviour
 {
@@ -9,6 +11,12 @@ public class MessageUI : MonoBehaviour
     [Header("Interfaz")]
     [SerializeField] private GameObject messagePanel;
     [SerializeField] private TMP_Text messageText;
+
+    [Header("Pregunta")]
+    [SerializeField] private GameObject questionButtons;
+    [SerializeField] private Button yesButton;
+    [SerializeField] private Button noButton;
+
 
     private Coroutine hideCoroutine;
 
@@ -27,11 +35,14 @@ public class MessageUI : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         messagePanel.SetActive(false);
+        questionButtons.SetActive(false);
     }
 
     public void ShowMessage(string message, float duration = -1f)
     {
         Debug.Log("ShowMessage ejecutado con: " + message);
+        
+
         messageText.text = message;
         messagePanel.SetActive(true);
 
@@ -48,6 +59,33 @@ public class MessageUI : MonoBehaviour
         }
     }
 
+    public void ShowQuestion(UnityAction yesAction, UnityAction noAction)
+    {
+        if (hideCoroutine != null)
+        {
+            StopCoroutine(hideCoroutine);
+            hideCoroutine = null;
+        }
+
+        questionButtons.SetActive(true);
+
+        yesButton.onClick.RemoveAllListeners();
+        noButton.onClick.RemoveAllListeners();
+
+        yesButton.onClick.AddListener(() =>
+        {
+            HideMessage();
+            yesAction?.Invoke();
+        });
+        noButton.onClick.AddListener(() =>
+        {
+            HideMessage();
+            noAction?.Invoke();
+        });
+    }
+
+   
+
     public void HideMessage()
     {
         Debug.Log(
@@ -60,7 +98,7 @@ public class MessageUI : MonoBehaviour
             StopCoroutine(hideCoroutine);
             hideCoroutine = null;
         }
-
+        questionButtons.SetActive(false);
         messagePanel.SetActive(false);
         messageText.text = "";
     }

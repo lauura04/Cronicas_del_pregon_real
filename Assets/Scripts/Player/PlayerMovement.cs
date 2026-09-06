@@ -247,15 +247,17 @@ private void ApplyMovementMapping(
         }
     }
 
-    public void TeleportTo(Vector3 position)
-    {
-        movementInput = Vector3.zero;
+public void TeleportTo(Vector3 position)
+{
+    movementInput = Vector3.zero;
 
-        playerRigidbody.velocity = Vector3.zero;
-        playerRigidbody.angularVelocity = Vector3.zero;
+    playerRigidbody.velocity = Vector3.zero;
+    playerRigidbody.angularVelocity = Vector3.zero;
 
-        playerRigidbody.position = position;
-    }
+    playerRigidbody.position = position;
+
+    Physics.SyncTransforms();
+}
 
     //para hacer "animación automática" de movimiento
 

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890b10a6202c684983e32e79f25b064, type: 3}
+  m_Name: Casas
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "\xBFSabes por qu\xE9 hay tantos guardias por aquella zona?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: Ni idea. Pensaba que vigilaban las casas.
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Tambi\xE9n lo pens\xE9, pero no. Vi pasar antes a una dama con su s\xE9quito
+      y siguieron de largo."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "\xBFPor d\xF3nde?"
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: b514cc97c69ba9642b655e5a906af0b8, type: 2}
+    text: "Por detr\xE1s de las casas. Hacia la parte m\xE1s pr\xF3xima a las defensas."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
+    text: "Entonces ya entiendo tanto guardia. Mejor ser\xE1 no acercarse demasiado."
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}

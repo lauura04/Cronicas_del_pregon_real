@@ -68,6 +68,7 @@ public class LetterPuzzleManager : MonoBehaviour
             Debug.LogError("No se ha asignado ningún LetterPuzzleData")
 ;            return;
         }
+        HUDManager.Instance.HideHUD();
         currentPuzzle = puzzleData;
         isPlaying = true;
         currentPosition = 0;
@@ -302,6 +303,7 @@ private int GetWordLength(string text, int startIndex)
     {
         isPlaying = true;
         puzzlePanel.SetActive(false);
+        HUDManager.Instance.ShowHUD();
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
