@@ -326,10 +326,14 @@ MonoBehaviour:
   cameraOffset: {x: 2, y: 8, z: -5}
   cameraRotation: {x: 45, y: -45, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 0
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &34367863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -694,10 +698,14 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 3, z: -5}
   cameraRotation: {x: 45, y: 0, z: 0}
   fixedCameraPoint: {fileID: 1765591531}
-  resetOnExit: 1
   invertHorizontal: 1
   invertVertical: 1
   swapAxes: 0
+  swapFrontBackSprites: 1
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &67953195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11333,10 +11341,14 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 3, z: -5}
   cameraRotation: {x: 45, y: 0, z: 0}
   fixedCameraPoint: {fileID: 113695302}
-  resetOnExit: 1
-  invertHorizontal: 0
+  invertHorizontal: 1
   invertVertical: 0
-  swapAxes: 0
+  swapAxes: 1
+  swapFrontBackSprites: 1
+  swapRightLeftSprites: 1
+  changePlayerRotation: 1
+  playerRotation: {x: 0, y: 90, z: 0}
+  resetOnExit: 1
 --- !u!65 &1253794806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12645,7 +12657,7 @@ Transform:
   m_GameObject: {fileID: 1402664245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.27, y: 0, z: 2.62}
+  m_LocalPosition: {x: -1.27, y: 1.21, z: 2.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14638,10 +14650,14 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 3, z: -5}
   cameraRotation: {x: 45, y: 0, z: 0}
   fixedCameraPoint: {fileID: 1350045577}
-  resetOnExit: 1
-  invertHorizontal: 0
-  invertVertical: 0
+  invertHorizontal: 1
+  invertVertical: 1
   swapAxes: 0
+  swapFrontBackSprites: 1
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &1583039151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15201,7 +15217,7 @@ Transform:
   m_GameObject: {fileID: 1629465236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.17, y: -3.371424, z: 0.64}
+  m_LocalPosition: {x: -2.17, y: -2.34, z: 0.63999987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22028,10 +22044,14 @@ MonoBehaviour:
   cameraOffset: {x: -2, y: 2, z: 3}
   cameraRotation: {x: 40, y: 120, z: 0}
   fixedCameraPoint: {fileID: 1350045577}
-  resetOnExit: 1
   invertHorizontal: 1
   invertVertical: 1
   swapAxes: 0
+  swapFrontBackSprites: 1
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &2104489047
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,4 +13,6 @@ public class DialogueStep
     [SerializeField] private bool advanceAutomatically = true;
 
     public bool AdvanceAutomatically => advanceAutomatically;
+
+    
 }

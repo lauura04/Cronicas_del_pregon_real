@@ -91,9 +91,20 @@ public class FirstChapterController : MonoBehaviour
         }
          MusicManager.Instance.PlayMusic(firstChapterClip);
         GameProgressManager.Instance.StartChapter(firstChapter, introPhase);
-        DialogueManager.Instance.StartDialogue(initialDialogue, StartChapter);
 
-
+        StartCoroutine(StartChapterFade());
+        
+    }
+     private IEnumerator StartChapterFade()
+    {
+        yield return null;
+        if(ScreenFade.Instance != null)
+        {
+            yield return ScreenFade.Instance.FadeInCoroutine();
+        }
+        DialogueManager.Instance.StartDialogue(
+            initialDialogue, StartChapter
+        );
     }
 
     private void StartChapter()

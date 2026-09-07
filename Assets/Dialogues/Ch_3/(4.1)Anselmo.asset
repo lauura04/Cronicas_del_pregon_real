@@ -15,11 +15,11 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
     text: "Gente de bien, humildes vecinos de... \xA1Valencia de Alc\xE1ntara! Pues
-      hasta aqu\xED llego con la fe de que sepan que estos productos milagrosos puedan"
+      hasta aqu\xED llego con la fe de que sepan que estos productos "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
-    text: devolver la felicidad a cualquiera de ustedes.
+    text: milagrosos puedan devolver la felicidad a cualquiera de ustedes.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
@@ -43,25 +43,26 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Lo \xFAnico que yo ando buscando son unas velas para la boda de sus majestades.
-      Que hoy acaece el quiz\xE1 m\xE1s importante acto que la historia"
+      Que hoy acaece el quiz\xE1 m\xE1s importante acto que "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "puede regalar a esta poblaci\xF3n. De modo que como no se espabile y ahueque
-      el ala de aqu\xED, va a pasar la noche y buena parte del"
+    text: "la historia puede regalar a esta poblaci\xF3n. De modo que como no se
+      espabile y ahueque el ala de aqu\xED, va a pasar la noche y buena "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "d\xEDa entre los barrotes del calabozo."
+    text: "parte del d\xEDa entre los barrotes del calabozo."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
     text: "No diga eso mi buen se\xF1or, si lo que precisa son velas y no brebajes
-      eso tambi\xE9n se lo puedo proporcionar. Pero para ello tendr\xE1s que responder"
+      eso tambi\xE9n se lo puedo proporcionar. Pero para ello tendr\xE1s "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 75249c14cc507ad4eaa216af2ddf1aac, type: 2}
-    text: "correctamente a mis preguntas, t\xFA, que tanto dices saber sobre bodas
-      y coronas."
+    text: "que responder correctamente a mis preguntas, t\xFA, que tanto dices saber
+      sobre bodas y coronas."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

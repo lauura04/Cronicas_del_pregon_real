@@ -8,10 +8,10 @@ public enum DialogueUIType
     Gameplay,
     Intro
 }
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
-
 
     [Header("Configuración")]
     [SerializeField] private float typingSpeed = 0.05f;
@@ -30,11 +30,17 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text introCharacterNameText;
     [SerializeField] private Image introCharacterPortraitImage;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource dialogueAudioSource;
+
     private DialogueData currentDialogue;
     private int currentLineIndex;
 
     public bool IsDialogueActive =>
-        currentDialogue != null;
+        currentDialogue != null ||
+        (dialoguePanel != null && dialoguePanel.activeInHierarchy) ||
+        (introDialoguePanel != null && introDialoguePanel.activeInHierarchy);
+
     public System.Action onDialogueFinished;
 
     private Coroutine typingCoroutine;
@@ -47,6 +53,8 @@ public class DialogueManager : MonoBehaviour
     private TMP_Text currentDialogueTextUI;
     private TMP_Text currentCharacterNameTextUI;
     private Image currentCharacterPortraitImageUI;
+
+    private bool musicPausedForDialogue;
 
     public void SetUIType(DialogueUIType type)
     {
@@ -64,6 +72,7 @@ public class DialogueManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     private void SelectCurrentUI()
     {
         if (currentUIType == DialogueUIType.Intro)
@@ -81,18 +90,21 @@ public class DialogueManager : MonoBehaviour
             currentCharacterPortraitImageUI = characterPortraitImage;
         }
     }
+
     public void StartDialogue(
-    DialogueData dialogue,
-    System.Action onFinished = null)
+        DialogueData dialogue,
+        System.Action onFinished = null)
     {
         SelectCurrentUI();
 
-        if (dialogue == null || dialogue.Lines == null ||
+        if (dialogue == null ||
+            dialogue.Lines == null ||
             dialogue.Lines.Count == 0)
         {
             Debug.LogError(
                 "El diálogo está vacío o no ha sido asignado."
             );
+
             return;
         }
 
@@ -104,6 +116,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError(
                 "La interfaz de diálogo no está completamente asignada."
             );
+
             return;
         }
 
@@ -116,17 +129,40 @@ public class DialogueManager : MonoBehaviour
 
         currentPanel.SetActive(true);
 
+        // =========================
+        // AUDIO DEL DIÁLOGO
+        // =========================
+
+        musicPausedForDialogue = false;
+
+        if (dialogue.DialogueSound != null &&
+            dialogueAudioSource != null)
+        {
+            MusicManager.Instance?.PauseMusic();
+
+            musicPausedForDialogue = true;
+
+            dialogueAudioSource.clip = dialogue.DialogueSound;
+            dialogueAudioSource.loop = true;
+            dialogueAudioSource.Play();
+        }
+
+        // =========================
+
         currentDialogue = dialogue;
         onDialogueFinished = onFinished;
         currentLineIndex = 0;
 
         ShowCurrentLine();
     }
+
     private void ShowCurrentLine()
     {
-        DialogueLine line = currentDialogue.Lines[currentLineIndex];
+        DialogueLine line =
+            currentDialogue.Lines[currentLineIndex];
 
         currentLineText = line.Text;
+
         UpdateDialogueImages(line);
 
         if (line.Character != null)
@@ -134,9 +170,11 @@ public class DialogueManager : MonoBehaviour
             currentCharacterNameTextUI.text =
                 line.Character.CharacterName;
 
-            Sprite portrait = line.Character.Portrait;
+            Sprite portrait =
+                line.Character.Portrait;
 
-            currentCharacterPortraitImageUI.sprite = portrait;
+            currentCharacterPortraitImageUI.sprite =
+                portrait;
 
             currentCharacterPortraitImageUI.gameObject.SetActive(
                 portrait != null
@@ -148,7 +186,9 @@ public class DialogueManager : MonoBehaviour
 
             currentCharacterPortraitImageUI.sprite = null;
 
-            currentCharacterPortraitImageUI.gameObject.SetActive(false);
+            currentCharacterPortraitImageUI.gameObject.SetActive(
+                false
+            );
         }
 
         if (typingCoroutine != null)
@@ -171,7 +211,8 @@ public class DialogueManager : MonoBehaviour
 
         currentLineIndex++;
 
-        if (currentLineIndex < currentDialogue.Lines.Count)
+        if (currentLineIndex <
+            currentDialogue.Lines.Count)
         {
             ShowCurrentLine();
         }
@@ -191,7 +232,9 @@ public class DialogueManager : MonoBehaviour
         {
             currentDialogueTextUI.text += character;
 
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSeconds(
+                typingSpeed
+            );
         }
 
         isTyping = false;
@@ -206,7 +249,8 @@ public class DialogueManager : MonoBehaviour
             typingCoroutine = null;
         }
 
-        currentDialogueTextUI.text = currentLineText;
+        currentDialogueTextUI.text =
+            currentLineText;
 
         isTyping = false;
     }
@@ -219,21 +263,55 @@ public class DialogueManager : MonoBehaviour
             typingCoroutine = null;
         }
 
+        // =========================
+        // DETENER AUDIO DEL DIÁLOGO
+        // =========================
+
+        if (dialogueAudioSource != null)
+        {
+            dialogueAudioSource.Stop();
+            dialogueAudioSource.clip = null;
+        }
+
+        // Reanudar la música solo si este diálogo
+        // la había pausado
+        if (musicPausedForDialogue)
+        {
+            MusicManager.Instance?.ResumeMusic();
+
+            musicPausedForDialogue = false;
+        }
+
+        // =========================
+
         currentDialogueTextUI.text = "";
         currentCharacterNameTextUI.text = "";
 
         currentCharacterPortraitImageUI.sprite = null;
 
-        currentCharacterPortraitImageUI.gameObject.SetActive(false);
-        SetDialogueImage(leftDialogueImage, null);
-    SetDialogueImage(rightDialogueImage, null);
+        currentCharacterPortraitImageUI.gameObject.SetActive(
+            false
+        );
 
-        System.Action finishedAction = onDialogueFinished;
+        SetDialogueImage(
+            leftDialogueImage,
+            null
+        );
+
+        SetDialogueImage(
+            rightDialogueImage,
+            null
+        );
+
+        System.Action finishedAction =
+            onDialogueFinished;
 
         currentDialogue = null;
         onDialogueFinished = null;
+
         currentLineText = null;
         currentLineIndex = 0;
+
         isTyping = false;
 
         currentPanel.SetActive(false);
@@ -242,20 +320,35 @@ public class DialogueManager : MonoBehaviour
 
         if (PlayerMovement.Instance != null)
         {
-            PlayerMovement.Instance.SetMovementEnabled(true);
+            PlayerMovement.Instance.SetMovementEnabled(
+                true
+            );
         }
 
         finishedAction?.Invoke();
     }
 
-    private void UpdateDialogueImages(DialogueLine line)
+    private void UpdateDialogueImages(
+        DialogueLine line)
     {
-        SetDialogueImage(leftDialogueImage,line.LeftImage);
-        SetDialogueImage(rightDialogueImage, line.RightImage);
+        SetDialogueImage(
+            leftDialogueImage,
+            line.LeftImage
+        );
 
+        SetDialogueImage(
+            rightDialogueImage,
+            line.RightImage
+        );
     }
-    private void SetDialogueImage(Image image, Sprite sprite)
+
+    private void SetDialogueImage(
+        Image image,
+        Sprite sprite)
     {
+        if (image == null)
+            return;
+
         if (sprite != null)
         {
             image.sprite = sprite;

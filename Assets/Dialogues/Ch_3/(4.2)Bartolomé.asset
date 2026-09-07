@@ -23,11 +23,11 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "He conocido a su encantadora mujer hace un rato diciendo no s\xE9 qu\xE9
-      sobre una carta a entregar, si a vuesa merced le conviene puedo "
+      sobre una carta a entregar, si a vuesa merced le conviene  "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "encargarme de hac\xE9rsela llegar a la reina."
+    text: "puedo encargarme de hac\xE9rsela llegar a la reina."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 27f7f6e2ca9f681428bc715cdc305a5b, type: 2}
@@ -49,3 +49,4 @@ MonoBehaviour:
     text: "y llegue a o\xEDdos de alguien que no nos convenga."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

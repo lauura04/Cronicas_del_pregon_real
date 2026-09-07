@@ -43,7 +43,18 @@ public class SecondChapterController : MonoBehaviour
     {
        MusicManager.Instance.PlayMusic(musicClip);
         GameProgressManager.Instance.StartChapter(secondChapter, introPhase);
+
+        StartCoroutine(StartChapterFade());
         //StartCoroutine(InitialSequence());
+    }
+private IEnumerator StartChapterFade()
+    {
+        yield return null;
+        if(ScreenFade.Instance != null)
+        {
+            yield return ScreenFade.Instance.FadeInCoroutine();
+        }
+       StartCoroutine(InitialSequence());
     }
 
     private IEnumerator InitialSequence()

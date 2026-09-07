@@ -23,13 +23,24 @@ public class CameraZone : MonoBehaviour
     [Header("Vista fija")]
     [SerializeField] private Transform fixedCameraPoint;
 
-    [Header("Salida")]
-    [SerializeField] private bool resetOnExit = true;
-
-    [Header("Controles de movimiento")]
+    [Header("Controles")]
     [SerializeField] private bool invertHorizontal = false;
     [SerializeField] private bool invertVertical = false;
     [SerializeField] private bool swapAxes = false;
+
+    [Header("Player")]
+    [SerializeField] private bool swapFrontBackSprites = false;
+    [SerializeField] private bool swapRightLeftSprites = false;
+
+    [SerializeField] private bool changePlayerRotation = false;
+    [SerializeField] private Vector3 playerRotation;
+    private static readonly Vector3 defaultPlayerRotation = new Vector3(0f, 0f, 0f);
+
+    [Header("Salida")]
+    [SerializeField] private bool resetOnExit = true;
+
+    // La última CameraZone que ha aplicado controles
+    private static CameraZone activeControlZone;
 
     private void Awake()
     {
@@ -42,10 +53,25 @@ public class CameraZone : MonoBehaviour
         {
             return;
         }
-         //controles
+
+        // Esta zona pasa a controlar el mapping del jugador
+        activeControlZone = this;
+
         if (PlayerMovement.Instance != null)
         {
-            PlayerMovement.Instance.SetMovementMapping(invertHorizontal,invertVertical,swapAxes);
+            PlayerMovement.Instance.SetMovementMapping(
+                invertHorizontal,
+                invertVertical,
+                swapAxes
+            );
+
+            PlayerMovement.Instance.SetSpriteMapping(
+                swapFrontBackSprites, swapRightLeftSprites
+            );
+            if (changePlayerRotation)
+    {
+        PlayerMovement.Instance.SetGraphicsRotation(playerRotation);
+    }
         }
 
         if (CameraFollow.Instance == null)
@@ -85,9 +111,19 @@ public class CameraZone : MonoBehaviour
         {
             return;
         }
-       if(PlayerMovement.Instance != null)
+
+        // Solo esta zona puede resetear si sigue siendo
+        // la CameraZone activa.
+        if (activeControlZone == this)
         {
-            PlayerMovement.Instance.ResetMovementMapping();
+            if (PlayerMovement.Instance != null)
+            {
+                PlayerMovement.Instance.ResetMovementMapping();
+                PlayerMovement.Instance.ResetSpriteMapping();
+                PlayerMovement.Instance.ResetGraphicsRotation();
+            }
+
+            activeControlZone = null;
         }
 
         if (CameraFollow.Instance == null)

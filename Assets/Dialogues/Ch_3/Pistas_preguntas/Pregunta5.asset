@@ -38,10 +38,11 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
     text: "Centro no ser\xE1, desde luego. Pero para encontrarse sin que una de las
-      dos cortes tenga que adentrarse demasiado en tierras ajenas,"
+      dos cortes tenga que adentrarse demasiado en tierras "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: bbc6f7ec1a982b446ba526934c0ff2e7, type: 2}
-    text: pocos lugares resultan tan convenientes.
+    text: ajenas, pocos lugares resultan tan convenientes.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

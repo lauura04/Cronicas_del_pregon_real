@@ -29,12 +29,12 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Y mi viejo amigo, \xBFpero no le hab\xE9is visto? Es zapatero, aqu\xED
-      mismo tengo una s\xE1bana suya manchada de tinte, creo que cualquiera de ustedes"
+      mismo tengo una s\xE1bana suya manchada de tinte, creo que "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "la cambiar\xEDa independientemente del d\xEDa si tuvieran que dormir en
-      algo as\xED de manchado."
+    text: "cualquiera de ustedes la cambiar\xEDa independientemente del d\xEDa si
+      tuvieran que dormir en algo as\xED de manchado."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 0e3a13875efcc5d459ea9f0f4daa9e04, type: 2}
@@ -42,3 +42,4 @@ MonoBehaviour:
       de muy mala gana."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

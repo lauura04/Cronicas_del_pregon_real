@@ -59,24 +59,52 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void UpdateDirection(Vector3 direction)
     {
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+        Vector3 visualDirection = direction;
+
+        int steps = playerMovement.VisualRotationSteps;
+
+        for (int i = 0; i < steps; i++)
         {
-            // Left / Right NO cambian
-            if (direction.x > 0)
+            visualDirection = new Vector3(
+                visualDirection.z,
+                0f,
+                -visualDirection.x
+            );
+        }
+
+        if (Mathf.Abs(visualDirection.x) >
+            Mathf.Abs(visualDirection.z))
+        {
+            // LEFT / RIGHT
+            if (playerMovement.SwapRightLeftSprites)
             {
-                SetDirection(right, rightAnimator);
+                if (visualDirection.x > 0)
+                {
+                    SetDirection(left, leftAnimator);
+                }
+                else
+                {
+                    SetDirection(right, rightAnimator);
+                }
             }
             else
             {
-                SetDirection(left, leftAnimator);
+                if (visualDirection.x > 0)
+                {
+                    SetDirection(right, rightAnimator);
+                }
+                else
+                {
+                    SetDirection(left, leftAnimator);
+                }
             }
         }
         else
         {
-            if (playerMovement.SwapAxes)
+            // FRONT / BACK
+            if (playerMovement.SwapFrontBackSprites)
             {
-                // Con swap, intercambiamos SOLO Front y Back
-                if (direction.z > 0)
+                if (visualDirection.z > 0)
                 {
                     SetDirection(front, frontAnimator);
                 }
@@ -87,8 +115,7 @@ public class PlayerAnimationController : MonoBehaviour
             }
             else
             {
-                // Comportamiento normal
-                if (direction.z > 0)
+                if (visualDirection.z > 0)
                 {
                     SetDirection(back, backAnimator);
                 }

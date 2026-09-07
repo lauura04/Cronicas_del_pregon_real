@@ -12,7 +12,7 @@ public class PuzzleManager : MonoBehaviour
 
     [Header("Dialogue")]
     [SerializeField] private DialogueData puzzleCompletedDialogue;
-    [SerializeField] private ItemData Velas;
+    [SerializeField] private ItemData Miel;
 
     private int placedPieces;
     private bool puzzleCompleted;
@@ -60,6 +60,7 @@ public class PuzzleManager : MonoBehaviour
     {
         puzzleCompleted = true;
         Debug.Log("Puzzle completado");
+        InventoryManager.Instance.AddItem(Miel);
 
         if (puzzleCompletedDialogue != null && DialogueManager.Instance != null)
         {
@@ -69,7 +70,7 @@ public class PuzzleManager : MonoBehaviour
         {
             ClosePuzzle();
         }
-        InventoryManager.Instance.AddItem(Velas);
+        
     }
 
 

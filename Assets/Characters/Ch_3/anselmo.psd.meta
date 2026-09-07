@@ -1,0 +1,653 @@
+fileFormatVersion: 2
+guid: 0935edefe663cfd4c8849abb3443a431
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: cabeza
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1364
+      y: 4
+      width: 1250
+      height: 1550
+    spriteID: 73f7552b8abfeda4b98ce70d3e94493e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1364, y: 4}
+    spritePosition: {x: 705, y: 2034}
+  - name: mano_izq
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1987
+      y: 2053
+      width: 269
+      height: 264
+    spriteID: b8f559d2921d3c64192b7996a17149ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1987, y: 2053}
+    spritePosition: {x: 741, y: 960}
+  - name: 'mano_der '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2725
+      y: 1696
+      width: 269
+      height: 264
+    spriteID: ce0001c7fd97ef8499d8808fc53e7a79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2725, y: 1696}
+    spritePosition: {x: 1893, y: 960}
+  - name: antebrazo_der
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1401
+      y: 1696
+      width: 285
+      height: 614
+    spriteID: 0af6282f8a8236b4f8ca6c21db50c341
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1401, y: 1696}
+    spritePosition: {x: 1964, y: 1062}
+  - name: antebrazo_zq
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1694
+      y: 1696
+      width: 285
+      height: 614
+    spriteID: b00ce10352d6df34eb4b902bfeb96f56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1694, y: 1696}
+    spritePosition: {x: 656, y: 1054}
+  - name: hombro_izq
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2622
+      y: 4
+      width: 713
+      height: 896
+    spriteID: 56184fc0052c3ee459a3b34a999a5d57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2622, y: 4}
+    spritePosition: {x: 598, y: 1401}
+  - name: hombro_der
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3343
+      y: 4
+      width: 713
+      height: 896
+    spriteID: 8b1b2b4f5d3b667498e8b329aa065da4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3343, y: 4}
+    spritePosition: {x: 1594, y: 1409}
+  - name: cuerpo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1352
+      height: 1684
+    spriteID: fb28574de15728a449e04cfa90c86220
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 755, y: 612}
+  - name: pantorrilla_der
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 553
+      y: 1696
+      width: 416
+      height: 658
+    spriteID: a9996a1a0abef8549a65b1c5281e8ed4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 553, y: 1696}
+    spritePosition: {x: 1362, y: 219}
+  - name: pantorrilla_izq
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 977
+      y: 1696
+      width: 416
+      height: 658
+    spriteID: a4766b15bc1a6f0439f6fe3af8f086aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 977, y: 1696}
+    spritePosition: {x: 1080, y: 219}
+  - name: muslo_izq
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2622
+      y: 908
+      width: 512
+      height: 735
+    spriteID: 78d1911dab841184c960a8a5394d72b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2622, y: 908}
+    spritePosition: {x: 972, y: 653}
+  - name: muslo_der
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3343
+      y: 908
+      width: 512
+      height: 735
+    spriteID: 03d30c15106ca6d46ab078409ea24f3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3343, y: 908}
+    spritePosition: {x: 1372, y: 653}
+  - name: muslo_der - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1696
+      width: 541
+      height: 659
+    spriteID: 55171c67a02045b48b37726ce69b6165
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1696}
+    spritePosition: {x: 1353, y: 657}
+  - name: pie_der - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1987
+      y: 1696
+      width: 361
+      height: 349
+    spriteID: fba81dc3c61d3cc4cbd05f63a69ae0da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1987, y: 1696}
+    spritePosition: {x: 1475, y: 74}
+  - name: pie_izq - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2356
+      y: 1696
+      width: 361
+      height: 349
+    spriteID: 2111fe2b0f44bcd4a8b62cc724f1b61e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2356, y: 1696}
+    spritePosition: {x: 1026, y: 75}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: vendedor
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 14f23fb02e30e8c44aa6071df388709d
+    layerID: 0
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: cabeza
+    spriteName: cabeza
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 73f7552b8abfeda4b98ce70d3e94493e
+    layerID: -619351618
+    mosaicPosition: {x: 1364, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cabeza - copia
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ddbe1216972230c488bfbe63e4183829
+    layerID: -593843661
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: mano_izq
+    spriteName: mano_izq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b8f559d2921d3c64192b7996a17149ec
+    layerID: -436515870
+    mosaicPosition: {x: 1987, y: 2053}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'mano_der '
+    spriteName: 'mano_der '
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ce0001c7fd97ef8499d8808fc53e7a79
+    layerID: 1931849773
+    mosaicPosition: {x: 2725, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: antebrazo_der
+    spriteName: antebrazo_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0af6282f8a8236b4f8ca6c21db50c341
+    layerID: 847258614
+    mosaicPosition: {x: 1401, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: antebrazo_zq
+    spriteName: antebrazo_zq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b00ce10352d6df34eb4b902bfeb96f56
+    layerID: 208446766
+    mosaicPosition: {x: 1694, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: hombro_izq
+    spriteName: hombro_izq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 56184fc0052c3ee459a3b34a999a5d57
+    layerID: 747548626
+    mosaicPosition: {x: 2622, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: hombro_der
+    spriteName: hombro_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8b1b2b4f5d3b667498e8b329aa065da4
+    layerID: 1641319453
+    mosaicPosition: {x: 3343, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cuerpo
+    spriteName: cuerpo
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fb28574de15728a449e04cfa90c86220
+    layerID: -1938349868
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pantorrilla_der
+    spriteName: pantorrilla_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a9996a1a0abef8549a65b1c5281e8ed4
+    layerID: -1260300018
+    mosaicPosition: {x: 553, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pantorrilla_izq
+    spriteName: pantorrilla_izq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a4766b15bc1a6f0439f6fe3af8f086aa
+    layerID: -594894083
+    mosaicPosition: {x: 977, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: muslo_izq
+    spriteName: muslo_izq
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 78d1911dab841184c960a8a5394d72b1
+    layerID: 1248142153
+    mosaicPosition: {x: 2622, y: 908}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: muslo_der
+    spriteName: muslo_der
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 03d30c15106ca6d46ab078409ea24f3a
+    layerID: 1557317984
+    mosaicPosition: {x: 3343, y: 908}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: muslo_der - copia
+    spriteName: muslo_der - copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 55171c67a02045b48b37726ce69b6165
+    layerID: 1650413405
+    mosaicPosition: {x: 4, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pie_der - copia
+    spriteName: pie_der - copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fba81dc3c61d3cc4cbd05f63a69ae0da
+    layerID: -1338274391
+    mosaicPosition: {x: 1987, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pie_izq - copia
+    spriteName: pie_izq - copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 2111fe2b0f44bcd4a8b62cc724f1b61e
+    layerID: 1784221666
+    mosaicPosition: {x: 2356, y: 1696}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 42 - copia
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 53753052c46a09f4b889bea44eb21a81
+    layerID: -929374642
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Capa 25 - copia
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9bb674bdafc32ad47aa45dcfa6e537e9
+    layerID: 86861489
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

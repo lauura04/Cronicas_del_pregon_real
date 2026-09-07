@@ -26,7 +26,7 @@ MonoBehaviour:
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "Siempre hay una letrra peque\xF1a..."
+    text: "Siempre hay una letra peque\xF1a..."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 7990a38c4c9816f42a53ee5276a334dc, type: 2}
@@ -47,3 +47,4 @@ MonoBehaviour:
     text: Que comiencen las celebraciones.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

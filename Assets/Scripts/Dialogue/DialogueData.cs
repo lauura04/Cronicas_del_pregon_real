@@ -11,6 +11,7 @@ public class DialogueLine
     [Header("Optional images")]
     [SerializeField] private Sprite leftImage;
     [SerializeField] private Sprite rightImage;
+   
 
     public CharacterData Character => character;
     public string Text => text;
@@ -23,5 +24,8 @@ public class DialogueLine
 public class DialogueData : ScriptableObject
 {
     [SerializeField] private List<DialogueLine> lines;
+     [SerializeField] private AudioClip dialogueSound;
     public IReadOnlyList<DialogueLine> Lines =>lines;
+    public AudioClip DialogueSound => dialogueSound;
 }
+

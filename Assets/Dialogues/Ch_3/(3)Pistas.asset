@@ -30,11 +30,12 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Mi nombre es Benjam\xEDn, Buf\xF3n Real, para servirles. Vengo de Castilla
-      mandado por sus majestades con la misi\xF3n de asegurarme de que todo est\xE9"
+      mandado por sus majestades con la misi\xF3n de asegurarme de "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "preparado para la Boda Regia que se dar\xE1 aqu\xED y en breve plazo..."
+    text: "que todo est\xE9 preparado para la Boda Regia que se dar\xE1 aqu\xED y
+      en breve plazo..."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
@@ -48,18 +49,21 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
     text: "Gracias por el ofrecimiento, pero me veo en la obligaci\xF3n de rechazarlo.
-      Cuando pens\xE9 haber acabado mi tarea me encuentro con que no est\xE1 todo
-      preparado,"
+      Cuando pens\xE9 haber acabado mi tarea me encuentro con "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
-    text: "que si velas, que si miel, pero de d\xF3nde voy a sacar yo tales cosas
-      en un d\xEDa festivo como este."
+    text: "que no est\xE1 todo preparado, que si velas, que si miel, pero de d\xF3nde
+      voy a sacar yo tales cosas en un d\xEDa festivo como este."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
     text: "No se preocupe mi buen se\xF1or, si miel es lo que precisas me s\xE9 de
-      la existencia de un panal en la Torre del Homenaje, puede probar suerte all\xED."
+      la existencia de un panal en la Torre del Homenaje, "
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
+    text: "puede probar suerte all\xED."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
@@ -70,21 +74,21 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 83281260bf21207469fd6ed90e747471, type: 2}
     text: "Pero, \xBFqu\xE9 dec\xEDs insensatas? Qu\xE9 importa la miel o las velas
       si no hay boda. Mi marido, que se encuentra en el cuartel, me ha dicho que
-      ha recibido"
+      ha "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 83281260bf21207469fd6ed90e747471, type: 2}
-    text: "una carta que se ha de entregar a la reina, dicen que trae nuevas sobre
-      la enfermedad del pr\xEDncipe Juan."
+    text: "recibido una carta que se ha de entregar a la reina, dicen que trae nuevas
+      sobre la enfermedad del pr\xEDncipe Juan."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
     text: "Calla mujer, que boda va a haber. Y t\xFA, si tienes dudas al respecto
-      te recomiendo hacerte con ese mensaje y hablar, si puedes, con sus majestades."
+      te recomiendo hacerte con ese mensaje y hablar, si puedes, "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 658c142d5757a8f40958717eecf9ed2c, type: 2}
-    text: "Quiz\xE1s te alivien los pesares."
+    text: "con sus majestades. Quiz\xE1s te alivien los pesares."
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: ca443bc81ed58e74da099d16a583665c, type: 2}
@@ -97,3 +101,4 @@ MonoBehaviour:
       de mucho esta agradable charla.
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  dialogueSound: {fileID: 0}

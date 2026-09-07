@@ -5,7 +5,11 @@ public class HUDManager : MonoBehaviour
 {
     public static HUDManager Instance { get; private set; }
 
+    [Header("HUD")]
     [SerializeField] private GameObject hudPanel;
+
+    [Header("Buttons")]
+    [SerializeField] private GameObject inventoryButton;
 
     private void Awake()
     {
@@ -36,19 +40,25 @@ public class HUDManager : MonoBehaviour
             scene.name != "ChapterIntro";
 
         SetHUDVisible(isGameplayScene);
-        hudPanel.SetActive(isGameplayScene);
+
+        
+    }
+
+    public void HideInventoryButton()
+    {
+        inventoryButton.SetActive(false);
     }
 
     public void ShowHUD()
-{
-    if (DialogueManager.Instance != null &&
-        DialogueManager.Instance.IsDialogueActive)
     {
-        return;
-    }
+        if (DialogueManager.Instance != null &&
+            DialogueManager.Instance.IsDialogueActive)
+        {
+            return;
+        }
 
-    SetHUDVisible(true);
-}
+        SetHUDVisible(true);
+    }
 
     public void HideHUD()
     {

@@ -42,11 +42,11 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
     text: "\xA1Mi \xE1ngel! Dios me lo ha dado y ahora me lo quiere quitar. Duras
-      pruebas me ha mandado y las tengo que aceptar, pero ahora me pregunto"
+      pruebas me ha mandado y las tengo que aceptar, pero ahora "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
-    text: "\xBFqu\xE9 pecado comet\xED para este castigo alcanzar?"
+    text: "me pregunto \xBFqu\xE9 pecado comet\xED para este castigo alcanzar?"
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 79fa6db377b64ee48a8c949ed1c539f8, type: 2}
@@ -56,11 +56,16 @@ MonoBehaviour:
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
     text: "\xA1Nada parecido ha de hacer! La unidad peninsular depende de aquesta
-      boda y ning\xFAn impedimento la tiene que retrasar. Nada la Infanta ha de saber"
+      boda y ning\xFAn impedimento la tiene que retrasar. "
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
   - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
-    text: "hasta entrar en Portugal. Y ahora buf\xF3n, cesemos en nuestros llantos
-      y acudamos a su encuentro que una infanta he de casar."
+    text: "Nada la Infanta ha de saber hasta entrar en Portugal. Y ahora buf\xF3n,
+      cesemos en nuestros llantos y acudamos a su encuentro,"
     leftImage: {fileID: 0}
     rightImage: {fileID: 0}
+  - character: {fileID: 11400000, guid: 42be8fcd3850d9346872e802c8da55fa, type: 2}
+    text: ' que una infanta he de casar.'
+    leftImage: {fileID: 0}
+    rightImage: {fileID: 0}
+  dialogueSound: {fileID: 8300000, guid: ab51b35a9f050c549ab7d756f1c8f82c, type: 3}

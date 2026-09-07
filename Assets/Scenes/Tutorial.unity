@@ -690,10 +690,11 @@ MonoBehaviour:
   cameraOffset: {x: 4.5, y: 4.5, z: 2}
   cameraRotation: {x: 25, y: -90, z: 0}
   fixedCameraPoint: {fileID: 829724141}
-  resetOnExit: 1
   invertHorizontal: 0
-  invertVertical: 0
-  swapAxes: 0
+  invertVertical: 1
+  swapAxes: 1
+  swapFrontBackSprites: 1
+  resetOnExit: 1
 --- !u!65 &70081647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1675,10 +1676,11 @@ MonoBehaviour:
   cameraOffset: {x: 4.5, y: 4.5, z: 2}
   cameraRotation: {x: 25, y: -90, z: 0}
   fixedCameraPoint: {fileID: 1265031027}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 0
+  resetOnExit: 1
 --- !u!65 &239606377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1939,10 +1941,11 @@ MonoBehaviour:
   cameraOffset: {x: 4, y: 4, z: 3}
   cameraRotation: {x: 30, y: -120, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 1
   swapAxes: 1
+  swapFrontBackSprites: 1
+  resetOnExit: 1
 --- !u!65 &295165011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3400,8 +3403,15 @@ MonoBehaviour:
   dialogue: {fileID: 11400000, guid: 890b915e90fe1bd4583fc751bf8012c1, type: 2}
   triggerOnlyOnce: 1
   showMessageAfterDialogue: 1
+  messageIsQuestion: 0
   messageDuration: 3
   messageAfterDialogue: Pulsa R para Engatusar
+  yesAction:
+    m_PersistentCalls:
+      m_Calls: []
+  noAction:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
@@ -3720,8 +3730,15 @@ MonoBehaviour:
   dialogue: {fileID: 11400000, guid: dfa991f4f9c53d64daf4e7d743edacf6, type: 2}
   triggerOnlyOnce: 1
   showMessageAfterDialogue: 1
+  messageIsQuestion: 0
   messageDuration: 2
   messageAfterDialogue: Pulsa Q para ESPIAR
+  yesAction:
+    m_PersistentCalls:
+      m_Calls: []
+  noAction:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls:
@@ -4870,7 +4887,7 @@ GameObject:
   - component: {fileID: 913684309}
   - component: {fileID: 913684308}
   m_Layer: 0
-  m_Name: SpawnPoint (1)
+  m_Name: DebugSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4899,7 +4916,7 @@ Transform:
   m_GameObject: {fileID: 913684307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.24, y: 0.86, z: -15.04}
+  m_LocalPosition: {x: -30.68, y: 0.86, z: -26.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5211,8 +5228,15 @@ MonoBehaviour:
   dialogue: {fileID: 11400000, guid: 7c2fdf68d6933a448bcd12b26b7e314d, type: 2}
   triggerOnlyOnce: 1
   showMessageAfterDialogue: 1
+  messageIsQuestion: 0
   messageDuration: 2
   messageAfterDialogue: Pulsa E para hablar
+  yesAction:
+    m_PersistentCalls:
+      m_Calls: []
+  noAction:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
@@ -6003,10 +6027,11 @@ MonoBehaviour:
   cameraOffset: {x: 4.5, y: 4.5, z: 2}
   cameraRotation: {x: 25, y: -90, z: 0}
   fixedCameraPoint: {fileID: 1943477605}
-  resetOnExit: 1
   invertHorizontal: 0
-  invertVertical: 0
-  swapAxes: 0
+  invertVertical: 1
+  swapAxes: 1
+  swapFrontBackSprites: 1
+  resetOnExit: 1
 --- !u!65 &1102634424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6723,10 +6748,11 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 6, z: -5}
   cameraRotation: {x: 45, y: 0, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 0
+  resetOnExit: 1
 --- !u!65 &1214681392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7535,10 +7561,11 @@ MonoBehaviour:
   cameraOffset: {x: 6.5, y: 4, z: 3}
   cameraRotation: {x: 30, y: -90, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
-  invertVertical: 0
-  swapAxes: 0
+  invertVertical: 1
+  swapAxes: 1
+  swapFrontBackSprites: 1
+  resetOnExit: 1
 --- !u!65 &1489798654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8021,7 +8048,7 @@ Transform:
   m_GameObject: {fileID: 1603316024}
   serializedVersion: 2
   m_LocalRotation: {x: 0.05083144, y: 0.9582547, z: 0.01954805, w: 0.28068113}
-  m_LocalPosition: {x: 0.46, y: -6.87, z: 4.64}
+  m_LocalPosition: {x: -2.4, y: -7, z: 3.6}
   m_LocalScale: {x: 0.7, y: 0.6305729, z: 0.7099899}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8581,7 +8608,7 @@ Transform:
   m_GameObject: {fileID: 1766463509}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013523962, y: -0.29999968, z: 0.0054926923, w: 0.9538276}
-  m_LocalPosition: {x: -2.5, y: -9.33, z: 3.53}
+  m_LocalPosition: {x: -3.7, y: -9.3, z: 5.5}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9343,10 +9370,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852416977}
-  - component: {fileID: 1852416974}
   - component: {fileID: 1852416979}
   - component: {fileID: 1852416978}
   - component: {fileID: 1852416980}
+  - component: {fileID: 1852416981}
   m_Layer: 3
   m_Name: Herrero
   m_TagString: Untagged
@@ -9354,27 +9381,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1852416974
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852416973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1852416977
 Transform:
   m_ObjectHideFlags: 0
@@ -9534,6 +9540,27 @@ MonoBehaviour:
   onPuzzleFailed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1852416981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852416973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30.986643, y: 28.86462, z: 40.783745}
+  m_Center: {x: 3.440707, y: 0.7014055, z: -0.052418757}
 --- !u!1 &1852646867
 GameObject:
   m_ObjectHideFlags: 0
@@ -9886,8 +9913,15 @@ MonoBehaviour:
   dialogue: {fileID: 11400000, guid: 2ceddd486f9473741a06d0afab188899, type: 2}
   triggerOnlyOnce: 1
   showMessageAfterDialogue: 0
+  messageIsQuestion: 0
   messageDuration: 3
   messageAfterDialogue: 
+  yesAction:
+    m_PersistentCalls:
+      m_Calls: []
+  noAction:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls:
@@ -10392,8 +10426,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 33.848156, y: 54.132313, z: 37.68925}
-  m_Center: {x: -6.5000873, y: -21.24649, z: -18.288328}
+  m_Size: {x: 33.848156, y: 54.132313, z: 45.374855}
+  m_Center: {x: -6.5000873, y: -21.24649, z: -14.445527}
 --- !u!4 &1987636154
 Transform:
   m_ObjectHideFlags: 0
@@ -10732,7 +10766,7 @@ Transform:
   m_GameObject: {fileID: 2040999538}
   serializedVersion: 2
   m_LocalRotation: {x: -0.023779333, y: 0.98405945, z: -0.005034709, w: 0.17617099}
-  m_LocalPosition: {x: -2.44, y: -6.46, z: 6.6}
+  m_LocalPosition: {x: -4.4, y: -6.5, z: 9.7}
   m_LocalScale: {x: 0.8550986, y: 0.76940584, z: 0.86677885}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10867,10 +10901,11 @@ MonoBehaviour:
   cameraOffset: {x: 2, y: 2, z: -1}
   cameraRotation: {x: 45, y: -45, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 0
+  resetOnExit: 1
 --- !u!65 &2048627639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11218,10 +11253,11 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 3, z: -5}
   cameraRotation: {x: 45, y: 0, z: 0}
   fixedCameraPoint: {fileID: 1151642718}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 1
+  resetOnExit: 1
 --- !u!65 &2126273235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11502,10 +11538,11 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 6, z: -5}
   cameraRotation: {x: 40, y: 0, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 0
   invertVertical: 0
   swapAxes: 0
+  swapFrontBackSprites: 0
+  resetOnExit: 1
 --- !u!65 &2142493319
 BoxCollider:
   m_ObjectHideFlags: 0

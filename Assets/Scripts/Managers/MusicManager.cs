@@ -3,24 +3,26 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-   public static MusicManager Instance {get; private set;}
-   [Header("Audio")]
-   [SerializeField] private AudioSource audioSource;
-   [Header("Fade")]
-   [SerializeField] private float fadeDuration = 1f;
+    public static MusicManager Instance { get; private set; }
 
-   private AudioClip previousClip;
-   private float previousVolume;
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
 
-   private Coroutine fadeCoroutine;
+    [Header("Fade")]
+    [SerializeField] private float fadeDuration = 1f;
 
-   private void Awake()
+    private AudioClip previousClip;
+    private float previousVolume;
+    private Coroutine fadeCoroutine;
+
+    private void Awake()
     {
-        if(Instance !=null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
@@ -30,14 +32,25 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    // =========================
+    // REPRODUCIR MÚSICA
+    // =========================
+
     public void PlayMusic(AudioClip clip)
     {
-        if(clip==null)
+        if (clip == null)
             return;
-        if(audioSource.clip == clip && audioSource.isPlaying)
+
+        // Si ya está sonando esta canción, no hacemos nada
+        if (audioSource.clip == clip && audioSource.isPlaying)
             return;
+
         ChangeMusic(clip);
     }
+
+    // =========================
+    // PARAR MÚSICA
+    // =========================
 
     public void StopMusic()
     {
@@ -45,13 +58,52 @@ public class MusicManager : MonoBehaviour
         {
             StopCoroutine(fadeCoroutine);
         }
+
         fadeCoroutine = StartCoroutine(FadeOutAndStop());
     }
 
+    // =========================
+    // PAUSAR / REANUDAR
+    // Para los diálogos
+    // =========================
+
+    public void PauseMusic()
+    {
+        if (audioSource == null)
+            return;
+
+        // Si hay un fade activo, lo detenemos
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+            fadeCoroutine = null;
+        }
+
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    public void ResumeMusic()
+    {
+        if (audioSource == null)
+            return;
+
+        // UnPause continúa exactamente
+        // desde el momento en el que se pausó
+        audioSource.UnPause();
+    }
+
+    // =========================
+    // MÚSICA TEMPORAL
+    // =========================
+
     public void PlayTemporaryMusic(AudioClip temporaryClip)
     {
-        if(temporaryClip == null)
+        if (temporaryClip == null)
             return;
+
         previousClip = audioSource.clip;
         previousVolume = audioSource.volume;
 
@@ -60,12 +112,19 @@ public class MusicManager : MonoBehaviour
 
     public void RestorePreviousMusic()
     {
-        if(previousClip==null)
+        if (previousClip == null)
             return;
+
         AudioClip clipToRestore = previousClip;
-        previousClip= null;
+
+        previousClip = null;
+
         ChangeMusic(clipToRestore);
     }
+
+    // =========================
+    // CAMBIO DE MÚSICA
+    // =========================
 
     private void ChangeMusic(AudioClip newClip)
     {
@@ -77,13 +136,19 @@ public class MusicManager : MonoBehaviour
         fadeCoroutine = StartCoroutine(FadeToNewMusic(newClip));
     }
 
+    // =========================
+    // FADE ENTRE CANCIONES
+    // =========================
+
     private IEnumerator FadeToNewMusic(AudioClip newClip)
     {
         float startVolume = audioSource.volume;
 
-        while(audioSource.volume > 0f)
+        while (audioSource.volume > 0f)
         {
-            audioSource.volume-= startVolume*Time.unscaledDeltaTime/fadeDuration;
+            audioSource.volume -=
+                startVolume * Time.unscaledDeltaTime / fadeDuration;
+
             yield return null;
         }
 
@@ -93,9 +158,11 @@ public class MusicManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
 
-        while(audioSource.volume < startVolume)
+        while (audioSource.volume < startVolume)
         {
-            audioSource.volume += startVolume*Time.unscaledDeltaTime/fadeDuration;
+            audioSource.volume +=
+                startVolume * Time.unscaledDeltaTime / fadeDuration;
+
             yield return null;
         }
 
@@ -103,18 +170,25 @@ public class MusicManager : MonoBehaviour
         fadeCoroutine = null;
     }
 
+    // =========================
+    // FADE Y STOP
+    // =========================
+
     private IEnumerator FadeOutAndStop()
     {
         float startVolume = audioSource.volume;
-        while(audioSource.volume > 0f)
+
+        while (audioSource.volume > 0f)
         {
-            audioSource.volume -= startVolume * Time.unscaledDeltaTime/fadeDuration;
+            audioSource.volume -=
+                startVolume * Time.unscaledDeltaTime / fadeDuration;
+
             yield return null;
         }
 
         audioSource.Stop();
-
         audioSource.volume = startVolume;
+
         fadeCoroutine = null;
     }
 }

@@ -58,19 +58,19 @@ public class NPCAnimationController : MonoBehaviour
     }
 
     public void StopMoving()
+{
+    if (currentAnimator != null)
     {
-        
-        if (currentAnimator != null)
-        {
-            currentAnimator.SetBool("IsMoving", false);
-        }
+        currentAnimator.SetBool("IsMoving", false);
+    }
 
-        
-        SetDirection(front, frontAnimator);
+    SetDirection(front, frontAnimator);
 
-        
+    if (frontAnimator != null)
+    {
         frontAnimator.SetBool("IsMoving", false);
     }
+}
 
     private void SetDirection(
         GameObject objectToShow,

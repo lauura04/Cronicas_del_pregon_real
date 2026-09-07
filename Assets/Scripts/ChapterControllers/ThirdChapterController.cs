@@ -8,8 +8,8 @@ public class ThirdChapterController : MonoBehaviour
 
     [Header("Chapter")]
     [SerializeField] private ChapterData thirdChapter;
+    [SerializeField] private AudioClip music;
 
-    //fases en saber
     [Header("Phases")]
     [SerializeField] private ChapterPhaseData introPhase;
     [SerializeField] private ChapterPhaseData getThingsPhase;
@@ -19,25 +19,31 @@ public class ThirdChapterController : MonoBehaviour
     [Header("DIALOGUES")]
     [SerializeField] private DialogueData initialDialogue;
     [SerializeField] private DialogueData secondDialogue;
-    [SerializeField] private DialogueData thirdDialogue; // mujeres con bufon
+    [SerializeField] private DialogueData thirdDialogue;
 
     [Header("POSITIONS")]
     [SerializeField] private NPCMovement herald;
     [SerializeField] private Transform heraldFirstDestination;
     [SerializeField] private Transform heraldSecondDestination;
+
     [SerializeField] private NPCMovement firstWoman;
     [SerializeField] private Transform firstWomanDestination;
     [SerializeField] private Transform firstWomanDestination2;
+
     [SerializeField] private NPCMovement secondWoman;
     [SerializeField] private Transform secondWomanDestination;
     [SerializeField] private Transform secondWomanDestination2;
+
     [SerializeField] private NPCMovement thirdWoman;
     [SerializeField] private Transform thirdWomanDestination;
     [SerializeField] private Transform thirdWomanDestination2;
+
     [SerializeField] private NPCMovement isabel;
     [SerializeField] private Transform isabelDestination;
+
     [SerializeField] private PlayerSpawnPoint towerSpawnPoint1;
     [SerializeField] private PlayerSpawnPoint towerSpawnPoint2;
+
     [Header("Characters")]
     [SerializeField] private GameObject isabelObject;
     [SerializeField] private GameObject heraldObject;
@@ -49,6 +55,8 @@ public class ThirdChapterController : MonoBehaviour
     private bool unlockIsabel = false;
     public bool UnlockIsabel => unlockIsabel;
 
+    private bool itemsObjectiveCompleted = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,139 +64,305 @@ public class ThirdChapterController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
     }
 
     private void Start()
     {
-        GameProgressManager.Instance.StartChapter(thirdChapter, getThingsPhase);
+        GameProgressManager.Instance.StartChapter(
+            thirdChapter,
+            introPhase
+        );
+
+        StartCoroutine(StartChapterFade());
+
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.PlayMusic(music);
+        }
+
+        /*
+         * Nos suscribimos aquí y no en OnEnable,
+         * porque así nos aseguramos de que el
+         * InventoryManager ya esté inicializado.
+         */
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.OnInventoryChanged +=
+                CheckCandlesAndHoney;
+
+            // Por si ya tenemos miel o velas al empezar.
+            CheckCandlesAndHoney();
+        }
+        else
+        {
+            Debug.LogError(
+                "ThirdChapterController: InventoryManager.Instance es NULL"
+            );
+        }
+    }
+
+    private IEnumerator StartChapterFade()
+    {
+        yield return null;
+
+        if (ScreenFade.Instance != null)
+        {
+            yield return ScreenFade.Instance.FadeInCoroutine();
+        }
 
         StartCoroutine(InitialSequence());
     }
 
     private IEnumerator InitialSequence()
     {
-        herald.MoveTo(heraldFirstDestination, null);
-        bool dialogueFinished = false;
-        DialogueManager.Instance.StartDialogue(initialDialogue, () => dialogueFinished = true); // se va el heraldo y entrada de las pavas 
-        yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(0.5f);
-        herald.MoveTo(heraldSecondDestination, () => heraldObject.SetActive(false));
-        yield return new WaitForSeconds(1f);
-        firstWoman.MoveTo(firstWomanDestination, null);
-        secondWoman.MoveTo(secondWomanDestination, null);
-        thirdWoman.MoveTo(thirdWomanDestination, null);
-        bool secondDialogueFinished = false;
-        DialogueManager.Instance.StartDialogue(secondDialogue, () => secondDialogueFinished = true); // se va el heraldo y entrada de las pavas
-        yield return new WaitUntil(() => secondDialogueFinished);
-        yield return new WaitForSeconds(1f);
-        OnNPCsArrived();
+        herald.MoveTo(
+            heraldFirstDestination,
+            null
+        );
 
+        bool dialogueFinished = false;
+
+        DialogueManager.Instance.StartDialogue(
+            initialDialogue,
+            () => dialogueFinished = true
+        );
+
+        yield return new WaitUntil(
+            () => dialogueFinished
+        );
+
+        yield return new WaitForSeconds(0.5f);
+
+        herald.MoveTo(
+            heraldSecondDestination,
+            () => heraldObject.SetActive(false)
+        );
+
+        yield return new WaitForSeconds(1f);
+
+        firstWoman.MoveTo(
+            firstWomanDestination,
+            null
+        );
+
+        secondWoman.MoveTo(
+            secondWomanDestination,
+            null
+        );
+
+        thirdWoman.MoveTo(
+            thirdWomanDestination,
+            null
+        );
+
+        bool secondDialogueFinished = false;
+
+        DialogueManager.Instance.StartDialogue(
+            secondDialogue,
+            () => secondDialogueFinished = true
+        );
+
+        yield return new WaitUntil(
+            () => secondDialogueFinished
+        );
+
+        yield return new WaitForSeconds(1f);
+
+        OnNPCsArrived();
     }
 
     private void OnNPCsArrived()
     {
-        DialogueManager.Instance.StartDialogue(thirdDialogue, NextPhase);
+        DialogueManager.Instance.StartDialogue(
+            thirdDialogue,
+            NextPhase
+        );
     }
+
     private void NextPhase()
     {
         GameProgressManager.Instance.SetPhase(
             getThingsPhase
         );
-        firstWoman.MoveTo(firstWomanDestination2, () => firstWoman.gameObject.SetActive(false));
-        secondWoman.MoveTo(secondWomanDestination2, () => secondWoman.gameObject.SetActive(false));
-        thirdWoman.MoveTo(thirdWomanDestination2, () => thirdWoman.gameObject.SetActive(false));
 
+        firstWoman.MoveTo(
+            firstWomanDestination2,
+            () => firstWoman.gameObject.SetActive(false)
+        );
+
+        secondWoman.MoveTo(
+            secondWomanDestination2,
+            () => secondWoman.gameObject.SetActive(false)
+        );
+
+        thirdWoman.MoveTo(
+            thirdWomanDestination2,
+            () => thirdWoman.gameObject.SetActive(false)
+        );
     }
 
     public void EntryTower()
     {
-
-        StartCoroutine(TeleportWithFade(towerSpawnPoint1));
+        StartCoroutine(
+            TeleportWithFade(towerSpawnPoint1)
+        );
     }
 
     public void OutTower()
     {
-        StartCoroutine(TeleportWithFade(towerSpawnPoint2));
+        StartCoroutine(
+            TeleportWithFade(towerSpawnPoint2)
+        );
     }
 
-    private IEnumerator TeleportWithFade(PlayerSpawnPoint spawnPoint)
+    private IEnumerator TeleportWithFade(
+        PlayerSpawnPoint spawnPoint
+    )
     {
-        yield return StartCoroutine(ScreenFade.Instance.FadeOutCoroutine());
+        if (ScreenFade.Instance != null)
+        {
+            yield return StartCoroutine(
+                ScreenFade.Instance.FadeOutCoroutine()
+            );
+        }
 
         spawnPoint.TeleportPlayer();
 
         yield return null;
-        yield return StartCoroutine(ScreenFade.Instance.FadeInCoroutine());
-    }
 
+        if (ScreenFade.Instance != null)
+        {
+            yield return StartCoroutine(
+                ScreenFade.Instance.FadeInCoroutine()
+            );
+        }
+    }
 
     public void OpenPuzzle()
     {
-        PuzzleManager.Instance.OpenPuzzle();
+        if (PuzzleManager.Instance != null)
+        {
+            PuzzleManager.Instance.OpenPuzzle();
+        }
     }
 
     public void UnlockedIsabel()
     {
         unlockIsabel = true;
-        isabelObject.SetActive(true);
-        //aparición de la reina en un point
+
+        if (isabelObject != null)
+        {
+            isabelObject.SetActive(true);
+        }
     }
 
     public void MoveIsabelToDestination()
     {
-        if (isabel != null && isabelDestination != null)
+        if (
+            isabel != null &&
+            isabelDestination != null
+        )
         {
-            isabel.MoveTo(isabelDestination, () => isabel.gameObject.SetActive(false));
+            isabel.MoveTo(
+                isabelDestination,
+                () => isabel.gameObject.SetActive(false)
+            );
         }
         else
         {
-            Debug.LogWarning("Isabel o isabelDestination no están asignados.");
+            Debug.LogWarning(
+                "Isabel o isabelDestination no están asignados."
+            );
         }
-
     }
 
     public void CheckCandlesAndHoney()
     {
-        if (InventoryManager.Instance == null)
+        /*
+         * Una vez completado no queremos volver
+         * a ejecutar esta lógica cada vez que
+         * cambie el inventario.
+         */
+        if (itemsObjectiveCompleted)
         {
-            Debug.LogWarning("InventoryManager no está asignado.");
             return;
         }
 
-        bool hasCandles = InventoryManager.Instance.HasItemById(candlesID);
-        bool hasHoney = InventoryManager.Instance.HasItemById(honeyID);
+        if (InventoryManager.Instance == null)
+        {
+            Debug.LogWarning(
+                "InventoryManager no está asignado."
+            );
+
+            return;
+        }
+
+        bool hasCandles =
+            InventoryManager.Instance.HasItemById(
+                candlesID
+            );
+
+        bool hasHoney =
+            InventoryManager.Instance.HasItemById(
+                honeyID
+            );
+
+        Debug.Log(
+            "Comprobando objetos -> " +
+            "Velas: " + hasCandles +
+            " | Miel: " + hasHoney
+        );
 
         if (hasCandles && hasHoney)
         {
-            Debug.Log("El jugador tiene ambos objetos: velas y miel. Avanzando a la fase final.");
-            GameProgressManager.Instance.SetPhase(endPhase);
-            heraldObject.SetActive(true);
-            heraldObject.transform.position = heraldFirstDestination.position;
-        }
-    }
+            itemsObjectiveCompleted = true;
 
-    private void OnEnable()
-    {
-        if(InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.OnInventoryChanged += CheckCandlesAndHoney;
+            Debug.Log(
+                "El jugador tiene velas y miel. " +
+                "Avanzando a endPhase."
+            );
+
+            GameProgressManager.Instance.SetPhase(
+                endPhase
+            );
+
+            if (heraldObject != null)
+            {
+                heraldObject.SetActive(true);
+            }
+
+            if (
+                herald != null &&
+                heraldFirstDestination != null
+            )
+            {
+                herald.transform.position =
+                    heraldFirstDestination.position;
+            }
         }
     }
 
     private void OnDisable()
     {
-        if(InventoryManager.Instance != null)
+        if (InventoryManager.Instance != null)
         {
-            InventoryManager.Instance.OnInventoryChanged -= CheckCandlesAndHoney;
+            InventoryManager.Instance.OnInventoryChanged -=
+                CheckCandlesAndHoney;
         }
     }
 
     public void End()
     {
-        
-        ScreenFade.Instance.FadeOut();
+        if (ScreenFade.Instance != null)
+        {
+            ScreenFade.Instance.FadeOutAndIn();
+        }
+
+        if (SceneLoader.Instance != null)
+        {
+            SceneLoader.Instance.LoadScene("End");
+        }
     }
-
-
 }

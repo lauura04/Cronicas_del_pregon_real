@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Velas
   description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 544bc890664c8d142878144b86b7dd96, type: 3}
   itemId: velas
