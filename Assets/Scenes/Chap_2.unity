@@ -4317,11 +4317,14 @@ MonoBehaviour:
   cameraOffset: {x: -2, y: 4, z: 3}
   cameraRotation: {x: 40, y: 120, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 1
   invertVertical: 1
   swapAxes: 0
   swapFrontBackSprites: 1
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &507483271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8935,6 +8938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1041119845}
   - component: {fileID: 1041119846}
+  - component: {fileID: 1041119847}
   m_Layer: 0
   m_Name: sabana_2
   m_TagString: Untagged
@@ -8977,7 +8981,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f8d08c5b8b502fa428110c806a5816fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9009,6 +9013,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!64 &1041119847
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041119844}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1043022103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,11 +10534,14 @@ MonoBehaviour:
   cameraOffset: {x: -2, y: 4, z: 3}
   cameraRotation: {x: 40, y: 120, z: 0}
   fixedCameraPoint: {fileID: 0}
-  resetOnExit: 1
   invertHorizontal: 1
   invertVertical: 1
   swapAxes: 0
   swapFrontBackSprites: 1
+  swapRightLeftSprites: 0
+  changePlayerRotation: 0
+  playerRotation: {x: 0, y: 0, z: 0}
+  resetOnExit: 1
 --- !u!65 &1180113215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16206,7 +16235,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f8d08c5b8b502fa428110c806a5816fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

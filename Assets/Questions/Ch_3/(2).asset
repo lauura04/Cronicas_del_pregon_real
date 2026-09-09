@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
   m_Name: (2)
   m_EditorClassIdentifier: 
+  questionLayout: 1
   question: "\xBFQu\xE9 dura condici\xF3n pusieron para el matrimonio?"
   answers:
   - answerText: "Expulsi\xF3n de los moros"

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
   m_Name: (1)
   m_EditorClassIdentifier: 
+  questionLayout: 1
   question: "\xBFEn qu\xE9 d\xEDa nos encontramos hoy?"
   answers:
   - answerText: 7 de octubre de 1497

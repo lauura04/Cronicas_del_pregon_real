@@ -110,6 +110,7 @@ public class KeyMinigameManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
         }
+        HUDManager.Instance.HideHUD();
     }
 
     private void UpdateTimer()
@@ -219,7 +220,7 @@ public class KeyMinigameManager : MonoBehaviour
     {
         isPlaying = false;
         minigamePanel.SetActive(false);
-
+        
         if(completeDialogue!=null && DialogueManager.Instance != null)
         {
             DialogueManager.Instance.StartDialogue(completeDialogue, FinishMinigame);
@@ -238,6 +239,8 @@ public class KeyMinigameManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
         }
+        HUDManager.Instance.ShowHUD();
+
 
         onMinigameCompleted?.Invoke();
         onCompletedCallback?.Invoke();
@@ -255,6 +258,8 @@ public class KeyMinigameManager : MonoBehaviour
         {
             PlayerMovement.Instance.SetMovementEnabled(true);
         }
+        HUDManager.Instance.ShowHUD();
+
     }
 
     private void KeyTimeExpired()
@@ -269,7 +274,7 @@ public class KeyMinigameManager : MonoBehaviour
         }
         GenerateNewKey();
     }
-//funcion para hacer cambiar el sprite de la actuación --> cambiar prox a animator
+//funcion para hacer cambiar el sprite de la actuación --> cambiar prox a animator --> ni de coña
     private void ChangeCharacterImage()
     {
         if(characterImage==null || characterSprites.Length==0)

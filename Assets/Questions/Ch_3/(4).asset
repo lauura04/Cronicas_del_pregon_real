@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
   m_Name: (4)
   m_EditorClassIdentifier: 
+  questionLayout: 1
   question: "\xBFY en qu\xE9 a\xF1o tuvo lugar dicho matrimonio?"
   answers:
   - answerText: 1490

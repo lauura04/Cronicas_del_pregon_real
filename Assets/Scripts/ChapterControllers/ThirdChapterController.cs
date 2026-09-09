@@ -13,7 +13,6 @@ public class ThirdChapterController : MonoBehaviour
     [Header("Phases")]
     [SerializeField] private ChapterPhaseData introPhase;
     [SerializeField] private ChapterPhaseData getThingsPhase;
-    [SerializeField] private ChapterPhaseData lookForMusicianPhase;
     [SerializeField] private ChapterPhaseData endPhase;
 
     [Header("DIALOGUES")]
@@ -82,11 +81,7 @@ public class ThirdChapterController : MonoBehaviour
             MusicManager.Instance.PlayMusic(music);
         }
 
-        /*
-         * Nos suscribimos aquí y no en OnEnable,
-         * porque así nos aseguramos de que el
-         * InventoryManager ya esté inicializado.
-         */
+        
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnInventoryChanged +=
@@ -364,5 +359,7 @@ public class ThirdChapterController : MonoBehaviour
         {
             SceneLoader.Instance.LoadScene("End");
         }
+
+        MusicManager.Instance.StopMusic();
     }
 }

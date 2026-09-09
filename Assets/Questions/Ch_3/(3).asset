@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
   m_Name: (3)
   m_EditorClassIdentifier: 
+  questionLayout: 1
   question: "Antes de con don Manuel, Isabel ya hab\xEDa estado casada con alguien
     de la realeza portuguesa, \xBFcon qui\xE9n?"
   answers:

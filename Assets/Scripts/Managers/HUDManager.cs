@@ -37,7 +37,7 @@ public class HUDManager : MonoBehaviour
     {
         bool isGameplayScene =
             scene.name != "MainMenu" &&
-            scene.name != "ChapterIntro";
+            scene.name != "ChapterIntro" && scene.name!="BootstrapScene";
 
         SetHUDVisible(isGameplayScene);
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb229ddb3e9184f974dbd7750c0201, type: 3}
   m_Name: (5)
   m_EditorClassIdentifier: 
+  questionLayout: 1
   question: "\xBFPor qu\xE9 crees que los reyes han elegido este sitio como lugar
     del casamiento?"
   answers:

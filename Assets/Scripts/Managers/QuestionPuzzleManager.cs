@@ -1,22 +1,30 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class QuestionPuzzleManager : MonoBehaviour
 {
     public static QuestionPuzzleManager Instance { get; private set; }
 
-    [Header("UI")]
-    [SerializeField] private GameObject puzzlePanel;
-    [SerializeField] private TMP_Text questionText;
+    [Header("Short Answers UI")]
+    [SerializeField] private GameObject shortAnswersPanel;
+    [SerializeField] private TMP_Text shortQuestionText;
+    [SerializeField] private RectTransform shortAnswerContainer;
+    [SerializeField] private GameObject shortAnswerButtonPrefab;
 
-    [Header("Answers")]
-    [SerializeField] private RectTransform answerContainer;
-    [SerializeField] private GameObject answerButtonPrefab;
+    [Header("Long Answers UI")]
+    [SerializeField] private GameObject longAnswersPanel;
+    [SerializeField] private TMP_Text longQuestionText;
+    [SerializeField] private RectTransform longAnswerContainer;
+    [SerializeField] private GameObject longAnswerButtonPrefab;
+
+    private GameObject currentPanel;
+    private TMP_Text currentQuestionText;
+    private RectTransform currentAnswerContainer;
+    private GameObject currentAnswerButtonPrefab;
 
     private QuestionPuzzle currentPuzzle;
-
     private QuestionData currentQuestionData;
     private Action<int> onAnswerSelected;
 
@@ -31,9 +39,14 @@ public class QuestionPuzzleManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        if (puzzlePanel != null)
+        if (shortAnswersPanel != null)
         {
-            puzzlePanel.SetActive(false);
+            shortAnswersPanel.SetActive(false);
+        }
+
+        if (longAnswersPanel != null)
+        {
+            longAnswersPanel.SetActive(false);
         }
     }
 
@@ -53,26 +66,27 @@ public class QuestionPuzzleManager : MonoBehaviour
             return;
         }
 
-        if(!CheckUIReferences())
-            return;
-
         currentPuzzle = puzzle;
         currentQuestionData = puzzle.QuestionData;
         onAnswerSelected = null;
+
+        if (!SelectUI(currentQuestionData))
+        {
+            return;
+        }
 
         OpenUI();
         ShowQuestion(currentQuestionData);
     }
 
-    public void OpenSequentialQuestion(QuestionData questionData, Action<int> answerCallback)
+    public void OpenSequentialQuestion(
+        QuestionData questionData,
+        Action<int> answerCallback
+    )
     {
-        if(questionData == null)
+        if (questionData == null)
         {
-            Debug.LogError("QuestionData es null");
-            return;
-        }
-        if (!CheckUIReferences())
-        {
+            Debug.LogError("QuestionData es null.");
             return;
         }
 
@@ -80,153 +94,200 @@ public class QuestionPuzzleManager : MonoBehaviour
         currentQuestionData = questionData;
         onAnswerSelected = answerCallback;
 
+        if (!SelectUI(currentQuestionData))
+        {
+            return;
+        }
+
         OpenUI();
         ShowQuestion(currentQuestionData);
     }
 
     public void RefreshQuestion(QuestionData questionData)
     {
-        if(questionData == null)
+        if (questionData == null)
         {
-            Debug.LogError("QuestionData es null");
+            Debug.LogError("QuestionData es null.");
+            return;
         }
 
+        ClearAnswerButtons();
+        HideAllPanels();
+
         currentQuestionData = questionData;
+
+        if (!SelectUI(currentQuestionData))
+        {
+            return;
+        }
+
+        currentPanel.SetActive(true);
         ShowQuestion(currentQuestionData);
     }
+
+    private bool SelectUI(QuestionData questionData)
+    {
+        if (questionData == null)
+        {
+            return false;
+        }
+
+        switch (questionData.Layout)
+        {
+            case QuestionLayout.ShortAnswers:
+                currentPanel = shortAnswersPanel;
+                currentQuestionText = shortQuestionText;
+                currentAnswerContainer = shortAnswerContainer;
+                currentAnswerButtonPrefab = shortAnswerButtonPrefab;
+                break;
+
+            case QuestionLayout.LongAnswers:
+                currentPanel = longAnswersPanel;
+                currentQuestionText = longQuestionText;
+                currentAnswerContainer = longAnswerContainer;
+                currentAnswerButtonPrefab = longAnswerButtonPrefab;
+                break;
+
+            default:
+                Debug.LogError(
+                    $"Layout desconocido en la pregunta {questionData.name}."
+                );
+                return false;
+        }
+
+        return CheckCurrentUIReferences();
+    }
+
     private void OpenUI()
     {
+        HideAllPanels();
+
         HUDManager.Instance?.HideHUD();
-        puzzlePanel.SetActive(true);
-        if(PlayerMovement.Instance != null)
+
+        currentPanel.SetActive(true);
+
+        if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.SetMovementEnabled(false);
         }
     }
 
     private void ShowQuestion(QuestionData questionData)
-{
-    Debug.Log(
-        $"Mostrando pregunta: {(questionData != null ? questionData.name : "NULL")}"
-    );
+    {
+        if (questionData == null)
+        {
+            Debug.LogError("ShowQuestion ha recibido un QuestionData null.");
+            return;
+        }
 
-    questionText.text = questionData.Question;
+        Debug.Log($"Mostrando pregunta: {questionData.name}");
 
-    CreateAnswerButtons(questionData);
-}
+        currentQuestionText.text = questionData.Question;
+        CreateAnswerButtons(questionData);
+    }
+
     private void CreateAnswerButtons(QuestionData questionData)
-{
-    ClearAnswerButtons();
-
-    if (questionData == null)
     {
-        Debug.LogError("CreateAnswerButtons ha recibido un QuestionData null.");
-        return;
-    }
+        ClearAnswerButtons();
 
-    if (questionData.Answers == null)
-    {
-        Debug.LogError(
-            $"La pregunta '{questionData.name}' tiene la lista Answers en null."
-        );
-        return;
-    }
-
-    if (questionData.Answers.Count == 0)
-    {
-        Debug.LogError(
-            $"La pregunta '{questionData.name}' no tiene respuestas."
-        );
-        return;
-    }
-
-    int answerCount = questionData.Answers.Count;
-
-    Debug.Log(
-        $"Creando {answerCount} botones para la pregunta {questionData.name}."
-    );
-
-    for (int i = 0; i < answerCount; i++)
-    {
-        int answerIndex = i;
-
-        GameObject buttonObject = Instantiate(
-            answerButtonPrefab,
-            answerContainer,
-            false
-        );
-
-        if (buttonObject == null)
-        {
-            Debug.LogError("No se ha podido instanciar el botón.");
-            continue;
-        }
-
-        Button button = buttonObject.GetComponent<Button>();
-
-        TMP_Text buttonText =
-            buttonObject.GetComponentInChildren<TMP_Text>();
-
-        if (button == null)
+        if (questionData == null)
         {
             Debug.LogError(
-                $"El prefab {answerButtonPrefab.name} no tiene Button."
+                "CreateAnswerButtons ha recibido un QuestionData null."
             );
-
-            Destroy(buttonObject);
-            continue;
+            return;
         }
 
-        if (buttonText == null)
+        if (questionData.Answers == null)
         {
             Debug.LogError(
-                $"El prefab {answerButtonPrefab.name} no tiene TMP_Text."
+                $"La pregunta '{questionData.name}' tiene Answers en null."
             );
-
-            Destroy(buttonObject);
-            continue;
+            return;
         }
 
-        AnswerOption answer =
-            questionData.Answers[answerIndex];
-
-        if (answer == null)
+        if (questionData.Answers.Count == 0)
         {
             Debug.LogError(
-                $"La respuesta {answerIndex} de {questionData.name} es null."
+                $"La pregunta '{questionData.name}' no tiene respuestas."
             );
-
-            Destroy(buttonObject);
-            continue;
+            return;
         }
 
-        buttonText.text = answer.answerText;
+        for (int i = 0; i < questionData.Answers.Count; i++)
+        {
+            int answerIndex = i;
+            AnswerOption answer = questionData.Answers[answerIndex];
 
-        button.onClick.RemoveAllListeners();
+            if (answer == null)
+            {
+                Debug.LogError(
+                    $"La respuesta {answerIndex} de " +
+                    $"{questionData.name} es null."
+                );
+                continue;
+            }
 
-        button.onClick.AddListener(
-            () => SelectAnswer(answerIndex)
+            GameObject buttonObject = Instantiate(
+                currentAnswerButtonPrefab,
+                currentAnswerContainer,
+                false
+            );
+
+            Button button = buttonObject.GetComponent<Button>();
+            TMP_Text buttonText =
+                buttonObject.GetComponentInChildren<TMP_Text>();
+
+            if (button == null)
+            {
+                Debug.LogError(
+                    $"El prefab {currentAnswerButtonPrefab.name} " +
+                    "no tiene un componente Button."
+                );
+
+                Destroy(buttonObject);
+                continue;
+            }
+
+            if (buttonText == null)
+            {
+                Debug.LogError(
+                    $"El prefab {currentAnswerButtonPrefab.name} " +
+                    "no tiene un componente TMP_Text."
+                );
+
+                Destroy(buttonObject);
+                continue;
+            }
+
+            buttonText.text = answer.answerText;
+
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(
+                () => SelectAnswer(answerIndex)
+            );
+        }
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            currentAnswerContainer
         );
     }
 
-    LayoutRebuilder.ForceRebuildLayoutImmediate(
-        answerContainer
-    );
-}
-
- private void SelectAnswer(int answerIndex)
-{
-        //puzzle secuencial
+    private void SelectAnswer(int answerIndex)
+    {
+        // Puzzle secuencial
         if (onAnswerSelected != null)
         {
             onAnswerSelected.Invoke(answerIndex);
             return;
         }
-        //puzzle unico
+
+        // Puzzle único
         if (currentPuzzle == null)
         {
             return;
         }
+
         QuestionPuzzle puzzle = currentPuzzle;
         bool correct = puzzle.CheckAnswer(answerIndex);
 
@@ -240,22 +301,23 @@ public class QuestionPuzzleManager : MonoBehaviour
         {
             puzzle.HandleWrongAnswer();
         }
-}
+    }
 
     public void ClosePuzzle()
     {
+        ClearAnswerButtons();
+        HideAllPanels();
+
         currentPuzzle = null;
         currentQuestionData = null;
         onAnswerSelected = null;
 
-        ClearAnswerButtons();
+        currentPanel = null;
+        currentQuestionText = null;
+        currentAnswerContainer = null;
+        currentAnswerButtonPrefab = null;
 
-        if (puzzlePanel != null)
-        {
-            puzzlePanel.SetActive(false);
-        }
         HUDManager.Instance?.ShowHUD();
-
 
         if (PlayerMovement.Instance != null)
         {
@@ -265,26 +327,44 @@ public class QuestionPuzzleManager : MonoBehaviour
 
     private void ClearAnswerButtons()
     {
-        if (answerContainer == null)
+        if (currentAnswerContainer == null)
         {
             return;
         }
 
-        for (int i = answerContainer.childCount - 1;
-             i >= 0;
-             i--)
+        for (int i = currentAnswerContainer.childCount - 1; i >= 0; i--)
         {
             Destroy(
-                answerContainer.GetChild(i).gameObject
+                currentAnswerContainer.GetChild(i).gameObject
             );
         }
     }
 
-    private bool CheckUIReferences()
+    private void HideAllPanels()
     {
-        if(puzzlePanel==null||questionText==null||answerContainer == null|| answerButtonPrefab == null)
+        if (shortAnswersPanel != null)
         {
-            Debug.LogError("QuestionPuzzleManager no tiene todas las referencias UI asignadas");
+            shortAnswersPanel.SetActive(false);
+        }
+
+        if (longAnswersPanel != null)
+        {
+            longAnswersPanel.SetActive(false);
+        }
+    }
+
+    private bool CheckCurrentUIReferences()
+    {
+        if (currentPanel == null ||
+            currentQuestionText == null ||
+            currentAnswerContainer == null ||
+            currentAnswerButtonPrefab == null)
+        {
+            Debug.LogError(
+                $"Faltan referencias de la interfaz para " +
+                $"{currentQuestionData.Layout}."
+            );
+
             return false;
         }
 

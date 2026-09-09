@@ -99,7 +99,7 @@ public class CharmMinigameManager : MonoBehaviour
         {
             MessageUI.Instance.HideMessage();
         }
-
+        HUDManager.Instance.HideHUD();
         currentNPC = npc;
 
         currentScale = maxScale;
@@ -207,6 +207,7 @@ public class CharmMinigameManager : MonoBehaviour
 
         PlayerMovement.Instance?
             .SetMovementEnabled(true);
+        HUDManager.Instance.ShowHUD();
 
         currentNPC?.CharmSucceeded();
 
